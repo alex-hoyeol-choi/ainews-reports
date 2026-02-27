@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-02-25 | Agentic Engineering: WTF Happened in December 2025? | [전체번역](reports/2026-02/2026-02-25_Agentic_Engineering_WTF_Happened_in_December_2025.md) | [요약](reports/2026-02/2026-02-25_Agentic_Engineering_WTF_Happened_in_December_2025_summary.md) | [HTML](reports/2026-02/2026-02-25_Agentic_Engineering_WTF_Happened_in_December_2025_summary.html) |
 | 2026-02-24 | Claude Code | [2026-02-24-claude-code.md](reports/smolai/2026-02/2026-02-24-claude-code.md) | [2026-02-24-claude-code_summary.md](reports/smolai/2026-02/2026-02-24-claude-code_summary.md) | [2026-02-24-claude-code_summary.html](reports/smolai/2026-02/2026-02-24-claude-code_summary.html) |
 | 2026-02-24 | Anthropic accuses DeepSeek, Moonshot and MiniMax | [full](reports/ainews/Anthropic_accuses_DeepSeek_Moonshot_and_MiniMax__20260224_173248.md) | [summary](reports/ainews/Anthropic_accuses_DeepSeek_Moonshot_and_MiniMax__20260224_173248_summary.md) | [html](reports/ainews/Anthropic_accuses_DeepSeek_Moonshot_and_MiniMax__20260224_173248_summary.html) |
 | 2025-10-09 | OpenAI Dev Day: Apps SDK, AgentKit, Codex GA, GPT | [full](reports/ainews/OpenAI_Dev_Day_Apps_SDK_AgentKit_Codex_GA_GPT_20251009_024455.md) | - | - |
