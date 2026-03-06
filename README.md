@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-03-06 | GPT 5.4: SOTA Knowledge Work -and- Coding -and- CUA Model, OpenAI is so very back | [전체번역](reports/2026-03/2026-03-06_GPT_54_SOTA_Knowledge_Work_-and-_Coding_-and-_CUA_Model_OpenAI_is_so_very_back.md) | [요약](reports/2026-03/2026-03-06_GPT_54_SOTA_Knowledge_Work_-and-_Coding_-and-_CUA_Model_OpenAI_is_so_very_back_summary.md) | [HTML](reports/2026-03/2026-03-06_GPT_54_SOTA_Knowledge_Work_-and-_Coding_-and-_CUA_Model_OpenAI_is_so_very_back_summary.html) |
 | 2026-03-05 | Is Harness Engineering real? | [전체번역](reports/2026-03/2026-03-05_Is_Harness_Engineering_real.md) | [요약](reports/2026-03/2026-03-05_Is_Harness_Engineering_real_summary.md) | [HTML](reports/2026-03/2026-03-05_Is_Harness_Engineering_real_summary.html) |
 | 2026-03-04 | Anthropic @ $19B ARR, Qwen team leaves, Gemini and GPT bump up fast models | [전체번역](reports/2026-03/2026-03-04_Anthropic_19B_ARR_Qwen_team_leaves_Gemini_and_GPT_bump_up_fast_models.md) | [요약](reports/2026-03/2026-03-04_Anthropic_19B_ARR_Qwen_team_leaves_Gemini_and_GPT_bump_up_fast_models_summary.md) | [HTML](reports/2026-03/2026-03-04_Anthropic_19B_ARR_Qwen_team_leaves_Gemini_and_GPT_bump_up_fast_models_summary.html) |
 | 2026-03-03 | Truth in the time of Artifice | [전체번역](reports/2026-03/2026-03-03_Truth_in_the_time_of_Artifice.md) | [요약](reports/2026-03/2026-03-03_Truth_in_the_time_of_Artifice_summary.md) | [HTML](reports/2026-03/2026-03-03_Truth_in_the_time_of_Artifice_summary.html) |
