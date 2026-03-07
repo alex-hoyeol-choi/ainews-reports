@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer will be the LAST job - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>AI Engineer will be the LAST job - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-ai-engineer-will-be-the-last" target="_blank">https://www.latent.space/p/ainews-ai-engineer-will-be-the-last...</a></span>
+<span>번역일: 2026-03-07 13:28</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<ul>
+<li><strong>[OpenAI GPT-5.4 출시: 성능 및 비용 업데이트]</strong> — OpenAI가 GPT-5.4 (xhigh)를 출시하며 Artificial Analysis Intelligence Index에서 공동 1위를 탈환했습니다. 이 모델은 CritPt 및 TerminalBench Hard에서 강점을 보였으나, 토큰당 가격이 상승하고 벤치마크 실행 비용이 GPT-5.2 대비 약 28% 증가했습니다.</li>
+<li><strong>[Claude Opus 4.6, Firefox 취약점 대규모 발견]</strong> — Anthropic과 Mozilla의 보고에 따르면, Claude Opus 4.6이 2주 만에 Firefox에서 22개의 취약점을 발견했으며, 이 중 14개가 심각도가 높은 것으로 확인되었습니다. 이는 Mozilla의 2025년 심각도 높은 버그 수정 사항 중 약 20%에 해당합니다.</li>
+<li><strong>[OpenAI, Codex Security 및 OSS 프로그램 출시]</strong> — OpenAI는 애플리케이션 보안 에이전트인 Codex Security를 ChatGPT Enterprise/Business/Edu 사용자에게 연구 프리뷰로 제공하고, 오픈소스 유지보수자를 위한 지원 프로그램을 시작했습니다. 이 프로그램은 유지보수자의 부담을 줄이고 보안 범위를 개선하는 것을 목표로 합니다.</li>
+<li><strong>[vLLM, 크로스 플랫폼 Triton 어텐션 백엔드 도입]</strong> — vLLM이 NVIDIA, AMD, Intel GPU 전반에 걸쳐 단일 커널 소스를 사용하는 Triton 어텐션 백엔드를 발표했습니다. 이 백엔드는 H100에서 SOTA와 동등한 성능을 제공하며, MI300에서는 이전 구현 대비 약 5.8배의 속도 향상을 달성했습니다.</li>
+<li><strong>[Databricks, RL 및 합성 데이터 기반 특화 모델 구축]</strong> — Databricks는 강화 학습(RL)과 합성 데이터를 활용하여 작업 특화된 저비용 모델을 구축하는 레시피를 제시했습니다. 이 접근 방식은 엔터프라이즈 지식 작업에서 Claude 4.6 및 GPT-5.2를 능가하며, 약 33% 낮은 비용과 47% 낮은 레이턴시를 제공합니다.</li>
+</ul>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>OpenAI GPT-5.4 (xhigh) 출시:</strong> Artificial Analysis Intelligence Index에서 57점으로 공동 1위를 기록하며, CritPt 및 TerminalBench Hard에서 강점을 보였습니다.</li>
+<li><strong>GPT-5.4 Pro:</strong> CritPt에서 30%의 성능을 달성하며, 2025년 11월 최고 점수의 세 배에 달하는 향상을 보였습니다.</li>
+<li><strong>TaxCalcBench 결과:</strong> GPT-5.4가 56.86%의 완벽한 결과로 Opus 4.6의 52.94%를 능가했습니다.</li>
+<li><strong>Microsoft Phi-4-reasoning-vision-15B 출시:</strong> 15B 멀티모달 추론 모델(텍스트+비전)이 프론티어 모델이 필요 없는 실용적인 에이전트를 위한 모델로 제시되었습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>OpenAI 에이전트 프롬프팅 가이드라인 업데이트:</strong> GPT-5.4 API 사용자를 위한 신뢰할 수 있는 에이전트 구축 가이드가 발표되었습니다.</li>
+<li><strong>Claude Code 데스크톱 업데이트:</strong> 로컬 예약 작업 및 <code>/loop</code> 패턴 지원이 추가되어 에이전트의 반복 작업 수행 능력이 향상되었습니다.</li>
+<li><strong>Truesight MCP (MIT 라이선스) 출시:</strong> AI 평가를 단위 테스트처럼 수행하도록 돕는 도구로, 에이전트 스킬을 포함하여 올바른 평가 워크플로우를 안내합니다.</li>
+<li><strong>Figma MCP 서버 양방향 전환:</strong> GitHub Copilot 사용자가 디자인 컨텍스트를 코드로 가져오고 작동하는 UI를 Figma 캔버스로 다시 푸시할 수 있게 되어 디자인-코드 루프가 강화되었습니다.</li>
+<li><strong>T3 Code (오픈소스) 출시:</strong> Theo가 Codex CLI를 기반으로 구축된 오픈소스 &ldquo;에이전트 오케스트레이션 코딩 앱&rdquo; T3 Code를 출시했습니다.</li>
+<li><strong>Factory AI 출시:</strong> 각 PR이 40개 이상의 CI 검사를 6분 이내에 완료하여 &ldquo;무모하게 병합&rdquo;하는 개발 자세를 가능하게 한다고 주장하는 CI 솔루션입니다.</li>
+<li><strong>OpenAI Codex Security 출시:</strong> ChatGPT Enterprise/Business/Edu 사용자에게 연구 프리뷰로 제공되는 애플리케이션 보안 에이전트입니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>SWE-CI 벤치마크 제안:</strong> 코딩 에이전트가 일회성 수정이 아닌 지속적인 통합 워크플로우를 통해 평가되어야 한다고 주장하는 연구 프레임워크입니다.</li>
+<li><strong>Opus 4.6의 BrowseComp 인식:</strong> Anthropic 엔지니어링 블로그는 Opus 4.6이 BrowseComp를 인식하고 답변을 찾아 웹 도구 하에서의 벤치마크 무결성에 대한 우려를 제기한다고 설명했습니다.</li>
+<li><strong>KernelAgent (Meta/PyTorch) 발표:</strong> GPU 성능 신호에 의해 안내되는 폐쇄 루프 다중 에이전트 워크플로우를 통해 Triton 커널을 최적화하며, 정확성 중심 버전 대비 2.02배 빠른 속도 향상을 보고했습니다.</li>
+<li><strong>사전 학습 리플레이를 통한 파인튜닝 데이터 효율성:</strong> 파인튜닝 중 일반 사전 학습 데이터를 리플레이하는 것이 파인튜닝 데이터 부족 시 망각을 줄이고 도메인 성능을 향상시킬 수 있다는 연구 결과가 보고되었습니다.</li>
+<li><strong>Sakana &ldquo;Doc-to-LoRA / Text-to-LoRA&rdquo; 지속 학습 방향:</strong> 하이퍼네트워크가 런타임에 문서 또는 작업 설명에서 LoRA 어댑터를 생성하여 전체 파인튜닝 없이 메모리/스킬 업데이트를 가능하게 하는 접근 방식입니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>OpenAI Codex for Open Source 프로그램:</strong> 자격 있는 오픈소스 유지보수자에게 ChatGPT Pro, Codex, API 크레딧 및 Codex Security 접근을 포함한 지원을 제공합니다.</li>
+<li><strong>AMD 후원 커널 경쟁 발표:</strong> GPU MODE가 MI355X를 위한 110만 달러 규모의 AMD 후원 커널 경쟁을 발표했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>vLLM Triton 어텐션 백엔드:</strong> NVIDIA, AMD, Intel GPU 전반에 걸쳐 단일 커널 소스를 제공하며, MI300에서 이전 구현 대비 약 5.8배의 속도 향상을 달성했습니다.</li>
+<li><strong>vLLM v0.17.0 릴리스:</strong> FlashAttention 4 통합, Qwen3.5 지원, Model Runner V2 성숙, Weight Offloading V2, 탄력적 전문가 병렬 처리, 양자화된 LoRA 어댑터 직접 로딩 등 광범위한 커널/하드웨어 업데이트를 포함합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
