@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-03-10 | Autoresearch: Sparks of Recursive Self Improvement | [전체번역](reports/2026-03/2026-03-10_Autoresearch_Sparks_of_Recursive_Self_Improvement.md) | [요약](reports/2026-03/2026-03-10_Autoresearch_Sparks_of_Recursive_Self_Improvement_summary.md) | [HTML](reports/2026-03/2026-03-10_Autoresearch_Sparks_of_Recursive_Self_Improvement_summary.html) |
 | 2026-03-07 | AI Engineer will be the LAST job | [전체번역](reports/2026-03/2026-03-07_AI_Engineer_will_be_the_LAST_job.md) | [요약](reports/2026-03/2026-03-07_AI_Engineer_will_be_the_LAST_job_summary.md) | [HTML](reports/2026-03/2026-03-07_AI_Engineer_will_be_the_LAST_job_summary.html) |
 | 2026-03-06 | GPT 5.4: SOTA Knowledge Work -and- Coding -and- CUA Model, OpenAI is so very back | [전체번역](reports/2026-03/2026-03-06_GPT_54_SOTA_Knowledge_Work_-and-_Coding_-and-_CUA_Model_OpenAI_is_so_very_back.md) | [요약](reports/2026-03/2026-03-06_GPT_54_SOTA_Knowledge_Work_-and-_Coding_-and-_CUA_Model_OpenAI_is_so_very_back_summary.md) | [HTML](reports/2026-03/2026-03-06_GPT_54_SOTA_Knowledge_Work_-and-_Coding_-and-_CUA_Model_OpenAI_is_so_very_back_summary.html) |
 | 2026-03-05 | Is Harness Engineering real? | [전체번역](reports/2026-03/2026-03-05_Is_Harness_Engineering_real.md) | [요약](reports/2026-03/2026-03-05_Is_Harness_Engineering_real_summary.md) | [HTML](reports/2026-03/2026-03-05_Is_Harness_Engineering_real_summary.html) |

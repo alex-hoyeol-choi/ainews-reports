@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoresearch: Sparks of Recursive Self Improvement - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Autoresearch: Sparks of Recursive Self Improvement - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive" target="_blank">https://www.latent.space/p/ainews-autoresearch-sparks-of-recursive...</a></span>
+<span>번역일: 2026-03-10 07:28</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 AI 뉴스레터에서 추출한 핵심 신규 소식 요약 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<ul>
+<li><strong>[LLM의 자율적 자기 개선 시연]</strong> — Andrej Karpathy는 에이전트 기반 연구 루프를 통해 nanochat 학습에서 &ldquo;Time to GPT-2&rdquo;를 약 11% (2.02시간에서 1.80시간으로) 단축했다고 보고했습니다. 이는 LLM이 스스로 학습 레시피를 체계적으로 개선할 수 있음을 보여주는 중요한 진전입니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/029937e5-83d-4302-a39c-d0bdac3f797e_1188x1252.png" /></li>
+<li><strong>[Anthropic, 멀티 에이전트 PR 코드 리뷰 출시]</strong> — Anthropic이 Claude Code를 활용한 멀티 에이전트 PR 리뷰 도구를 출시했습니다. 이 도구는 의미 있는 PR 댓글 비율을 16%에서 54%로 증가시키고, 잘못된 발견은 1% 미만으로 유지한다고 주장합니다.</li>
+<li><strong>[OpenAI, Promptfoo 인수]</strong> — OpenAI가 오픈소스 에이전틱 보안 테스트 및 평가 도구인 Promptfoo를 인수했습니다. Promptfoo는 오픈소스로 유지되며, OpenAI의 에이전트 보안 테스트 및 평가 역량을 강화할 예정입니다.</li>
+<li><strong>[Figure Helix 02, 자율 주택 청소 데모 공개]</strong> — Brett Adcock이 Figure Helix 02 로봇의 완전 자율 거실 청소 데모를 공개하며, 전신 로봇이 엔드투엔드 가사 작업을 수행하는 중요한 이정표를 제시했습니다.</li>
+<li><strong>[Anthropic, 미 국방부 상대 소송 제기]</strong> — Anthropic이 대량 감시 및 자율 무기에 대한 안전장치 제거를 거부한 후, 미 국방부에 의해 &ldquo;공급망 위험&rdquo;으로 분류되자 소송을 제기한 것으로 알려졌습니다. 이는 AI 기업의 정책 및 조달에 영향을 미칠 수 있는 주요 법적/정책적 사건입니다.</li>
+</ul>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>GPT-5.4 사용자 반응 및 성능</strong> — ChatGPT의 GPT-5.4는 지시 준수 및 어려운 한국어 테이블 OCR과 같은 비전/OCR 작업에서 긍정적인 실제 사용 경험과 상당한 개선을 보였습니다.</li>
+<li><strong>Anthropic, 문서 분석 벤치마크 지배</strong> — Document Arena 보고서에 따르면, 문서 분석 및 장문 추론 분야에서 상위 3개 모델이 Anthropic의 Opus 4.6, Sonnet 4.6, Opus 4.5로 나타났습니다.</li>
+<li><strong>Gemma 4 출시 루머</strong> — 120B 전체/15B 활성 파라미터를 포함한 Gemma 4의 임박한 출시 루머가 돌고 있습니다.</li>
+<li><strong>Qwen3.5 로컬 실행 가이드 공개</strong> — Unsloth는 ≤24GB RAM에서 작동하며 Unsloth를 사용하여 모델을 파인튜닝하는 에이전트를 시연하는 Qwen3.5 로컬 실행 가이드 및 파인튜닝 에이전트 워크플로우를 게시했습니다.</li>
+<li><strong>RoboMME, 로봇 메모리 벤치마크 등장</strong> — RoboMME가 로봇 제너럴리스트 정책의 메모리 벤치마크로 새롭게 등장했습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>Cognition, Devin Review 출시</strong> — Cognition이 URL 대체 방식의 무료 PR 리뷰 도구인 Devin Review를 출시했으며, 자동 수정 및 diff 기능을 포함합니다.</li>
+<li><strong>Perplexity &ldquo;Computer&rdquo; 기능 확장</strong> — Perplexity는 &ldquo;Perplexity Computer&rdquo;에 Claude Code와 GitHub CLI를 추가하여 리포지토리 포크부터 PR 제출까지의 엔드투엔드 과정을 시연했습니다. 또한 Google/Meta Ads API 커넥터를 통해 자율적인 광고 캠페인 운영을 주장합니다.</li>
+<li><strong>Andrew Ng, Context Hub 출시</strong> — Andrew Ng이 최신 API 문서를 가져와 API 환각을 줄이고 영구적인 주석 및 커뮤니티 공유를 지원하는 CLI 도구인 Context Hub를 출시했습니다.</li>
+<li><strong>LangSmith Agent Builder 기능 추가</strong> — LangSmith는 멀티모달 평가자와 병렬 에이전트 작업을 관리하기 위한 Agent Builder 인박스를 추가했습니다.</li>
+<li><strong>Harbor, 엔드투엔드 컴퓨터 사용 평가 통합</strong> — Harbor는 대규모 엔드투엔드 컴퓨터 사용 평가(Windows/Linux)를 통합하여 SFT/RL을 위한 궤적을 생성합니다.</li>
+<li><strong>Teleport, 에이전틱 아이덴티티 제안</strong> — Teleport는 암호화된 아이덴티티, 최소 권한, MCP/도구 전반의 감사 추적을 위한 제어 플레인으로 &ldquo;에이전틱 아이덴티티&rdquo;를 제안했습니다.</li>
+<li><strong>LlamaIndex, Surreal Slides 시연</strong> — LlamaIndex는 LlamaParse, SurrealDB, MCP 에이전트 인터페이스를 활용하여 슬라이드 덱 파싱 및 리트리벌(&ldquo;Surreal Slides&rdquo;)을 시연했습니다.</li>
+<li><strong>Hugging Face, LeRobot v0.5.0 업데이트</strong> — Hugging Face의 로보틱스 스택인 LeRobot이 v0.5.0으로 주요 업데이트를 출시하며 Unitree G1 휴머노이드 지원, 새로운 정책, 실시간 청킹, 더 빠른 데이터셋, EnvHub/Isaac 통합, Python 3.12 + Transformers v5, 플러그인 시스템을 포함했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>Karpathy, 오토리서치 성과 보고</strong> — Andrej Karpathy는 에이전트 기반 연구 루프를 통해 nanochat 학습에서 &ldquo;Time to GPT-2&rdquo;를 약 11% (2.02시간에서 1.80시간으로) 단축했다고 보고했습니다. 이 루프는 정규화 스케일러, 어텐션 튜닝 등 학습 레시피 개선 사항을 체계적으로 발견합니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/029937e5-83d-4302-a39c-d0bdac3f797e_1188x1252.png" /></li>
+<li><strong>AgentIR, 추론 토큰 활용 성능 향상</strong> — AgentIR은 에이전트의 &ldquo;추론 토큰&rdquo;을 신호로 사용하여 BrowseComp-Plus에서 기준선 대비 35%에서 67%로 성능 향상을 보고했습니다.</li>
+<li><strong>Memex(RL), 인덱싱된 경험 메모리 제안</strong> — Memex(RL)는 컨텍스트 윈도우를 부풀리지 않고 장기적인 작업을 확장하기 위해 인덱싱된 경험 메모리 개념을 제안했습니다.</li>
+<li><strong>Databricks/DAIR, KARL 연구 발표</strong> — Databricks/DAIR은 엔터프라이즈 검색 에이전트를 위한 멀티태스크 RL 학습 모델 KARL을 발표하며, 파레토 최적의 비용/레이턴시 품질 트레이드오프와 향상된 일반화를 주장합니다.</li>
+<li><strong>CosNet 아이디어 제시</strong> — CosNet은 선형 레이어에 저랭크 비선형 잔여 함수를 추가하여 사전 학습에서 20% 이상의 실제 시간 속도 향상을 가져온다고 주장하는 아이디어를 제시했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>OpenAI, Promptfoo 인수</strong> — OpenAI가 오픈소스 에이전틱 보안 테스트 및 평가 도구인 Promptfoo를 인수했습니다. Promptfoo는 오픈소스로 유지되며, OpenAI의 에이전트 보안 테스트 및 평가 역량을 강화할 예정입니다.</li>
+<li><strong>Anthropic, 미 국방부 상대 소송 제기</strong> — Anthropic이 대량 감시 및 자율 무기에 대한 안전장치 제거를 거부한 후, 미 국방부에 의해 &ldquo;공급망 위험&rdquo;으로 분류되자 소송을 제기한 것으로 알려졌습니다.</li>
+<li><strong>Qwen 기술 리더 사임 언급</strong> — Qwen의 기술 리더가 사임했다는 언급이 있었습니다 (2차 출처).</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>vLLM, NVIDIA Jetson에서 MoE 실행 시연</strong> — vLLM은 NVIDIA Jetson에서 MoE (Nemotron 3 Nano 30B)를 클라우드 API 없이 온디바이스로 실행하는 완전 로컬 어시스턴트를 시연했습니다.</li>
+<li><strong>vLLM Semantic Router 언급</strong> — Microsoft 임원이 vLLM Semantic Router를 언급하며 프로덕션 스택에서 시맨틱 라우팅의 중요성이 커지고 있음을 시사했습니다.</li>
+<li><strong>Hugging Face, Ulysses 시퀀스 병렬화 통합</strong> — Hugging Face는 Ulysses 시퀀스 병렬화를 Trainer, Accelerate, TRL에 통합했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
