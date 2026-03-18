@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Cowork Dispatch: Anthropic's Answer to OpenClaw - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Claude Cowork Dispatch: Anthropic's Answer to OpenClaw - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics" target="_blank">https://www.latent.space/p/ainews-claude-cowork-dispatch-anthropics...</a></span>
+<span>번역일: 2026-03-18 06:42</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 바쁜 기술 경영진과 AI 엔지니어를 위한 AI 뉴스레터 요약 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Anthropic, Claude Cowork 출시]</strong> — Anthropic이 OpenClaw에 대한 답변으로 Claude Cowork를 출시했습니다. 이 제품은 원격 제어 기능을 포함하며, 샌드박싱과 Electron 기술을 활용하여 에이전트 기능을 강화한 새로운 제품입니다. 이는 에이전트 기반 워크플로우를 위한 Anthropic의 중요한 진출을 의미합니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/319f7604-36d5-44d5-b37e-61de653f6941_1208x1334.png" /><br />
+<strong>[OpenAI, GPT-5.4 Mini/Nano 모델 출시]</strong> — OpenAI가 GPT-5.4 mini와 GPT-5.4 nano를 출시하며, 이를 자사의 가장 유능한 소형 모델로 포지셔닝했습니다. GPT-5.4 mini는 이전 mini보다 2배 이상 빠르며, 코딩, 컴퓨터 사용, 멀티모달 이해, 서브 에이전트 작업에 최적화되었고, API에서 400k 컨텍스트 윈도우를 제공합니다. 이 모델들은 SWE-Bench Pro 및 OSWorld-Verified 평가에서 더 큰 GPT-5.4 성능에 근접한다고 주장됩니다.<br />
+<strong>[Mistral AI, Mistral Small 4 모델 공개]</strong> — Mistral AI가 1,190억 개의 파라미터와 256k 컨텍스트 길이를 가진 하이브리드 멀티모달 AI 모델인 Mistral Small 4를 Apache 2.0 라이선스로 출시했습니다. 이 모델은 128개의 전문가 중 4개를 활성화하는 MoE 아키텍처를 사용하며, 텍스트 및 이미지 입력을 지원하고 추론 레이턴시를 40% 줄였습니다. 다국어 지원 및 네이티브 함수 호출을 통한 고급 에이전트 기능도 포함합니다.<br />
+<strong>[Unsloth Studio, 로컬 LLM 학습 및 실행 웹 UI 출시]</strong> — Unsloth가 Mac, Windows, Linux에서 500개 이상의 LLM을 로컬에서 학습하고 실행할 수 있는 오픈소스 웹 UI인 Unsloth Studio를 출시했습니다. 이 도구는 70% 적은 VRAM으로 2배 빠른 학습, GGUF 지원, 합성 데이터 툴링, 툴 호출 및 코드 실행 기능을 제공합니다. 이는 로컬 LLM 개발 워크플로우를 간소화하는 데 기여할 것으로 예상됩니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>OpenAI GPT-5.4 Mini/Nano 성능:</strong> GPT-5.4 mini는 SWE-Bench Pro 및 OSWorld-Verified 평가에서 더 큰 GPT-5.4 성능에 근접하며, GPT-5.4 Codex 할당량의 30%만 사용한다고 주장합니다. 가격은 mini의 경우 입력 $0.75/M, 출력 $4.5/M입니다.</li>
+<li><strong>Qwen3.5-9B 문서 AI 벤치마크:</strong> Alibaba의 Qwen3.5-9B는 문서 AI 벤치마크에서 77.0점으로 9위를 기록했으며, &ldquo;Key Information Extraction&rdquo; 및 &ldquo;Table Understanding&rdquo;에서 강점을 보였으나, &ldquo;OmniDoc&rdquo; 및 &ldquo;IDP Core&rdquo;에서는 GPT-5.4에 뒤처졌습니다.</li>
+<li><strong>NVIDIA Nemotron 3 Ultra Base 모델 공개:</strong> NVIDIA가 약 500B 규모의 Nemotron 3 Ultra Base 모델을 공개하며, 5배의 효율성과 높은 추론 정확도를 가진 &ldquo;Best Open Base Model&rdquo;이라고 주장했습니다. 이 모델은 MMLU Pro, Code HumanEval 등 여러 벤치마크에서 우수한 성능을 보였습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>LangChain LangSmith Sandboxes 출시:</strong> LangChain이 보안 임시 코드 실행을 위한 LangSmith Sandboxes를 도입했습니다.</li>
+<li><strong>LangChain Open SWE 오픈소스화:</strong> LangChain이 Stripe, Ramp, Coinbase에서 사용된 내부 시스템을 본뜬 백그라운드 코딩 에이전트인 Open SWE를 오픈소스화했습니다.</li>
+<li><strong>Hermes Agent v0.3.0 출시:</strong> Hermes Agent가 v0.3.0을 출시하며, 플러그인 아키텍처, CDP를 통한 실시간 Chrome 제어, IDE 통합, 로컬 Whisper 기반 음성 모드, PII 비식별화 기능을 포함했습니다.</li>
+<li><strong>Hugging Face hf CLI 확장 기능 출시:</strong> Hugging Face가 사용 가능한 하드웨어에 최적화된 로컬 모델/양자화를 자동 감지하고 로컬 코딩 에이전트를 실행하는 hf CLI 확장 기능을 출시했습니다.</li>
+<li><strong>Ollama 웹 검색/가져오기 플러그인 추가:</strong> Ollama가 웹 검색/가져오기 플러그인과 OpenClaw 워크플로우를 위한 헤드리스 실행 지원을 추가했습니다.</li>
+<li><strong>LangChain Deep Agents 출시:</strong> LangChain이 Claude Code 스타일의 에이전틱 하네스를 MIT 라이선스로 제공하는 Deep Agents를 출시했습니다.</li>
+<li><strong>H Company Holotron-12B 출시:</strong> H Company가 컴퓨터 사용 에이전트를 위해 NVIDIA와 함께 구축된 오픈 멀티모달 모델인 Holotron-12B를 출시했습니다.</li>
+<li><strong>Perplexity Comet Enterprise 출시:</strong> Perplexity가 rollout 컨트롤 및 CrowdStrike Falcon 통합을 통해 자사의 AI 브라우저를 엔터프라이즈 팀에 제공하는 Comet Enterprise를 발표했습니다.</li>
+<li><strong>LTX 2.3 LORA 모델 공개:</strong> 게임 Dispatch의 440개 클립으로 학습된 LTX 2.3 LORA 모델이 공개되었으며, 여러 캐릭터와 스타일을 구현하여 게임 개발 사전 시각화에 잠재력을 보였습니다.</li>
+<li><strong>OldNokia UltraReal LoRA 출시:</strong> 2000년대 중반 휴대폰 카메라의 미학을 재현하도록 재학습된 Nokia 2MP Camera LoRA인 OldNokia UltraReal이 Civitai와 Hugging Face에서 다운로드 가능하게 출시되었습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>Moonshot Attention Residuals 논문 발표:</strong> Moonshot이 &ldquo;수직 어텐션&rdquo; 또는 계층 간 어텐션을 다루는 Attention Residuals 논문을 arXiv에 발표했습니다. 이 연구는 각 계층이 이전 계층 상태를 쿼리하여 어텐션을 수평 시퀀스 상호작용에서 계층 간 메모리로 확장하는 아이디어를 제시합니다.</li>
+<li><strong>Mamba-3 아키텍처 출시:</strong> @_albertgu와 @tri_dao가 인퍼런스 효율성에 중점을 둔 Mamba-3를 출시했습니다. 이는 선형/상태 공간 모델의 경쟁력을 높이는 하이브리드 아키텍처로, 1.5B에서 가장 빠른 prefill+decode 성능을 주장합니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>Anthropic CEO, 초급 화이트칼라 직업 50% 소멸 예측:</strong> Anthropic CEO는 AI 기술 발전으로 인해 향후 3년 내에 초급 화이트칼라 직업의 50%가 사라질 것이라고 예측했습니다.</li>
+<li><strong>NVIDIA GTC, 인퍼런스 및 에이전트 중심 메시징:</strong> NVIDIA GTC에서 Jensen Huang은 미래 컴퓨터를 &ldquo;토큰을 제조하는&rdquo; 시스템으로 규정하며, 인퍼런스가 다음 용량 파동을 주도할 것이라고 강조했습니다.</li>
+<li><strong>LangChain, NVIDIA Nemotron Coalition 합류:</strong> LangChain이 자사 프레임워크의 10억 다운로드 돌파와 함께 NVIDIA Nemotron Coalition에 합류했습니다.</li>
+<li><strong>NVIDIA, 1조 달러 AI 인프라 기회 재확인:</strong> Jensen Huang은 2027년까지 1조 달러 규모의 AI 인프라 기회가 스택의 일부만을 다룰 것이며, 산업이 인퍼런스 인프라 구축의 매우 초기 단계에 있음을 재확인했습니다.</li>
+<li><strong>NBC News 설문조사, AI에 대한 부정적 인식:</strong> NBC News 설문조사 결과, 미국 유권자의 46%가 AI에 대해 부정적인 견해를 가지고 있으며, 이는 AI의 광범위한 사용에도 불구하고 대중의 회의론이 높음을 보여줍니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>NVIDIA DGX Station, OEM 유통업체 통해 가용:</strong> 고성능 AI 및 딥러닝 워크스테이션인 NVIDIA DGX Station이 이제 OEM 유통업체를 통해 85-90k USD 가격으로 구매 가능합니다. 이 장비는 고급 냉각 및 &ldquo;코히어런트 메모리&rdquo; 기능을 특징으로 합니다.</li>
+<li><strong>llama.cpp, Nemotron 3 Nano 4B 지원:</strong> @ggerganov가 llama.cpp에서 Nemotron 3 Nano 4B 지원을 강조했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
