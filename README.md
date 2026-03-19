@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-03-19 | MiniMax 2.7: GLM-5 at 1/3 cost SOTA Open Model | [전체번역](reports/2026-03/2026-03-19_MiniMax_27_GLM-5_at_13_cost_SOTA_Open_Model.md) | [요약](reports/2026-03/2026-03-19_MiniMax_27_GLM-5_at_13_cost_SOTA_Open_Model_summary.md) | [HTML](reports/2026-03/2026-03-19_MiniMax_27_GLM-5_at_13_cost_SOTA_Open_Model_summary.html) |
 | 2026-03-18 | Claude Cowork Dispatch: Anthropic's Answer to OpenClaw | [전체번역](reports/2026-03/2026-03-18_Claude_Cowork_Dispatch_Anthropics_Answer_to_OpenClaw.md) | [요약](reports/2026-03/2026-03-18_Claude_Cowork_Dispatch_Anthropics_Answer_to_OpenClaw_summary.md) | [HTML](reports/2026-03/2026-03-18_Claude_Cowork_Dispatch_Anthropics_Answer_to_OpenClaw_summary.html) |
 | 2026-03-17 | NVIDIA GTC: Jensen goes hard on OpenClaw, Vera CPU, and announces $1T sales backlog in 2027 | [전체번역](reports/2026-03/2026-03-17_NVIDIA_GTC_Jensen_goes_hard_on_OpenClaw_Vera_CPU_and_announces_1T_sales_backlog_in_2027.md) | [요약](reports/2026-03/2026-03-17_NVIDIA_GTC_Jensen_goes_hard_on_OpenClaw_Vera_CPU_and_announces_1T_sales_backlog_in_2027_summary.md) | [HTML](reports/2026-03/2026-03-17_NVIDIA_GTC_Jensen_goes_hard_on_OpenClaw_Vera_CPU_and_announces_1T_sales_backlog_in_2027_summary.html) |
 | 2026-03-14 | Context Drought | [전체번역](reports/2026-03/2026-03-14_Context_Drought.md) | [요약](reports/2026-03/2026-03-14_Context_Drought_summary.md) | [HTML](reports/2026-03/2026-03-14_Context_Drought_summary.html) |
