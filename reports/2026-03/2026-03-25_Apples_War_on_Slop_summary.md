@@ -1,0 +1,51 @@
+# Apple's War on Slop - 요약
+
+**원문 URL**: https://www.latent.space/p/ainews-apples-war-on-slop
+**번역일**: 2026-03-25 07:20
+**발행일**: 2026-03-25
+
+---
+
+다음은 제공된 AI 뉴스레터 내용에서 추출한 핵심 신규 소식에 대한 한국어 브리핑입니다.
+
+### 🔥 주요 뉴스
+**[LiteLLM PyPI 공급망 침해]** — LiteLLM 라이브러리 버전 1.82.7 및 1.82.8이 PyPI에서 침해되어 악성 페이로드가 자격 증명을 유출하고 복제하려 시도했습니다. 이 공격은 .pth 파일 취약점을 악용하여 인터프리터 시작 시 코드를 실행하며, 수천 명의 사용자에게 영향을 미칠 수 있어 즉각적인 자격 증명 로테이션이 권고됩니다.
+**[OpenAI, Sora 서비스 종료 및 핵심 LLM 개발 집중]** — OpenAI는 Foundation에 내년 10억 달러를 지출하고 AI 복원력에 집중하며, 코드명 "Spud"인 다음 주요 LLM 개발을 위해 Sora 앱/API 서비스를 공식 종료했습니다. 이는 핵심 일반 모델 및 인프라에 제품 초점을 좁히는 전략적 변화를 시사합니다.
+**[Anthropic Claude, 컴퓨터 사용 기능 연구 프리뷰 출시]** — Anthropic의 Claude가 'Claude Cowork' 및 'Claude Code'를 통해 사용자의 컴퓨터를 직접 사용하여 작업을 수행하는 연구 프리뷰 기능을 macOS Pro 및 Max 티어에 출시했습니다. 이 기능은 애플리케이션 실행, 브라우징, 스프레드시트 관리 등 수동 작업을 자동화하며, 연결된 앱 및 화면과 상호작용합니다.
+**[Figma, 디자인 캔버스에 AI 편집 기능 오픈 베타 출시]** — Figma가 MCP 서버를 통해 디자인 캔버스에서 직접 AI 편집 기능을 오픈 베타로 출시했습니다. 이는 에이전트가 제품 디자인 표면에서 직접 작동하는 주요 사례로, GitHub Copilot CLI 및 Cursor의 Figma 컴포넌트 생성 등으로 확장됩니다.
+**[Apple, '바이브 코드' 앱 차단 시작]** — Apple이 Replit 및 Vibecode와 같은 '바이브 코드' 앱을 정책상의 이유로 App Store에서 차단하기 시작했습니다. 이는 전통적인 앱 스토어의 검토 프로세스가 AI 네이티브 앱 배포 패러다임에 직면하며 붕괴될 수 있음을 시사하는 중요한 산업 동향입니다.
+![](https://substack-post-media.s3.amazonaws.com/public/images/72bc7ca8-c2b-4fc8-a615-0d3210287f22_1190x1682.png)
+
+### 📊 모델 & 벤치마크
+*   AI2가 Molmo 2 기반의 오픈소스 브라우저 에이전트 MolmoWeb을 출시했으며, 4개 웹-에이전트 벤치마크에서 오픈 웨이트 SOTA를 달성했습니다.
+*   Zhipu가 사무 자동화, 코딩, 분석을 아우르는 116개 실제 에이전트 작업을 포함하는 벤치마크 ZClawBench를 공개했습니다.
+*   RYS II 연구에서 Qwen3.5 27B 모델 실험을 통해 LLM이 '보편 언어'로 정보를 처리할 수 있음을 보였으며, 반복 레이어가 성능을 향상시킨다는 것을 발견했습니다.
+*   Cursor AI가 Kimi K2.5를 퍼플렉시티 기반 평가에서 가장 강력한 오픈소스 모델로 인정했습니다.
+*   중국 LLM 시장에서 ByteDance의 dola-seed 및 Seedance T2V, Alibaba의 오픈 웨이트 모델, Tencent의 Hunyuan 3.1 (3D 메시 생성) 및 HY-Motion (텍스트-투-애니메이션), Xiaomi의 Mimo V2 Pro 등 다양한 신규 모델들이 출시되었습니다.
+
+### 🛠️ 제품 & 도구
+*   Anthropic이 프런트엔드 디자인 및 장기 실행 소프트웨어 작업을 위한 다중 에이전트 하네스 사용에 대한 새로운 엔지니어링 보고서를 발표했습니다.
+*   LangChain이 프레임워크-네이티브 툴 렌더링과 맞춤형 Slack 봇 및 인간 승인을 위한 Slack-네이티브 Fleet 워크플로우를 선보였습니다.
+*   Nous가 OpenAI 호환 Responses API 백엔드, 백그라운드 자체 개선 루프, 향상된 컨텍스트 압축 등을 포함한 Hermes Agent v0.4.0을 업데이트했습니다.
+*   Hugging Face가 Hub 데이터셋, 모델, 스토리지 버킷을 로컬 파일 시스템으로 마운트할 수 있는 hf-mount를 출시했습니다.
+*   SillyTavern 확장 프로그램이 Cydonia (RP 모델)와 Qwen 3.5 0.8B (게임 마스터)를 사용하여 어떤 게임이든 NPC를 통합하는 기능을 제공합니다.
+*   Claude Code가 에이전트의 메모리 관리를 향상시키는 '오토 드림(Auto Dream)' 기능을 도입했으며, 이는 인간의 REM 수면 과정을 모방하여 메모리를 주기적으로 통합합니다.
+*   Sora 앱과 API 서비스가 공식 종료되었습니다.
+
+### 🔬 연구 & 논문
+*   Google Research가 KV-캐시 압축 알고리즘인 TurboQuant를 발표했으며, 정확도 손실 없이 최소 6배의 메모리 감소와 최대 8배의 속도 향상을 보고했습니다.
+*   Optimal Intellect가 CVXPY 팀의 GPU-네이티브 솔버인 Moreau를 소개했으며, 기존 도구에 비해 몇 배 빠른 속도 향상을 주장했습니다.
+
+### 💰 산업 동향
+*   Microsoft가 AI2의 리더십 팀 일부(Ali Farhadi, Hanna Hajishirzi, Ranjay Krishna)를 스카우트하여 Microsoft Superintelligence에 합류시켰습니다.
+*   미국 자문 기구가 중국의 오픈소스 AI 부문 영향력 증가가 미국의 AI 리더십을 위협할 수 있다고 경고하며, 미국도 오픈소스 이니셔티브를 강화해야 한다고 제안했습니다.
+
+### ⚡ 인프라 & 하드웨어
+*   vLLM이 GTC에서 GPU-네이티브 Triton 커널을 갖춘 Model Runner V2, 하이브리드 메모리 할당자, 인코더 프리필 분리 등 여러 시스템 업그레이드를 발표했습니다.
+*   Hugging Face/Transformers 측 최적화 작업으로 연속 배치와 torch.compile 튜닝이 8K 생성에서 vLLM 처리량의 95%에 도달했다고 주장했습니다.
+*   Fox는 Ollama 대비 2배의 처리량과 72% 낮은 TTFT를 제공하는 Rust 기반 LLM 인퍼런스 엔진으로, PagedAttention, 연속 배치 처리, 프리픽스 캐싱 기능을 갖췄습니다.
+*   FlashAttention-4가 Blackwell B200 GPU에서 1613 TFLOPs/s를 달성하며, Triton보다 2.1-2.7배 빠르고 vLLM 0.17.0에 통합되었습니다.
+
+---
+
+*이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.*
