@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-03-27 | Everything is CLI | [전체번역](reports/2026-03/2026-03-27_Everything_is_CLI.md) | [요약](reports/2026-03/2026-03-27_Everything_is_CLI_summary.md) | [HTML](reports/2026-03/2026-03-27_Everything_is_CLI_summary.html) |
 | 2026-03-26 | The Biggest Claude Launch of All Time | [전체번역](reports/2026-03/2026-03-26_The_Biggest_Claude_Launch_of_All_Time.md) | [요약](reports/2026-03/2026-03-26_The_Biggest_Claude_Launch_of_All_Time_summary.md) | [HTML](reports/2026-03/2026-03-26_The_Biggest_Claude_Launch_of_All_Time_summary.html) |
 | 2026-03-25 | Apple's War on Slop | [전체번역](reports/2026-03/2026-03-25_Apples_War_on_Slop.md) | [요약](reports/2026-03/2026-03-25_Apples_War_on_Slop_summary.md) | [HTML](reports/2026-03/2026-03-25_Apples_War_on_Slop_summary.html) |
 | 2026-03-24 | Dreamer joins Meta Superintelligence Labs — 9 month retro of Personal Superintelligence | [전체번역](reports/2026-03/2026-03-24_Dreamer_joins_Meta_Superintelligence_Labs_9_month_retro_of_Personal_Superintelligence.md) | [요약](reports/2026-03/2026-03-24_Dreamer_joins_Meta_Superintelligence_Labs_9_month_retro_of_Personal_Superintelligence_summary.md) | [HTML](reports/2026-03/2026-03-24_Dreamer_joins_Meta_Superintelligence_Labs_9_month_retro_of_Personal_Superintelligence_summary.html) |
