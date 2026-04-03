@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-04-03 | Gemma 4: The best small Multimodal Open Models, dramatically better than Gemma 3 in every way | [전체번역](reports/2026-04/2026-04-03_Gemma_4_The_best_small_Multimodal_Open_Models_dramatically_better_than_Gemma_3_in_every_way.md) | [요약](reports/2026-04/2026-04-03_Gemma_4_The_best_small_Multimodal_Open_Models_dramatically_better_than_Gemma_3_in_every_way_summary.md) | [HTML](reports/2026-04/2026-04-03_Gemma_4_The_best_small_Multimodal_Open_Models_dramatically_better_than_Gemma_3_in_every_way_summary.html) |
 | 2026-04-02 | A quiet April Fools | [전체번역](reports/2026-04/2026-04-02_A_quiet_April_Fools.md) | [요약](reports/2026-04/2026-04-02_A_quiet_April_Fools_summary.md) | [HTML](reports/2026-04/2026-04-02_A_quiet_April_Fools_summary.html) |
 | 2026-04-01 | The Claude Code Source Leak | [전체번역](reports/2026-04/2026-04-01_The_Claude_Code_Source_Leak.md) | [요약](reports/2026-04/2026-04-01_The_Claude_Code_Source_Leak_summary.md) | [HTML](reports/2026-04/2026-04-01_The_Claude_Code_Source_Leak_summary.html) |
 | 2026-03-31 | The Last 4 Jobs in Tech | [전체번역](reports/2026-03/2026-03-31_The_Last_4_Jobs_in_Tech.md) | [요약](reports/2026-03/2026-03-31_The_Last_4_Jobs_in_Tech_summary.md) | [HTML](reports/2026-03/2026-03-31_The_Last_4_Jobs_in_Tech_summary.html) |
