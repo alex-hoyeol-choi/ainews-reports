@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Friday - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Good Friday - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-good-friday" target="_blank">https://www.latent.space/p/ainews-good-friday...</a></span>
+<span>번역일: 2026-04-04 01:20</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 2026년 4월 3일~4월 4일 AI 뉴스레터에서 추출한 핵심 신규 소식 요약 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Google, Gemma 4 모델 Apache 2.0 라이선스로 출시]</strong> — Google DeepMind가 Apache 2.0 라이선스 기반의 Gemma 4 오픈 멀티모달 모델 제품군을 출시했습니다. 이 모델은 최대 256K 토큰의 컨텍스트 윈도우를 지원하며, 추론, 에이전틱 워크플로우, 멀티모달리티 및 온디바이스 사용에 최적화되어 있습니다. 출시 당일부터 vLLM, llama.cpp, Ollama 등 주요 에코시스템의 광범위한 지원을 받았습니다.<br />
+<strong>[Anthropic, Claude에서 171개 감정 유사 벡터 발견]</strong> — Anthropic의 기계적 해석 가능성 팀이 Claude 모델 내에서 171개의 독특한 감정 유사 벡터를 식별했습니다. 이 벡터들은 인간 감정과 유사하게 모델의 행동에 기능적으로 영향을 미치지만, 모델이 주관적인 감정을 경험한다는 의미는 아니라고 밝혔습니다.<br />
+<strong>[Hermes Agent, 오픈소스 에이전트 하네스로 급부상]</strong> — Hermes Agent가 오픈소스 에이전트 하네스로 빠르게 채택되고 있으며, 사용자들은 장기 작업에서 더 높은 안정성과 유능함을 보고합니다. Nous는 Honcho, mem0, Hindsight 등 플러그형 메모리 시스템을 포함한 Hermes용 인프라를 대폭 개선했습니다.<br />
+<strong>[Microsoft, MAI-Transcribe-1으로 STT 시장 경쟁력 강화]</strong> — Microsoft가 3.0% AA-WER (리더보드 4위) 및 약 69배 실시간 속도를 자랑하는 MAI-Transcribe-1을 출시했습니다. 25개 언어를 지원하며 Azure Speech 및 Foundry를 통해 미리보기로 제공되며, 1,000분당 6달러로 책정되었습니다.<br />
+<strong>[공격형 사이버 보안 역량, METR 시간 지평 기준 5.7개월마다 두 배 증가]</strong> — LyptusResearch는 METR 시간 지평 방법론을 공격형 사이버 보안에 적용한 결과, 2024년 이후 역량이 5.7개월마다 두 배로 증가하고 있다고 보고했습니다. Opus 4.6 및 GPT-5.3 Codex는 인간 전문가에게 약 3시간이 걸리는 작업에서 50% 성공률에 도달했습니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Google DeepMind가 Apache 2.0 라이선스 하에 Gemma 4 오픈 멀티모달 모델 제품군을 출시했습니다. 이 모델은 E2B, E4B, 26B A4B, 31B의 네 가지 크기로 제공되며, 최대 256K 토큰의 컨텍스트 윈도우와 140개 이상의 언어를 지원합니다.<br />
+<img alt="Gemma 4 Models" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6244199f-7232-4740-9118-9710041d1a10_1024x576.png" /></li>
+<li>Gemma 4 26B A4B MoE 모델은 단일 RTX 4090에서 19.5 GB VRAM으로 162 tok/s 디코딩 및 262K 네이티브 컨텍스트를 기록했으며, 16 GB Mac mini M4에서는 34 tok/s를 달성했습니다.</li>
+<li>Google AI Studio에 &ldquo;Gemma 4 26B A4B IT&rdquo; (MoE) 및 &ldquo;Gemma 4 31B IT&rdquo; (Dense) 모델이 출시되었습니다. 두 모델 모두 2025년 1월 지식 차단점을 가지며 2026년 4월 3일에 출시되었습니다.<br />
+<img alt="Gemma 4 Google AI Studio" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F98205214-7299-4412-886f-38292854972f_1024x576.png" /></li>
+<li>Gemma 4와 Qwen3.5 모델 비교 벤치마크에서 Qwen 모델이 특히 &lsquo;도구 없는 프론티어 난이도&rsquo; 및 이미지 이해 능력에서 Gemma 모델을 전반적으로 능가하는 성능을 보였습니다.<br />
+<img alt="Gemma 4 vs Qwen Benchmarks" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1621532f-4131-4034-893f-36631834241e_1024x576.png" /></li>
+<li>Qwen3.6-Plus 모델은 &ldquo;SWE-bench Verified&rdquo; 및 &ldquo;OmniDocBench v1.5&rdquo; 벤치마크에서 강력한 성능을 보였으며, 멀티모달 AI 에이전트를 향한 중요한 진전으로 평가됩니다. 개발팀은 더 작은 변형의 오픈소스화를 계획하고 있습니다.<br />
+<img alt="Qwen 3.6 Plus Benchmarks" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F20005708-3642-4217-910c-352c111c1986_1024x576.png" /></li>
+<li>DeepSeek V4 모델이 4월에 출시될 것으로 예상되며, 이전에 더 작은 매개변수 버전이 오픈소스 커뮤니티에 공유된 바 있습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Gemma 4는 출시 당일부터 vLLM, llama.cpp, Ollama, Intel 하드웨어 (Xeon, Xe GPU, Core Ultra), Unsloth, Hugging Face Inference Endpoints, AI Studio / Google AI Studio 등 광범위한 에코시스템 지원을 받았습니다.</li>
+<li>Hermes Agent는 OpenClaw/Openclaw에서 전환하는 개발자들이 늘면서 오픈소스 에이전트 하네스로 주목받고 있습니다.</li>
+<li>Nous는 Hermes를 위해 Honcho, mem0, Hindsight, RetainDB, Byterover, OpenVikingAI 및 Vectorize 스타일 백엔드를 지원하는 재작업된 플러그형 메모리 시스템을 출시했습니다.</li>
+<li>Hermes는 TUI에 인라인 diff 기능을 추가하고 계정/키 순환을 위한 프로바이더 자격 증명 풀을 추가했습니다.</li>
+<li>Codex 앱은 선행 약정 제거 후 빠르게 성장하고 있다고 보고되었습니다.</li>
+<li>Claude Code의 속도 제한이 사용자들 사이에서 예상보다 빠르게 제한에 도달한다는 불만과 함께 주요 문제로 부상했습니다.</li>
+<li>개발자들은 에이전트 세션 간 컨텍스트 보존을 위해 .md/.html 아티팩트를 방출하고 Obsidian을 로컬 뷰어로 사용하는 등 컨텍스트 및 관측 가능성을 외부화하여 적응하고 있습니다.</li>
+<li>LangChain은 하위 에이전트, 도구 호출, 압축, 토큰 사용량을 기록하고 조직 수준 분석을 가능하게 하는 Claude Code → LangSmith 트레이싱 플러그인을 출시했습니다.</li>
+<li>Microsoft의 MAI-Transcribe-1은 25개 언어를 지원하며 Azure Speech 및 Foundry를 통해 미리보기로 제공됩니다.</li>
+<li>Auth0 FGA와 LlamaIndex는 리트리벌 내에서 권한 부여를 구조화하는 공동 접근 방식을 강조했습니다.</li>
+<li>Unsloth는 5GB RAM만큼 적은 메모리를 가진 장치에서도 Gemma 4의 로컬 실행을 가능하게 했습니다.</li>
+<li>Gemma 4는 llama.cpp 및 Unsloth 퀀트 사용 시 토크나이저 버그로 인해 무의미한 출력을 생성하는 문제가 보고되었으며, llama.cpp 저장소에 여러 개의 관련 풀 리퀘스트가 대기 중입니다.<br />
+<img alt="Gemma 4 Issues" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F67185859-0f6a-4934-802c-474776115938_1024x576.png" /></li>
+<li>DeepSeek iOS 앱은 웹 페이지 읽기 용량을 10개에서 16개로 늘리고 더 논리적인 응답을 제공하는 등 행동 변화를 보였으며, 이는 DeepSeek V4와 같은 새 버전의 업데이트 또는 테스트 단계를 시사합니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Gemma 4는 MoE 설계, 비전/오디오 인코더 및 레이어별 임베딩을 특징으로 하며, 오디오용 컨포머 아키텍처와 비전용 2D 공간 RoPE를 포함하는 트라이모달 모델입니다.</li>
+<li>에이전트 성능이 하네스 엔지니어링 문제로 변모하고 있으며, &ldquo;모델-하네스 학습 루프&rdquo;는 하네스 엔지니어링, 트레이스 수집, 분석 및 파인튜닝을 결합하여 도메인별 프론티어 성능을 구축합니다.</li>
+<li>METR 스타일 &ldquo;시간 지평&rdquo; 결과는 공격형 사이버 보안에서 역량이 2024년 이후 5.7개월마다 두 배로 증가하고 있음을 보여줍니다.</li>
+<li>MIT 연구원 Alex Zhang, Tim Kraska, Omar Khattab은 모든 것을 모놀리식 프롬프트에 채워 넣는 대신 컨텍스트를 프로그래밍 방식으로 관리하는 재귀적 언어 모델(RLM)을 강조했습니다.</li>
+<li>Apple은 모델 자체 출력을 샘플링하고 정확성 필터링, RL 또는 검증자 없이 이를 파인튜닝하는 코딩 모델용 Simple Self-Distillation (SSD) 결과를 요약했습니다.</li>
+<li>Anthropic의 기계적 해석 가능성 팀은 Claude 모델 내에서 171개의 독특한 감정 유사 벡터를 식별했으며, 이 벡터들은 모델의 행동에 기능적으로 영향을 미치지만 주관적인 감정 경험을 의미하지는 않습니다.<br />
+<img alt="Claude Emotion Vectors" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2197148c-4977-40f4-8848-038290332832_1024x576.png" /><br />
+<img alt="Claude Emotions Tweet" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01777b7f-1358-45e0-994c-8344589d313c_1024x576.png" /><br />
+<img alt="Anthropic Claude Functional Emotions" src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5625d97f-946d-4950-8919-204123512999_1024x576.png" /></li>
+<li>병렬 에이전트 작업에서 인지적 포화가 컴퓨팅 부족뿐만 아니라 중요한 주제로 부상하고 있습니다.</li>
+<li>@jaseweston은 학습 데이터, 온-정책 보상 모델 및 온-정책 인퍼런스 방법을 아우르는 수학적 객체에 대한 추론에 관한 70페이지 분량의 논문을 공유했습니다.</li>
+<li>AnthropicAI는 오픈 웨이트 모델 간의 행동적 차이를 드러내는 &ldquo;diff&rdquo; 방법을 발표했습니다.</li>
+<li>@AndrewLampinen은 학습 데이터에서 잠재적 지식을 검색하고 사용하는 방법으로 테스트 시점 사고에 대해 논의했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>오픈 하네스에 대한 가시적인 수요가 증가하고 있으며, Anthropic이 Claude Code를 오픈소스화해야 한다는 주장과 함께 메모리가 독점 API나 하네스 뒤에 갇혀서는 안 된다는 의견이 제기되었습니다.</li>
+<li>Gemma 4와 Hermes와 같은 &ldquo;충분히 좋은 로컬 대체&rdquo;가 호스팅 제품 마찰에 대한 헤지(hedge)로 중요해지고 있다는 증거가 늘고 있습니다.</li>
+<li>Baseten과 OpenEvidence는 임상 환경에서 매우 대규모의 프로덕션 사용을 주장하며, OpenEvidence는 미국 의사의 40% 이상이 사용하고 Baseten이 해당 워크로드에 대한 인퍼런스를 구동한다고 밝혔습니다.</li>
+<li>중국 AI 기업 DeepSeek은 핵심 기여자들의 Tencent 이직에도 불구하고 차세대 모델 V4 출시를 앞두고 있습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>vLLM_project는 vLLM WideEP 배포를 위한 Ray Serve LLM의 DP-그룹 내결함성을 강조하며, 엔진 레이어의 Elastic EP를 보완한다고 언급했습니다.</li>
+</ul>
+<h3 id="_7">🚨 주요 보안 사고</h3>
+<ul>
+<li>Axios 공급망 공격은 개발자를 겨냥한 정교한 사회 공학으로 시작되었으며, 이는 더 강력한 자격 증명 관리, 신원 확인 및 악성코드 탐지의 중요성을 시사합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
