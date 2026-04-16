@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-04-16 | RIP Pull Requests (2005-2026) | [전체번역](reports/2026-04/2026-04-16_RIP_Pull_Requests_2005-2026.md) | [요약](reports/2026-04/2026-04-16_RIP_Pull_Requests_2005-2026_summary.md) | [HTML](reports/2026-04/2026-04-16_RIP_Pull_Requests_2005-2026_summary.html) |
 | 2026-04-15 | Humanity's Last Gasp | [전체번역](reports/2026-04/2026-04-15_Humanitys_Last_Gasp.md) | [요약](reports/2026-04/2026-04-15_Humanitys_Last_Gasp_summary.md) | [HTML](reports/2026-04/2026-04-15_Humanitys_Last_Gasp_summary.html) |
 | 2026-04-14 | Top Local Models List - April 2026 | [전체번역](reports/2026-04/2026-04-14_Top_Local_Models_List_-_April_2026.md) | [요약](reports/2026-04/2026-04-14_Top_Local_Models_List_-_April_2026_summary.md) | [HTML](reports/2026-04/2026-04-14_Top_Local_Models_List_-_April_2026_summary.html) |
 | 2026-04-10 | AI Engineer Europe 2026 | [전체번역](reports/2026-04/2026-04-10_AI_Engineer_Europe_2026.md) | [요약](reports/2026-04/2026-04-10_AI_Engineer_Europe_2026_summary.md) | [HTML](reports/2026-04/2026-04-10_AI_Engineer_Europe_2026_summary.html) |
