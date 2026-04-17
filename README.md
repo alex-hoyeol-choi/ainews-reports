@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-04-17 | Anthropic Claude Opus 4.7 - literally one step better than 4.6 in every dimension | [전체번역](reports/2026-04/2026-04-17_Anthropic_Claude_Opus_47_-_literally_one_step_better_than_46_in_every_dimension.md) | [요약](reports/2026-04/2026-04-17_Anthropic_Claude_Opus_47_-_literally_one_step_better_than_46_in_every_dimension_summary.md) | [HTML](reports/2026-04/2026-04-17_Anthropic_Claude_Opus_47_-_literally_one_step_better_than_46_in_every_dimension_summary.html) |
 | 2026-04-16 | RIP Pull Requests (2005-2026) | [전체번역](reports/2026-04/2026-04-16_RIP_Pull_Requests_2005-2026.md) | [요약](reports/2026-04/2026-04-16_RIP_Pull_Requests_2005-2026_summary.md) | [HTML](reports/2026-04/2026-04-16_RIP_Pull_Requests_2005-2026_summary.html) |
 | 2026-04-15 | Humanity's Last Gasp | [전체번역](reports/2026-04/2026-04-15_Humanitys_Last_Gasp.md) | [요약](reports/2026-04/2026-04-15_Humanitys_Last_Gasp_summary.md) | [HTML](reports/2026-04/2026-04-15_Humanitys_Last_Gasp_summary.html) |
 | 2026-04-14 | Top Local Models List - April 2026 | [전체번역](reports/2026-04/2026-04-14_Top_Local_Models_List_-_April_2026.md) | [요약](reports/2026-04/2026-04-14_Top_Local_Models_List_-_April_2026_summary.md) | [HTML](reports/2026-04/2026-04-14_Top_Local_Models_List_-_April_2026_summary.html) |
