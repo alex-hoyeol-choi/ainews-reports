@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Two Sides of OpenClaw - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>The Two Sides of OpenClaw - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-the-two-sides-of-openclaw" target="_blank">https://www.latent.space/p/ainews-the-two-sides-of-openclaw...</a></span>
+<span>번역일: 2026-04-18 12:36</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 제공된 AI 뉴스레터에서 추출한 핵심 신규 소식에 대한 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Anthropic, Claude Opus 4.7 및 Claude Design 출시]</strong> — Anthropic이 Claude Opus 4.7 모델과 함께 첫 디자인/프로토타이핑 도구인 Claude Design을 공개했습니다. Claude Design은 자연어 지시를 통해 프로토타입, 슬라이드 등을 생성하며, Opus 4.7은 Code Arena 및 Text Arena에서 1위를 차지하고 Intelligence Index에서 다른 주요 모델들과 경쟁하며 강력한 성능과 효율성을 입증했습니다.<br />
+<strong>[OpenAI Codex 컴퓨터 사용 기능 업데이트]</strong> — OpenAI의 Codex 데스크톱/컴퓨터 사용 기능이 업데이트되어 실무자들로부터 강력한 반응을 얻었습니다. 이 기능은 빠르고 Slack, 브라우저, 임의의 데스크톱 앱을 구동할 수 있어 엔터프라이즈 레거시 소프트웨어에 대한 최초의 진정으로 사용 가능한 컴퓨터 사용 플랫폼이 될 수 있다는 평가를 받습니다.<br />
+<strong>[AI 에이전트 견고성 및 자기 개선 연구 활발]</strong> — LLM 심사자/히든 스테이트 프로브를 통한 추론 성능 저하 모니터링(Cognitive Companion), 재사용 가능한 스킬 추출(WebXSkill), 역량 격차 식별 및 개선 통합(Autogenesis) 등 에이전트의 견고성과 지속적인 개선을 위한 연구 논문들이 발표되었습니다. 이는 에이전트의 신뢰성과 자율성 향상에 기여할 것으로 보입니다.<br />
+<strong>[Stargate 프로젝트, 2029년까지 9+ GW 전력 수요 예측]</strong> — EpochAIResearch의 조사에 따르면, 미국 내 7개 Stargate 사이트 프로젝트가 2029년까지 뉴욕시 최대 전력 수요에 해당하는 9+ GW의 전력을 필요로 할 것으로 예상됩니다. 이는 AI 인프라 구축에 필요한 대규모 컴퓨팅 자원 및 전력 수요의 증가를 시사합니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Anthropic이 Claude Opus 4.7을 출시했습니다. 이 모델은 Code Arena에서 1위, Text Arena 코딩 및 과학 분야에서 카테고리 우승을 차지했으며, Intelligence Index에서 57.3점으로 Gemini 3.1 Pro(57.2점) 및 GPT-5.4(56.8점)와 함께 선두권을 형성했습니다.</li>
+<li>Opus 4.7은 GDPval-AA 벤치마크에서도 1위를 기록했으며, 이전 버전인 Opus 4.6보다 약 35% 적은 출력 토큰으로 더 높은 점수를 달성하며 효율성을 개선했습니다.</li>
+<li>LlamaIndex가 OCR 벤치마크인 ParseBench를 상세히 설명했습니다. 이 벤치마크는 누락, 환각, 읽기 순서 위반에 대한 16만 7천 개 이상의 규칙 기반 테스트를 포함하며, &ldquo;에이전트가 작동하기에 충분히 신뢰할 수 있는&rdquo; 콘텐츠 충실도를 목표로 합니다.</li>
+<li>Red Hat이 NVFP4 양자화된 Qwen3.6-35B-A3B 체크포인트를 출시했으며, 예비 GSM8K Platinum 벤치마크에서 100.69%의 복구율을 보고했습니다.</li>
+<li>RL 학습 모델인 GIANTS-4B가 &ldquo;부모&rdquo; 논문으로부터 후속 논문의 핵심 기여를 생성하는 통찰력 예측 태스크에서 프론티어 모델을 능가한다고 보고되었습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Anthropic이 Claude Opus 4.7 기반의 연구 프리뷰 도구인 Claude Design을 출시했습니다. 이는 자연어 지시를 통해 프로토타입, 슬라이드, 원페이저를 생성하며, Canva/PPTX/PDF/HTML로 내보내고 Claude Code로 핸드오프가 가능합니다.</li>
+<li>OpenAI의 Codex 데스크톱/컴퓨터 사용 기능이 업데이트되어 Slack, 브라우저 플로우, 임의의 데스크톱 앱을 구동할 수 있게 되었습니다.</li>
+<li>LangChain이 deepagents 배포에 서브에이전트 지원을 추가하고, Agents SDK에 메모리 프리미티브를 발표했습니다.</li>
+<li>ollama가 <code>ollama launch hermes</code> 명령어를 통해 네이티브 Hermes Agent 지원을 출시했습니다.</li>
+<li>코딩 에이전트가 개인 맞춤형 유전체 해석에 활용되어 100달러 미만의 분석으로 약 30배 높은 흑색종 소인과 후속 개입을 밝혀내는 데 유용함이 입증되었습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>LLM 심사자 또는 히든 스테이트 프로브를 사용하여 추론 성능 저하를 모니터링하는 Cognitive Companion 연구가 발표되었습니다. 레이어 28 히든 스테이트 프로브는 AUROC 0.840으로 성능 저하를 감지할 수 있습니다.</li>
+<li>WebXSkill 연구는 에이전트가 궤적에서 재사용 가능한 스킬을 추출하여 WebArena에서 최대 +9.8점, WebVoyager에서 그라운디드 모드로 86.1%를 달성했다고 보고했습니다.</li>
+<li>Autogenesis 프로토콜은 에이전트가 역량 격차를 식별하고, 개선 사항을 제안하며, 재학습 없이 작동하는 변경 사항을 통합하는 방법을 제시했습니다.</li>
+<li>AI 에이전트의 복잡한 실제 환경 평가를 위한 CRUX 프로젝트가 논의되었습니다.</li>
+<li>2500개 토픽 버킷에 걸쳐 학습 도메인 외부의 책/기사에 대한 광범위한 NLL/perplexity 기반 평가 스위트가 제안되었습니다.</li>
+<li>웨어러블 데이터 기반 바이오마커 발견 시스템이 &ldquo;심야 둠스크롤링&rdquo;이 우울증 심각도를 예측한다는 첫 발견(ρ=0.177, p&lt;0.001, n=7,497)을 공유했습니다.</li>
+<li>후기 상호작용 리트리벌 표현이 RAG에서 원본 문서 텍스트를 대체할 수 있음을 보여주는 새로운 연구가 발표되어, 일부 RAG 파이프라인이 전체 텍스트 재구성을 우회할 수 있음을 시사했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Nous와 Kimi가 코딩/생산성에서 창의적인 에이전트 워크플로우로의 전환을 알리며 2만 5천 달러 규모의 Hermes Agent Creative Hackathon을 시작했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>Qwen3.6-35B-A3B 모델을 로컬 에이전트 스택으로 사용하는 llama.cpp + Pi 설정이 공유되어 로컬 에이전틱 시스템의 실현 가능성을 강조했습니다.</li>
+<li>RisingSayak이 PyTorch/TorchAO와 함께 FP8 및 NVFP4 양자화를 사용하여 주요 레이턴시 페널티 없이 오프로딩을 가능하게 하는 작업을 발표하며 메모리 제약이 있는 소비자 GPU 사용자를 지원했습니다.</li>
+<li>Apple 기기에서 Gemma 4가 긴 컨텍스트로 iPhone에서 완전히 오프라인으로 실행되는 로컬 인퍼런스가 시연되었습니다.</li>
+<li>vLLM_project가 AMD/EmbeddedLLM과 함께 MORI-IO KV Connector를 강조하며, PD-분리형 커넥터를 통해 단일 노드에서 2.5배 더 높은 굿풋을 달성했다고 주장했습니다.</li>
+<li>Cloudflare가 isitagentready.com, Flagship 기능 플래그, 공유 압축 사전을 통한 페이로드 감소(92KB를 159바이트로) 등 에이전트/AI 플랫폼 추진을 이어갔습니다.</li>
+<li>EpochAIResearch의 조사에 따르면, 7개 미국 Stargate 사이트 프로젝트가 2029년까지 9+ GW의 전력을 필요로 할 것으로 예상되며, 이는 뉴욕시의 최대 전력 수요와 맞먹는 수준입니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
