@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-04-24 | GPT 5.5 and OpenAI Codex Superapp  | [전체번역](reports/2026-04/2026-04-24_GPT_55_and_OpenAI_Codex_Superapp.md) | [요약](reports/2026-04/2026-04-24_GPT_55_and_OpenAI_Codex_Superapp_summary.md) | [HTML](reports/2026-04/2026-04-24_GPT_55_and_OpenAI_Codex_Superapp_summary.html) |
 | 2026-04-23 | Tasteful Tokenmaxxing | [전체번역](reports/2026-04/2026-04-23_Tasteful_Tokenmaxxing.md) | [요약](reports/2026-04/2026-04-23_Tasteful_Tokenmaxxing_summary.md) | [HTML](reports/2026-04/2026-04-23_Tasteful_Tokenmaxxing_summary.html) |
 | 2026-04-22 | OpenAI launches GPT-Image-2 | [전체번역](reports/2026-04/2026-04-22_OpenAI_launches_GPT-Image-2.md) | [요약](reports/2026-04/2026-04-22_OpenAI_launches_GPT-Image-2_summary.md) | [HTML](reports/2026-04/2026-04-22_OpenAI_launches_GPT-Image-2_summary.html) |
 | 2026-04-21 | Moonshot Kimi K2.6: the world's leading Open Model refreshes to catch up to Opus 4.6 (ahead of DeepSeek v4?) | [전체번역](reports/2026-04/2026-04-21_Moonshot_Kimi_K26_the_worlds_leading_Open_Model_refreshes_to_catch_up_to_Opus_46_ahead_of_DeepSeek_v4.md) | [요약](reports/2026-04/2026-04-21_Moonshot_Kimi_K26_the_worlds_leading_Open_Model_refreshes_to_catch_up_to_Opus_46_ahead_of_DeepSeek_v4_summary.md) | [HTML](reports/2026-04/2026-04-21_Moonshot_Kimi_K26_the_worlds_leading_Open_Model_refreshes_to_catch_up_to_Opus_46_ahead_of_DeepSeek_v4_summary.html) |

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT 5.5 and OpenAI Codex Superapp  - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>GPT 5.5 and OpenAI Codex Superapp  - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp" target="_blank">https://www.latent.space/p/ainews-gpt-55-and-openai-codex-superapp...</a></span>
+<span>번역일: 2026-04-24 06:18</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[OpenAI, GPT-5.5 출시 및 Codex를 슈퍼앱 전략의 핵심으로 전환]</strong> — OpenAI가 GPT-5.5를 출시하며 Artificial Analysis 평가에서 Claude Opus 4.7과 동일한 지능 점수를 기록했으나 1/4 비용($1,200 vs $4,800)으로 제공됩니다. 동시에 Codex를 브라우저 제어 등 대규모 기능 업데이트와 함께 슈퍼앱 전략의 기반으로 삼았습니다.<br />
+<img alt="AA 차트… 달러당 지능 (&quot;GPT-5.5 (medium)은 저희 Intelligence Index에서 Claude Opus 4.7 (max)과 동일한 점수를 기록하면서도 4분의 1의 비용(약 $1,200 대 $4,800)으로 제공됩니다. 다만 Gemini 3.1 Pro Preview는 약 $900의 비용으로 동일한 점수를 기록했습니다.&quot;)" src="https://substack-post-media.s3.amazonaws.com/public/images/2f9f5845-e1e6-497a-9bed-f645719247c_2048x684.png" /><br />
+<img alt="aa 2D" src="https://substack-post-media.s3.amazonaws.com/public/images/39e50c45-bc8a-4f60-a562-026d1c7bd14d_1026x662.png" /><br />
+<img alt="트위터" src="https://substack-post-media.s3.amazonaws.com/public/images/ec7c1f27-a6ba-40a7-ba86-24eb303591c8_1030x1254.png" /><br />
+<img alt="cabd0f35-0766-4080-82b3-c90f52faa849_954x1416.png" src="https://substack-post-media.s3.amazonaws.com/public/images/cabd0f35-0766-4080-82b3-c90f52faa849_954x1416.png" /><br />
+<strong>[DeepSeek-V4 Preview, MIT 라이선스 오픈 모델로 출시]</strong> — DeepSeek이 V4-Pro (1.6T 파라미터 / 49B 활성)와 V4-Flash (284B / 13B 활성)를 MIT 라이선스 하에 오픈소스화하며 DeepSeek-V4 Preview를 출시했습니다. 두 모델 모두 1M 토큰 컨텍스트를 지원하며, 커뮤니티에서는 이를 새로운 오픈 모델 플래그십으로 평가하고 있습니다.<br />
+<strong>[Google DeepMind, Vision Banana로 CV 접근 방식 재구성]</strong> — Google DeepMind가 2D/3D 비전 작업을 이미지 생성으로 처리하는 통합 비전 모델인 Vision Banana를 공개했습니다. 이 모델은 여러 비전 작업에서 전문 SOTA 시스템을 능가하는 성능을 보이며, 향후 컴퓨터 비전 연구의 방향을 제시합니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>OpenAI GPT-5.5 출시:</strong> ChatGPT와 Codex에 배포되며, Terminal-Bench 2.0 82.7%, SWE-Bench Pro 58.6% 등 여러 벤치마크에서 선두를 달리거나 동률을 이루며 새로운 비용/성능 프론티어를 설정했습니다.</li>
+<li><strong>DeepSeek-V4 Preview 공개:</strong> DeepSeek이 V4-Pro (1.6T 파라미터 / 49B 활성)와 V4-Flash (284B / 13B 활성)를 MIT 라이선스 하에 오픈소스화했습니다. 두 모델 모두 1M 토큰 컨텍스트와 사고/비사고 모드를 지원합니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>OpenAI Codex 대규모 업그레이드:</strong> 브라우저 제어, Sheets/Slides, Docs/PDFs, OS 전반의 받아쓰기, 자동 검토 모드 등 상당한 기능이 추가되어 코딩 도구에서 광범위한 컴퓨터 작업 에이전트로 확장되었습니다.</li>
+<li><strong>Cua Driver 오픈소스화:</strong> Cua가 에이전트가 멀티플레이어/멀티커서 지원을 통해 macOS에서 임의의 앱을 백그라운드에서 제어할 수 있도록 하는 Cua Driver를 오픈소스화했습니다.</li>
+<li><strong>LangChain LangSmith Fleet 확장:</strong> LangChain이 파일 편집, 웹페이지/프레젠테이션 생성, 슬래시 커맨드 스킬로 LangSmith Fleet 기능을 지속적으로 확장했습니다.</li>
+<li><strong>Sakana AI Fugu 베타 출시:</strong> Sakana AI가 동적으로 프론티어 모델을 선택하고 조정하는 다중 에이전트 오케스트레이션 API인 Fugu의 베타 버전을 출시했으며, SWE-Pro, GPQA-D, ALE-Bench에서 SOTA를 달성했습니다.</li>
+<li><strong>Hermes Agent v0.11.0 출시:</strong> 대규모 기여자 릴리스, 확장된 공급자, 이미지 생성 지원, 즉각적인 GPT-5.5 지원과 함께 Hermes Agent v0.11.0이 출시되었습니다.</li>
+<li><strong>LTX HDR 베타 출시:</strong> LTX가 AI 비디오 프로덕션에서 해상도를 넘어 다이내믹 레인지에 초점을 맞춘 LTX HDR 베타를 출시하여 8비트 SDR을 넘어선 영상 제작을 가능하게 합니다.</li>
+<li><strong>World Labs World Jam 출시:</strong> World Labs가 Marble 1.1 + Spark LoD를 중심으로 인터랙티브 3D 생성을 위한 World Jam을 출시했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>DeepSeek-V4 기술 보고서:</strong> 1M 컨텍스트를 실용적으로 만드는 두 가지 새로운 압축/하이브리드 어텐션 메커니즘(mHC, Muon 기반 학습), FP4 양자화 인식 학습, 약 32T 토큰에 대한 사전 학습이 강조되었습니다.</li>
+<li><strong>엔터프라이즈 에이전트를 위한 상태 비저장 의사결정 메모리:</strong> 변경 가능한 에이전트별 상태를 불변의 의사결정 로그/이벤트 소싱으로 대체하여 수평 확장성, 감사 가능성 및 내결함성을 개선하는 아키텍처가 제안되었습니다.</li>
+<li><strong>Google DeepMind Vision Banana:</strong> 2D/3D 비전 작업을 이미지 생성으로 처리하는 통합 비전 모델로, 여러 비전 작업에서 전문 SOTA 시스템을 능가하는 성능을 보였습니다.</li>
+<li><strong>Meta Sapiens2 출시:</strong> Meta가 인간 중심 지각 작업을 위해 10억 개의 인간 이미지로 학습된 고해상도 비전 트랜스포머 세트인 Sapiens2를 공개했습니다.</li>
+<li><strong>Context Unrolling in Omni Models 논문:</strong> 텍스트, 이미지, 비디오, 3D 기하학 및 숨겨진 표현 전반에 걸쳐 학습된 통합 모델을 제안하며, 출력을 생성하기 전에 모달리티 전반에 걸쳐 추론을 명시적으로 전개합니다.</li>
+<li><strong>Google Decoupled DiLoCo 소개:</strong> Google DeepMind와 Google Research가 전 세계 데이터센터 학습, 이기종 하드웨어, 하드웨어 장애에 대한 내성을 가능하게 하는 분산 저통신 학습 방식인 Decoupled DiLoCo를 발표했습니다.</li>
+<li><strong>LLM 장기 셀프 플레이 연구:</strong> LLM의 장기 셀프 플레이가 정체되는 이유를 연구하고, 7B 모델이 100배 더 큰 모델만큼 많은 문제를 해결할 수 있도록 하는 알고리즘이 제안되었습니다.</li>
+<li><strong>Neural Garbage Collection 연구:</strong> 고정된 휴리스틱 대신 RL을 통해 모델이 자체 KV 캐시를 관리하도록 학습시키는 방법을 설명하며, 이는 장기 에이전트에게 잠재적으로 중요한 방향입니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>OpenAI GPT-5.5 API 가격:</strong> GPT-5.5의 API 가격은 1M 입력/출력 토큰당 $5/$30, Pro 버전은 $30/$180로 책정되었습니다.</li>
+<li><strong>DeepSeek-V4 공격적인 가격 책정:</strong> DeepSeek이 V4-Flash는 1M 입력/출력 토큰당 $0.14/$0.28, V4-Pro는 $1.74/$3.48이라는 매우 공격적인 가격을 발표했습니다.</li>
+<li><strong>Together AI 인퍼런스 수요 성장:</strong> Together AI가 전년 대비 월 30B에서 300T 토큰으로 성장했다고 보고하며, 대규모 인퍼런스 수요 확장을 나타냈습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>OpenAI GPT-5.5 인프라:</strong> GPT-5.5는 NVIDIA GB200/300 시스템을 위해 공동 설계되었으며, 모델 자체가 자체 인퍼런스 스택 개선에 기여했다고 언급되었습니다.</li>
+<li><strong>DeepSeek Ascend 950 가용성 언급:</strong> DeepSeek은 V4-Pro 처리량 제한을 해결하고 가격 인하를 위해 향후 Ascend 950 가용성을 명시적으로 언급했습니다.</li>
+<li><strong>Epoch AI Stargate Abilene 일정 변경:</strong> Epoch AI가 Stargate Abilene의 운영 전력 추정치를 약 0.3 GW로 하향 조정하고 전체 1.2 GW 목표 달성 시점을 2026년 4분기로 연기했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
