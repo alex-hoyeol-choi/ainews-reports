@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-05-01 | Agents for Everything Else: Codex for Knowledge Work, Claude for Creative Work | [전체번역](reports/2026-05/2026-05-01_Agents_for_Everything_Else_Codex_for_Knowledge_Work_Claude_for_Creative_Work.md) | [요약](reports/2026-05/2026-05-01_Agents_for_Everything_Else_Codex_for_Knowledge_Work_Claude_for_Creative_Work_summary.md) | [HTML](reports/2026-05/2026-05-01_Agents_for_Everything_Else_Codex_for_Knowledge_Work_Claude_for_Creative_Work_summary.html) |
 | 2026-04-30 | The Inference Inflection | [전체번역](reports/2026-04/2026-04-30_The_Inference_Inflection.md) | [요약](reports/2026-04/2026-04-30_The_Inference_Inflection_summary.md) | [HTML](reports/2026-04/2026-04-30_The_Inference_Inflection_summary.html) |
 | 2026-04-29 | not much happened today | [전체번역](reports/2026-04/2026-04-29_not_much_happened_today.md) | [요약](reports/2026-04/2026-04-29_not_much_happened_today_summary.md) | [HTML](reports/2026-04/2026-04-29_not_much_happened_today_summary.html) |
 | 2026-04-28 | ImageGen is on the Path to AGI | [전체번역](reports/2026-04/2026-04-28_ImageGen_is_on_the_Path_to_AGI.md) | [요약](reports/2026-04/2026-04-28_ImageGen_is_on_the_Path_to_AGI_summary.md) | [HTML](reports/2026-04/2026-04-28_ImageGen_is_on_the_Path_to_AGI_summary.html) |
