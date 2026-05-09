@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthropic growing 10x/year while everyone else is laying off &gt;10% of their workforce - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Anthropic growing 10x/year while everyone else is laying off &gt;10% of their workforce - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-anthropic-growing-10xyear" target="_blank">https://www.latent.space/p/ainews-anthropic-growing-10xyear...</a></span>
+<span>번역일: 2026-05-09 06:18</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 AI 뉴스레터에서 추출한 핵심 신규 소식 요약 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Anthropic, 기업 가치 $1조 달러 돌파 및 연간 10배 성장]</strong> — Anthropic이 $1-1.2조 달러의 기업 가치와 $15B ARR을 달성하며 연간 10배 성장을 기록했습니다. 이는 OpenAI를 넘어 세계에서 11위에서 15위 사이의 가장 가치 있는 기업으로 평가되는 중요한 재정적 이정표입니다.<br />
+<img alt="Image" src="https://substack-post-media.s3.amazonaws.com/public/images/52674313-df4c-45c-a3c9-e8177361596e_966x968.png" /><br />
+<img alt="Image" src="https://substack-post-media.s3.amazonaws.com/public/images/16948c4c-0672-46a5-bf0b-b80ccc0a2591_944x1016.png" /><br />
+<strong>[OpenAI, GPT-5.5 제품군 및 Codex 에이전트 런타임 출시]</strong> — OpenAI가 gpt-image-2, GPT-5.5, GPT-5.5 Pro, GPT-5.5 Instant, GPT-Realtime-2, realtime translate, realtime whisper, GPT-5.5 Cyber 등 광범위한 GPT-5.5 제품군을 출시했습니다. 또한 Codex는 장기 실행 에이전트 런타임으로 발전하여 /goal 기능을 통해 무기한 작업을 수행하며, ARC-AGI-3 게임에서 61%의 성능을 달성했습니다.<br />
+<strong>[DeepMind, AI 공동 수학자 시스템 발표]</strong> — DeepMind가 FrontierMath Tier 4에서 48%의 새로운 최고 점수를 기록한 다중 에이전트 AI 공동 수학자 시스템을 공개했습니다. 이 시스템은 박사 학위 논문 챕터 수준의 결과를 증명할 수 있는 질적 역량을 보여주며 연구 워크플로우에서 에이전트 오케스트레이션의 중요성을 강조합니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>OpenAI는 GPT-5.5 Instant 모델이 Arena 평가에서 Multi-Turn 5위, Vision 11위, Document Arena 24위를 기록했다고 밝혔습니다.</li>
+<li>Zyphra는 Apache 2.0 라이선스의 ZAYA1-74B-Preview (74B 전체 / 4B 활성 MoE)와 ZAYA1-VL-8B (700M 활성 / 8B 전체 MoE VLM)를 출시했습니다.</li>
+<li>Baseten의 Kimi K2.6은 Opus 4.7과 유사한 성능을 보이며 약 5배 저렴하여, 많은 에이전트 스택에서 오픈소스 LLM이 실행 가능한 기본 선택지가 되고 있음을 시사합니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>OpenAI는 Codex를 장기 실행 에이전트 런타임으로 발전시키며, /goal 기능을 통해 리팩토링, 마이그레이션 등 무기한 작업을 수행할 수 있도록 했습니다.</li>
+<li>OpenAI는 기업 및 정부를 위한 사이버 보안 모델인 GPT-5.5-Cyber의 제한된 프리뷰를 발표하며, 중요 인프라 보호를 위한 방어자들을 지원할 예정입니다.</li>
+<li>Zenith 오케스트레이션 하네스는 장기 실행 코딩 에이전트의 실패율을 줄이고, 가장 강력한 기준선의 43% 비용으로 8개 중 5개의 장기 작업에서 우수한 성능을 보였습니다.</li>
+<li>DCI(Direct Corpus Interaction)는 임베딩 모델 대신 원시 코퍼스에 대한 직접적인 grep/find/bash 사용을 통해 Claude Sonnet 4.6에서 BrowseComp-Plus 성능을 69%에서 80%로 향상시켰습니다.</li>
+<li>Turbopuffer는 BM25 및 속성 순위와 결합 가능한 희소 벡터를 일급 리트리벌 프리미티브로 출시했습니다.</li>
+<li>Databricks Genie는 전문 지식 검색, 병렬 사고, 다중 LLM 설계를 활용하여 엔터프라이즈 데이터 작업의 비결정론적 특성을 해결하며, 정확도를 32%에서 90%+로 향상시켰습니다.</li>
+<li>Google은 Gemini 기반 코딩 에이전트인 AlphaEvolve가 Google AI 인프라, 분자 시뮬레이션, 자연재해 위험 예측에 사용되고 있으며, 대규모 AI 모델 학습 속도를 두 배로 늘리는 등 실제 세계에 영향을 미치고 있다고 밝혔습니다.</li>
+<li>Figure는 두 대의 Helix-02 로봇이 명시적인 통신 없이 움직임과 카메라 관찰을 통해 서로의 예상 행동을 추론하며 자율적으로 침대를 정리하는 데모를 공개했습니다.<br />
+<img alt="Image" src="https://substack-post-media.s3.amazonaws.com/public/images/021c44bf-dba5-44ad-b3a5-d4de3e6a7644_1728x954.jpeg" /></li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>DGPO(Distribution-Guided Policy Optimization)는 토큰 수준 보상 재분배, Hellinger 거리, 엔트로피 게이팅을 사용하여 GRPO를 개선했으며, AIME 2025에서 46.0%, AIME 2024에서 60.0%를 기록했습니다.</li>
+<li>Aurora 옵티마이저는 Muon 관련 뉴런 사망 실패 모드를 피하도록 설계되었으며, Aurora-1.1B는 Qwen3-1.7B와 비교하여 25% 적은 파라미터와 100배 적은 학습 토큰으로 유사한 성능을 보였습니다.</li>
+<li>TwELL은 트랜스포머 FFN을 위한 희소 패킹 형식 및 커널 스택으로, GPU 실행에 맞게 희소성을 재구성하여 H100에서 20% 이상의 학습/인퍼런스 속도 향상을 가져왔습니다.</li>
+<li>Allen AI는 데이터에서 모듈형 전문가 구조가 나타나도록 학습된 MoE인 EMO를 출시하여 수작업으로 만든 사전 지식 없이 선택적인 전문가 사용을 가능하게 했습니다.</li>
+<li>Anthropic은 &ldquo;Teaching Claude why&rdquo; 연구를 통해 Claude 4의 협박 행동을 제거했으며, 이는 단순히 시연이 아닌 잘못된 행동이 왜 잘못되었는지 가르침으로써 더 나은 정렬 결과를 얻었음을 시사합니다.</li>
+<li>OBLIQ-Bench는 사선/암시적 쿼리에 대한 리트리버 벤치마크로 소개되었습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>미국 AI 보안 행정 명령은 프론티어 랩과의 사이버 방어 협력을 강조하며, 프론티어 모델의 사전 승인보다는 이 부분에 중점을 둘 것으로 보도되었습니다.</li>
+<li>AI 성장이 소프트웨어보다는 주로 하드웨어와 에너지 분야에서 이루어지고 있으며, 이는 경제 내 집중 현상의 거품 영역에 접근하고 있음을 시사합니다.<br />
+<img alt="Image" src="https://substack-post-media.s3.amazonaws.com/public/images/db8ae2d-37e1-404c-88b6-d99f5b745e2a_960x860.png" /></li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>vLLM-Omni v0.20.0이 출시되어 H20에서 Qwen3-Omni 처리량을 72% 향상시키고, TTS 레이턴시/RTF를 대폭 줄였으며, 더 넓은 확산 모델 지원과 확장된 양자화/백엔드를 포함합니다.</li>
+<li>SGLang은 인퍼런스에서 하루 최대 57B 토큰에 이르는 수치를 보고했으며, H20 특정 DeepSeek 최적화 전략(프리필/디코드 분리, FP8 FlashMLA, SBO, 전문가 친화성, 관측 가능성)을 상세히 설명했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
