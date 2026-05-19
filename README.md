@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-05-19 | How to land a job at a frontier lab (on Pretraining) | [전체번역](reports/2026-05/2026-05-19_How_to_land_a_job_at_a_frontier_lab_on_Pretraining.md) | [요약](reports/2026-05/2026-05-19_How_to_land_a_job_at_a_frontier_lab_on_Pretraining_summary.md) | [HTML](reports/2026-05/2026-05-19_How_to_land_a_job_at_a_frontier_lab_on_Pretraining_summary.html) |
 | 2026-05-16 | Cerebras' $60B IPO: Slowly, then All at Once | [전체번역](reports/2026-05/2026-05-16_Cerebras_60B_IPO_Slowly_then_All_at_Once.md) | [요약](reports/2026-05/2026-05-16_Cerebras_60B_IPO_Slowly_then_All_at_Once_summary.md) | [HTML](reports/2026-05/2026-05-16_Cerebras_60B_IPO_Slowly_then_All_at_Once_summary.html) |
 | 2026-05-15 | Everything is Conductor | [전체번역](reports/2026-05/2026-05-15_Everything_is_Conductor.md) | [요약](reports/2026-05/2026-05-15_Everything_is_Conductor_summary.md) | [HTML](reports/2026-05/2026-05-15_Everything_is_Conductor_summary.html) |
 | 2026-05-14 | Codex Rises, Claude Meters Programmatic Usage | [전체번역](reports/2026-05/2026-05-14_Codex_Rises_Claude_Meters_Programmatic_Usage.md) | [요약](reports/2026-05/2026-05-14_Codex_Rises_Claude_Meters_Programmatic_Usage_summary.md) | [HTML](reports/2026-05/2026-05-14_Codex_Rises_Claude_Meters_Programmatic_Usage_summary.html) |

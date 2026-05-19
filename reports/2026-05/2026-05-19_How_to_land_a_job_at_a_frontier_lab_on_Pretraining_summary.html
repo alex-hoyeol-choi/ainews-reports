@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to land a job at a frontier lab (on Pretraining) - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>How to land a job at a frontier lab (on Pretraining) - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-how-to-land-a-job-at-a-frontier" target="_blank">https://www.latent.space/p/ainews-how-to-land-a-job-at-a-frontier...</a></span>
+<span>번역일: 2026-05-19 12:19</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Cursor, Composer 2.5 출시 및 &lsquo;SpaceXAI&rsquo; 이니셔티브 발표]</strong> — Cursor는 최신 모델 Composer 2.5를 출시하며 장기 작업 및 지시 따르기 능력을 강화했다고 밝혔습니다. 또한, &lsquo;SpaceXAI&rsquo; 이니셔티브를 통해 Colossus 2의 100만 H100 등가물에 접근하여 10배 더 많은 컴퓨팅으로 훨씬 큰 모델을 처음부터 학습시킬 계획을 공개했습니다.<br />
+<strong>[Anthropic, SDK 플랫폼 Stainless 인수]</strong> — Anthropic은 초기 API 시절부터 자사 SDK를 지원해 온 SDK 및 MCP 서버 플랫폼 Stainless를 인수했습니다. 이는 개발자 인체 공학 및 프로토콜 표면을 중심으로 한 지속적인 수직 통합 전략을 시사합니다.<br />
+<strong>[llama.cpp, Qwen3.6 모델에 MTP 지원 추가로 로컬 추론 속도 대폭 향상]</strong> — llama.cpp는 Qwen3.6 모델군에 MTP(Multi-Token Prediction) 지원을 발표하며 로컬 AI의 중요한 이정표를 세웠습니다. A10G에서 Qwen3.6-27B dense 모델의 처리량이 25 tok/s에서 45 tok/s로 78% 향상되는 등 상당한 속도 개선을 보였습니다.<br />
+<strong>[ByteDance, 통합 멀티모달 모델 Lance 오픈소스화]</strong> — ByteDance는 이미지/비디오 이해, 생성 및 편집을 위한 통합 멀티모달 모델 Lance를 오픈소스화했습니다. 이 모델은 3B 비디오, 3B 이미지, 3B 디코더 구성 요소를 포함합니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Cursor는 장기 작업에 대한 지속적인 성능과 신뢰성 높은 지시 따르기를 개선한 Composer 2.5를 출시했습니다.</li>
+<li>Alibaba Qwen3.7 Max Preview는 Arena 텍스트 부문 전체 13위(수학 7위, 전문가 9위, 소프트웨어 및 IT 9위, 코딩 10위 포함)를 기록했으며, Qwen3.7 Plus Preview는 비전 부문 전체 16위에 올랐습니다.</li>
+<li>ByteDance는 이미지/비디오 이해, 생성 및 편집을 위한 통합 멀티모달 모델 Lance를 오픈소스화했으며, 3B 비디오 + 3B 이미지 + 3B 디코더 구성 요소를 포함합니다.</li>
+<li>Perplexity는 MaxSim 커널 사용에 대한 설명과 함께 작은 오픈 다국어 ColBERT 모델인 pplx-embed-0.6b의 계속 학습 변형을 출시했습니다.</li>
+<li>Zyphra는 AMD Instinct MI355X에서 Kimi K2.6, GLM 5.1, DeepSeek V3.2 모델 서빙 시 AMD의 기준선 대비 강력한 성능 우위와 NVIDIA B200과의 격차를 좁혔다고 주장하는 종단 간 추론 벤치마크를 발표했습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>LangSmith Engine은 프로덕션 에이전트를 위한 CI/CD 루프로서, 프로덕션 트레이스에서 실패를 자동으로 감지하고 문제를 클러스터링하며 수정/평가를 초안 작성하는 기능을 제공합니다.</li>
+<li>LangChain은 대규모 트레이스에 대한 낮은 레이턴시 쿼리 및 자체 호스팅/멀티 클라우드 요구 사항을 갖춘 에이전트 관측 가능성/평가 워크로드를 위한 특수 목적 데이터 레이어인 SmithDB를 강조했습니다.</li>
+<li>Cognition은 버그, 경고 및 사고에 대한 상시 작동하는 &ldquo;첫 번째 대응자&rdquo;로, 장기 기억, 관리자/하위 에이전트 구조 및 PR 생성을 지원하는 Devin Auto-Triage를 출시했습니다.</li>
+<li>Anthropic은 수백만 라인 규모의 모노레포, 레거시 시스템 및 마이크로서비스 전반에서 Claude Code를 실행하기 위한 모범 사례를 발표하고, 프롬프트 캐시 진단을 추가하며, 낮은 레이턴시 코딩 워크플로우를 위해 Fast 모드를 Opus 4.7으로 기본 설정했습니다.</li>
+<li>OpenAI는 Zoom 플러그인, 모바일/데스크톱 원격 실행, 장시간 실행되는 작업이 휴대폰 앱에서 계속될 수 있도록 &ldquo;Mac을 깨어 있게 유지&rdquo; 지원을 추가하여 Codex 워크플로우를 확장했습니다.</li>
+<li>Microsoft는 GitHub Copilot CLI와 VS Code용 원격 제어를 정식 출시(General Availability)했습니다.</li>
+<li>Papers With Code는 메서드 파싱, 리더보드 및 SOTA 추적을 통해 AI 에이전트 지원 방식을 개선하며 연구 발견 가능성에 새로운 초점을 맞추고 있습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>&ldquo;On Training in Imagination&rdquo; 연구는 모델 기반 RL에서 낮은 립시츠 상수를 가진 더 부드러운 세계/보상 모델이 오류 경계를 강화하고, 보상 모델이 동적 모델보다 빠르게 스케일링되며, 많은 노이즈 있는 보상 레이블이 적은 고품질 레이블을 능가할 수 있지만 편향된 보상은 위험하다는 점을 강조했습니다.</li>
+<li>Pedagogical RL에 대한 연구는 올바른 추론 트레이스라도 학생 정책에 비해 너무 놀랍다면 좋지 않은 학습 데이터가 될 수 있다고 주장하며, 특권 교사, 스파이크 인식 보상, 놀라움 게이트 모방을 사용하여 학생이 실제로 학습할 수 있는 궤적을 생성하는 방법을 제시했습니다.</li>
+<li>Meta의 AIRA(Agentic Neural Architecture Discovery) 연구는 검색을 계획 에이전트(AIRA-Compose)와 구현 에이전트(AIRA-Design)로 분할하여 24시간 컴퓨팅 예산 내에서 350M, 1B, 3B 규모에서 Llama 3.2를 능가하는 신경 아키텍처를 발견했습니다.</li>
+<li>&ldquo;Slicing and Dicing MoEs&rdquo; 논문은 2,000개 이상의 MoE LM 학습을 보고하며, MoE 설계 공간의 대부분이 전문가 크기(expert size)와 전문가 수(expert count)로 귀결된다고 결론지었습니다.</li>
+<li>On-Policy Mix는 데이터 분포가 계속 변화함에 따라 올바른 데이터 믹스를 찾는 미해결 문제를 목표로 하며, 사전 학습, 중간 학습 및 지시 튜닝 전반에 걸쳐 적용 가능합니다.</li>
+<li>에이전트 평가 가이드 및 Zhihu 요약은 에이전트 시대에는 정적 지식이나 내부 CoT 능력뿐만 아니라 위임 지능(delegation intelligence) — 즉, 언제 검색하고, 코딩하고, 추론하고, 도구를 호출할지 — 를 측정해야 한다고 주장했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Anthropic은 초기 API 시절부터 자사 SDK를 지원해 온 SDK 및 MCP 서버 플랫폼 Stainless를 인수했습니다.</li>
+<li>Cursor는 Colossus 2의 100만 H100 등가물에 접근하여 10배 더 많은 컴퓨팅으로 훨씬 큰 모델을 처음부터 학습시킬 계획인 &lsquo;SpaceXAI&rsquo; 이니셔티브를 공개했습니다.</li>
+<li>Hugging Face와 Dell은 NVIDIA B300이 탑재된 Dell PowerEdge XE9780에 최적화된 Kimi K2.6, DeepSeek V4 Pro/Flash, GLM 5.1, MiniMax M2.7 모델에 대한 원클릭 액세스를 제공하는 Dell Enterprise Hub를 홍보했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>Georgi Gerganov는 llama.cpp에서 Qwen3.6 모델군에 대한 MTP(Multi-Token Prediction) 지원을 발표하며, A10G에서 Qwen3.6-27B dense 모델의 처리량이 25 tok/s에서 45 tok/s로 78% 향상되는 결과를 보였습니다.</li>
+<li>Zyphra는 AMD Instinct MI355X에서 Kimi K2.6, GLM 5.1, DeepSeek V3.2 모델 서빙 시 AMD의 기준선 대비 강력한 성능 우위와 NVIDIA B200과의 격차를 좁혔다고 주장하는 종단 간 추론 벤치마크를 발표했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
