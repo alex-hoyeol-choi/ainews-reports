@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google I/O 2026: Gemini 3.5 Flash, Omni (NanoBanana for Video), Spark (background agents), and Antigravity 2.0 - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Google I/O 2026: Gemini 3.5 Flash, Omni (NanoBanana for Video), Spark (background agents), and Antigravity 2.0 - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash" target="_blank">https://www.latent.space/p/ainews-google-io-2026-gemini-35-flash...</a></span>
+<span>번역일: 2026-05-20 06:20</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Google, Gemini 3.5 Flash 및 Omni 공개]</strong> — Google이 I/O에서 Gemini 3.5 Flash를 즉시 GA하며 에이전트 및 코딩 워크로드에 최적화된 강력한 성능과 빠른 속도를 제공한다고 발표했습니다. 또한 멀티모달 생성/편집을 위한 Gemini Omni를 선보이며 영상 생성 및 편집 기능을 강화했습니다.<br />
+<strong>[Google, Antigravity 2.0 에이전트 스택 확장]</strong> — Google은 에이전트 중심의 데스크톱 앱, CLI, SDK를 포함하는 Antigravity 2.0을 출시하여 에이전트 실행 환경을 강화했습니다. Gemini API의 Managed Agents를 통해 호스팅된 Linux 샌드박스에서 에이전트 실행을 지원합니다.<br />
+<strong>[Andrej Karpathy, Anthropic 합류]</strong> — AI 분야의 저명한 연구자인 Andrej Karpathy가 Anthropic에 합류하여 R&amp;D 및 새로운 사전 학습(pretraining) 중심 노력에 참여할 예정입니다.<br />
+<strong>[OpenAI, Guaranteed Capacity 도입]</strong> — OpenAI는 고객이 중요한 워크로드를 위해 장기적인 컴퓨팅 자원을 확보할 수 있도록 1~3년 약정으로 할인된 토큰을 제공하는 상업적 제안인 Guaranteed Capacity를 발표했습니다.<br />
+<strong>[Hugging Face, Carbon DNA 모델 공개]</strong> — Hugging Face는 생성형 DNA 파운데이션 모델 제품군인 Carbon을 출시했습니다. Carbon-3B는 Evo2-7B와 유사한 성능을 보이며 250-275배 빠른 인퍼런스 속도로 단일 GPU에서 이틀 내에 전체 인간 게놈을 처리할 수 있습니다.</p>
+<p><img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/904f7a4e-f945-40e0-b980-024fc220d0b7_1524x912.png" /></p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Google은 Gemini 3.5 Flash를 즉시 GA했으며, 1M 토큰 컨텍스트, 65k 최대 출력 토큰, 4단계 사고 레벨, 다중 턴 대화 전반에 걸친 thought preservation 기능을 제공합니다.</li>
+<li>Gemini 3.5 Flash는 Terminal-Bench 2.1에서 76.2%, GDPval-AA에서 1656 Elo, MCP Atlas에서 83.6%, MMMU-Pro에서 84%의 성능을 기록했습니다.</li>
+<li>Google은 Gemini 3.5 Flash가 유사한 프론티어 모델보다 4배 빠르며, Antigravity에서는 최대 12배 빠르다고 밝혔고, Artificial Analysis는 &gt;280 output tok/s를 관찰했습니다.</li>
+<li>Gemini 3.5 Flash의 가격은 1M 입력 토큰당 $1.50, 1M 출력 토큰당 $9.00이며, 캐시된 입력에 90% 할인이 적용됩니다.</li>
+<li>Arena 벤치마크에서 Gemini 3.5 Flash는 Text Arena에서 #9위, Code Arena: Frontend에서 #9위를 기록하며 1507점으로 Gemini 3 Flash 대비 +70점 상승했습니다.</li>
+<li>Hugging Face는 생성형 DNA 파운데이션 모델 Carbon을 출시했으며, Carbon-3B는 Evo2-7B와 유사한 성능을 보이면서 250-275배 빠른 인퍼런스 속도로 단일 GPU에서 이틀 내에 전체 인간 게놈을 처리할 수 있습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Google은 Gemini Omni Flash를 유료 Gemini 사용자에게 Gemini 앱 및 Flow에서 오늘부터 제공하며, YouTube Shorts/Create에서는 이번 주부터 무료로, 몇 주 내로 API를 통해 제공할 예정입니다.</li>
+<li>Antigravity 2.0 데스크톱 앱, CLI, SDK가 출시되었으며, Gemini API의 Managed Agents는 Bash/Python/Node, 파일, 브라우징, 커스텀 스킬, repo/GCS 마운트를 지원하는 호스팅된 Linux 샌드박스를 제공합니다.</li>
+<li>Google Search는 AI 기반 Search 박스를 재설계하고 멀티모달 쿼리를 지원하며, Antigravity + Gemini 3.5 Flash를 사용하여 즉석에서 맞춤형 시각 도구 및 시뮬레이션을 생성하는 기능을 선보였습니다.</li>
+<li>Google Search는 지속적인 모니터링 작업, 웹/뉴스/소셜/실시간 신호를 기반으로 종합 업데이트를 제공하는 정보 에이전트를 올 여름 Pro/Ultra 사용자에게 출시할 예정입니다.</li>
+<li>Gemini 앱은 새로운 &ldquo;Neural Expressive&rdquo; 디자인 언어, 인라인/즉시 Gemini Live 음성, 받은 편지함/캘린더/작업에서 개인화된 Daily Brief 요약 기능을 포함합니다.</li>
+<li>Gemini Spark는 전용 Google Cloud 가상 머신에서 24시간 내내 작동하여 사용자 장치가 꺼져 있어도 장시간 실행되는 작업을 허용하는 개인 AI 에이전트입니다.</li>
+<li>Gemini macOS 앱이 출시되었으며, Spark/음성 데스크톱 워크플로우가 곧 제공될 예정입니다.</li>
+<li>GitHub Copilot에 Gemini 3.5 Flash가 통합 출시되었으며, Cursor는 Jira와의 통합을 출시하여 클라우드 에이전트가 작업 항목을 가져와 병합 준비된 PR을 생성할 수 있도록 했습니다.</li>
+<li>Code/VS Code 또한 Gemini 3.5 Flash의 가용성을 발표했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Google은 연구자들을 위한 프로토타입 스위트인 Gemini for Science를 소개했으며, 이는 Literature Insights, Hypothesis Generation, Computational Discovery (AlphaEvolve 및 ERA 기반)를 포함합니다.</li>
+<li>Google Research는 ERA가 Nature에 출판되었다고 언급했습니다.</li>
+<li>Google Project Genie는 Street View 기반 다지기(grounding)를 사용하여 약 20년간의 지도 이미지를 통해 인터랙티브한 실제 위치 시뮬레이션을 생성합니다.</li>
+<li>METR은 Anthropic, Google, Meta, OpenAI에 대한 접근을 기반으로 한 첫 번째 프론티어 리스크 보고서를 발표했으며, 모델 CoT 및 기능, 정렬, 제어에 대한 비공개 정보를 포함합니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Google은 현재 월 3.2 경(quadrillion) 토큰 이상을 처리하며, 이는 전년 대비 7배 증가한 수치라고 밝혔습니다.</li>
+<li>Google Gemini 앱은 월 9억 명 이상의 사용자를 보유하고 있으며 230개 이상의 국가와 70개 이상의 언어로 제공됩니다.</li>
+<li>Google은 새로운 월 $100 요금제를 도입하고, 최고 티어 Ultra의 월 요금을 $250에서 $200로 인하하는 새로운 가격 체계를 발표했습니다.</li>
+<li>Andrej Karpathy가 Anthropic에 합류하여 R&amp;D 및 새로운 사전 학습(pretraining) 중심 노력에 참여할 예정입니다.</li>
+<li>OpenAI는 고객이 중요한 워크로드를 위해 장기적인 컴퓨팅 액세스를 확보할 수 있도록 하는 상업적 제안인 Guaranteed Capacity를 발표했습니다.</li>
+<li>Google은 Search, Gemini, Chrome, 하드웨어/미디어 서비스 전반에 걸쳐 SynthID를 추진하며, OpenAI, NVIDIA, Kakao, ElevenLabs와의 파트너십을 통해 이들의 생성된 콘텐츠에 SynthID를 적용할 예정입니다.</li>
+<li>OpenAI는 SynthID 워터마크와 C2PA 자격 증명을 통해 OpenAI가 생성한 이미지를 확인하는 지원을 별도로 발표했습니다.</li>
+<li>Steven Adler와 Page Hedley가 공동 설립한 새로운 AI 안전 표준 조직인 Guidelight가 첫 두 가지 표준을 공개했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>Google은 현재 월 3.2 경(quadrillion) 토큰 이상을 처리하며, 이는 전년 대비 월 480조(trillion) 토큰에서 7배 증가한 수치라고 밝혔습니다.</li>
+<li>Gemini Spark는 전용 Google Cloud 가상 머신에서 실행되어 사용자 장치가 꺼져 있어도 장시간 실행되는 작업을 허용합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
