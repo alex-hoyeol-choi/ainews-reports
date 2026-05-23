@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Model Labs are now Agent Labs - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>All Model Labs are now Agent Labs - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-all-model-labs-are-now-agent" target="_blank">https://www.latent.space/p/ainews-all-model-labs-are-now-agent...</a></span>
+<span>번역일: 2026-05-23 06:18</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 AI 뉴스레터에서 추출한 핵심 신규 소식 요약 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[AI 업계, &lsquo;모델&rsquo; 중심에서 &lsquo;에이전트&rsquo; 중심으로 전환 가속화]</strong> — OpenAI, AI21, DeepSeek 등 주요 AI 기업들이 모델 개발을 넘어 에이전트 제품 구축 및 전담 팀 신설에 집중하고 있습니다. 이는 모델 단독으로는 더 이상 제품 경쟁력을 확보하기 어렵다는 인식이 확산되며, 모델과 하네스, 워크플로우를 통합한 시스템 구축이 중요해지고 있음을 시사합니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/348d0573-16b0-46d0-a852-ccaae2b6ff4f_1122x534.png" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/f0b62ab4-065e-4317-857e-6483330aeb08_1088x1308.png" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/f8ba4c74-81d3-4163-a6c3-752ef8ec9fe6_1076x1362.png" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/77b0428e9-bb30-464c-8dc2-827ae5accf1f_1084x426.png" /></p>
+<p><strong>[Anthropic Project Glasswing, 1만 개 이상 치명적 취약점 발견]</strong> — Anthropic의 Project Glasswing이 파트너들과 함께 한 달 만에 필수 소프트웨어에서 1만 개 이상의 높은 또는 치명적인 심각도 취약점을 발견했습니다. 이는 Claude Mythos Preview와 같은 AI 모델이 찾아낼 수 있는 취약점의 양에 업계가 대비해야 함을 경고하며, AI 기반 사이버 보안 역량의 중요성을 강조합니다.</p>
+<p><strong>[DeepSeek-V4-Pro, 75% 영구 할인으로 LLM 경제성 재편]</strong> — DeepSeek이 DeepSeek-V4-Pro 모델의 가격을 75% 영구 할인하여 LLM 인퍼런스 비용/성능 프론티어를 크게 변화시켰습니다. 이로 인해 V4 Pro는 Gemini 3.1 Pro Preview보다 약 3배, GPT-5.5보다 약 12배, Claude Opus 4.7보다 약 19배 저렴한 비용으로 유사한 지능을 제공하는 것으로 평가됩니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>Gemini 3.5 Flash, GDPval에서 성능 향상:</strong> Gemini 3.5 Flash가 GDPval 벤치마크에서 3.1 Pro 대비 상당한 진전을 보이며, Design Arena에서 전체 16위에 올랐습니다.</li>
+<li><strong>Qwen3.7-Max, 지시 따르기 및 컨텍스트 신뢰성 개선:</strong> Alibaba의 Qwen3.7-Max가 지시 따르기, 컨텍스트 신뢰성, 안정성 면에서 의미 있는 발전을 보였으나, 여전히 장황함과 높은 토큰 사용량 문제를 안고 있습니다.</li>
+<li><strong>중국 LLM, ALE-Bench에서 서구 모델 능가:</strong> ALE-Bench 벤치마크 실행 결과, Kimi-K2.6, DeepSeek-V4, GLM-5.1 등 중국 모델들이 특정 설정에서 여러 서구 모델들을 능가하는 성능을 보였습니다.</li>
+<li><strong>Cursor Composer 2.5, 코딩 에이전트 벤치마크에서 비용 효율성 입증:</strong> Cursor Composer 2.5가 Coding Agent 벤치마크에서 Claude Opus 4.7보다 3~18배, GPT-5.5보다 5~32배 저렴한 비용으로 우수한 성능을 보이며, 토큰 사용량도 현저히 낮았습니다.</li>
+<li><strong>Cartesia Sonic-3.5, Speech Arena #1 TTS 모델 등극:</strong> Cartesia Sonic-3.5가 Elo 1218점으로 Speech Arena에서 새로운 #1 TTS 모델로 선정되었으며, 42개 언어를 지원하고 82ms의 엔드투엔드 첫 오디오를 제공합니다.</li>
+<li><strong>Tencent Z-Image 6B, VAE 없는 픽셀 공간 생성기 공개:</strong> Tencent가 VAE 없이 1K 해상도를 지원하고 Flux/SD 모델 변환을 위한 전송 프레임워크를 갖춘 픽셀 공간 생성기 Z-Image 6B를 선보였습니다.</li>
+<li><strong>LLM 수학 및 추론 능력 향상:</strong> gpt-5.5가 도구 없이 중간 수준의 추론과 다중 자릿수 곱셈 실험에서 99.46%의 정확도를 기록했으며, 현대 LLM은 이제 도구 없이 100자릿수 곱셈도 가능합니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>OpenAI Codex, Appshots 및 원격 컴퓨터 사용 등 주요 업데이트 출시:</strong> OpenAI가 &lsquo;codex thursday no. 6&rsquo;를 통해 Appshots, /goal 개선, 잠금 상태에서의 원격 컴퓨터 사용, 주석 모드, 플러그인 공유, 분석 기능을 포함한 Codex 업데이트를 발표했습니다.</li>
+<li><strong>Claude, 자동 모드를 Pro 플랜으로 확장 및 Sonnet 4.6 지원 추가:</strong> ClaudeDevs가 자동 모드를 Pro 플랜으로 확장하고 Sonnet 4.6 모델 지원을 추가했습니다.</li>
+<li><strong>Google Gemini Spark, 24시간 개인 AI 에이전트 출시:</strong> Google이 반복적인 작업, 스킬, 워크플로우를 위한 24시간 연중무휴 개인 AI 에이전트 Gemini Spark를 소개했습니다.</li>
+<li><strong>Google DeepMind Project Genie + Street View 공개:</strong> Google DeepMind가 실제 미국 위치를 인터랙티브한 세계로 바꿀 수 있는 Project Genie + Street View를 출시했으며, Google AI Ultra 구독자에게 제공될 예정입니다.</li>
+<li><strong>Google Gemini Omni, 대화형 비디오 생성/편집 기능 발표:</strong> Google이 대화형 비디오 생성/편집 및 맞춤형 아바타를 위한 Gemini Omni를 발표했습니다.</li>
+<li><strong>Runway Aleph 2.0, 1080p 멀티샷 시퀀스 및 타겟 편집 지원:</strong> RunwayML이 Aleph 2.0을 출시하여 1080p 해상도로 최대 30초 길이의 멀티샷 시퀀스와 장면의 나머지 부분을 보존하는 타겟 편집 기능을 지원합니다.</li>
+<li><strong>Perplexity Bumblebee, macOS/Linux용 오픈소스 보안 스캐너 출시:</strong> Perplexity AI가 macOS/Linux용 읽기 전용 스캐너 Bumblebee를 오픈소스화하여 위험한 패키지, 확장 기능 및 AI 도구 구성을 탐지합니다.</li>
+<li><strong>NVIDIA AI-Q Agent Skills 오픈소스화:</strong> NVIDIA AI가 임의의 하네스에 연결할 수 있는 휴대용 심층 연구 파이프라인을 위한 AI-Q 에이전트 스킬을 오픈소스화했습니다.</li>
+<li><strong>Allen AI, ArtifactLinker 출시:</strong> Allen AI가 모델이 어떤 벤치마크에서 SOTA를 달성할 가능성이 있는지 실행 전에 예측하는 메타 평가 도구 ArtifactLinker를 출시했습니다.</li>
+<li><strong>Cursor SDK 공개:</strong> Cursor AI가 코딩 에이전트 인프라 위에 구축하는 팀들을 위한 Cursor SDK를 공개했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>Vector Policy Optimization (VPO) 소개:</strong> Ryan Boldi가 RL 중 스칼라 보상 붕괴 문제를 해결하기 위해 벡터 값 보상을 최적화하는 Vector Policy Optimization (VPO)을 소개했습니다.</li>
+<li><strong>에이전트 워크플로우 컴파일/디스틸레이션 연구:</strong> 다단계 호출, 도구 사용 등 복잡한 에이전트 워크플로우를 가중치로 디스틸레이션하여 거의 프론티어 품질을 유지하면서 약 100배 낮은 인퍼런스 비용으로 실행할 수 있음을 보여주는 논문이 발표되었습니다.</li>
+<li><strong>선형 시간 루프 트랜스포머 (LT2) 및 Ouro-hybrid-1.4B 공개:</strong> Chunyuan Deng이 희소 및 선형 어텐션을 결합하여 루핑을 실용적으로 만드는 선형 시간 루프 트랜스포머 LT2와 디스틸레이션된 Ouro-hybrid-1.4B를 소개했습니다.</li>
+<li><strong>MoE를 위한 Moving Quantile Balancing 제안:</strong> Jianlin S가 손실 페널티 없이 시퀀스 수준 로드 밸런싱을 위한 Moving Quantile Balancing을 제안했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>미국 이민 정책 변경 제안, AI 인재 유출 우려:</strong> 영주권 신청자들이 미국 밖에서 신청하도록 강제하는 제안된 규칙이 AI 인재 파이프라인에 직접적인 손상을 입히고 미국의 AI 경쟁력을 약화시킬 것이라는 AI 리더들의 강한 반발을 불러일으켰습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>MCP 2026-07-28 릴리스 후보, 스테이트리스 프로토콜 도입:</strong> MCP 2026-07-28 릴리스 후보가 발표되었으며, 핵심 변경 사항은 프로토콜이 스테이트리스(stateless)로 전환되어 핸드셰이크 및 세션 ID가 없어지고, 스케일링 및 로드 밸런싱이 용이해진다는 점입니다.</li>
+<li><strong>Gemini Managed Agents + Interactions API, 보안 샌드박스 제공:</strong> Gemini Managed Agents + Interactions API가 에이전트에게 메모리 및 코드 실행이 가능한 보안 호스팅 Linux 샌드박스를 제공합니다.</li>
+<li><strong>CoreWeave Sandboxes, 공개 프리뷰 출시:</strong> CoreWeave가 RL, 에이전트 도구 사용 및 모델 평가를 위한 CoreWeave Sandboxes를 공개 프리뷰로 출시했습니다.</li>
+<li><strong>Cloudsail, 작업별 Cloudflare 샌드박스 출시:</strong> Cloudsail이 토큰을 노출하지 않고 셸, Codex, GitHub 접근이 가능한 작업별 Cloudflare 샌드박스를 출시했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
