@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-06-02 | NVIDIA Cosmos 3, Nemotron 3 Ultra, and RTX Spark | [전체번역](reports/2026-06/2026-06-02_NVIDIA_Cosmos_3_Nemotron_3_Ultra_and_RTX_Spark.md) | [요약](reports/2026-06/2026-06-02_NVIDIA_Cosmos_3_Nemotron_3_Ultra_and_RTX_Spark_summary.md) | [HTML](reports/2026-06/2026-06-02_NVIDIA_Cosmos_3_Nemotron_3_Ultra_and_RTX_Spark_summary.html) |
 | 2026-05-30 | Founders and Forward Deployed Engineers | [전체번역](reports/2026-05/2026-05-30_Founders_and_Forward_Deployed_Engineers.md) | [요약](reports/2026-05/2026-05-30_Founders_and_Forward_Deployed_Engineers_summary.md) | [HTML](reports/2026-05/2026-05-30_Founders_and_Forward_Deployed_Engineers_summary.html) |
 | 2026-05-29 | Anthropic raises $965B Series H, releases Opus 4.8 and Dynamic Workflows/ultracode | [전체번역](reports/2026-05/2026-05-29_Anthropic_raises_965B_Series_H_releases_Opus_48_and_Dynamic_Workflowsultracode.md) | [요약](reports/2026-05/2026-05-29_Anthropic_raises_965B_Series_H_releases_Opus_48_and_Dynamic_Workflowsultracode_summary.md) | [HTML](reports/2026-05/2026-05-29_Anthropic_raises_965B_Series_H_releases_Opus_48_and_Dynamic_Workflowsultracode_summary.html) |
 | 2026-05-28 | Cognition raises $1B in $26B Series D | [전체번역](reports/2026-05/2026-05-28_Cognition_raises_1B_in_26B_Series_D.md) | [요약](reports/2026-05/2026-05-28_Cognition_raises_1B_in_26B_Series_D_summary.md) | [HTML](reports/2026-05/2026-05-28_Cognition_raises_1B_in_26B_Series_D_summary.html) |
