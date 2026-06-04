@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-06-04 | Reve 2 and Ideogram 4: Layouts in Imagegen | [전체번역](reports/2026-06/2026-06-04_Reve_2_and_Ideogram_4_Layouts_in_Imagegen.md) | [요약](reports/2026-06/2026-06-04_Reve_2_and_Ideogram_4_Layouts_in_Imagegen_summary.md) | [HTML](reports/2026-06/2026-06-04_Reve_2_and_Ideogram_4_Layouts_in_Imagegen_summary.html) |
 | 2026-06-03 | Microsoft Build: MAI-Thinking-1 and MAI Family models | [전체번역](reports/2026-06/2026-06-03_Microsoft_Build_MAI-Thinking-1_and_MAI_Family_models.md) | [요약](reports/2026-06/2026-06-03_Microsoft_Build_MAI-Thinking-1_and_MAI_Family_models_summary.md) | [HTML](reports/2026-06/2026-06-03_Microsoft_Build_MAI-Thinking-1_and_MAI_Family_models_summary.html) |
 | 2026-06-02 | NVIDIA Cosmos 3, Nemotron 3 Ultra, and RTX Spark | [전체번역](reports/2026-06/2026-06-02_NVIDIA_Cosmos_3_Nemotron_3_Ultra_and_RTX_Spark.md) | [요약](reports/2026-06/2026-06-02_NVIDIA_Cosmos_3_Nemotron_3_Ultra_and_RTX_Spark_summary.md) | [HTML](reports/2026-06/2026-06-02_NVIDIA_Cosmos_3_Nemotron_3_Ultra_and_RTX_Spark_summary.html) |
 | 2026-05-30 | Founders and Forward Deployed Engineers | [전체번역](reports/2026-05/2026-05-30_Founders_and_Forward_Deployed_Engineers.md) | [요약](reports/2026-05/2026-05-30_Founders_and_Forward_Deployed_Engineers_summary.md) | [HTML](reports/2026-05/2026-05-30_Founders_and_Forward_Deployed_Engineers_summary.html) |
