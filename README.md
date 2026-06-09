@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-06-09 | FrontierCode: Benchmarking for Code Quality over Slop | [전체번역](reports/2026-06/2026-06-09_FrontierCode_Benchmarking_for_Code_Quality_over_Slop.md) | [요약](reports/2026-06/2026-06-09_FrontierCode_Benchmarking_for_Code_Quality_over_Slop_summary.md) | [HTML](reports/2026-06/2026-06-09_FrontierCode_Benchmarking_for_Code_Quality_over_Slop_summary.html) |
 | 2026-06-06 | not much happened today | [전체번역](reports/2026-06/2026-06-06_not_much_happened_today.md) | [요약](reports/2026-06/2026-06-06_not_much_happened_today_summary.md) | [HTML](reports/2026-06/2026-06-06_not_much_happened_today_summary.html) |
 | 2026-06-05 | not much happened today | [전체번역](reports/2026-06/2026-06-05_not_much_happened_today.md) | [요약](reports/2026-06/2026-06-05_not_much_happened_today_summary.md) | [HTML](reports/2026-06/2026-06-05_not_much_happened_today_summary.html) |
 | 2026-06-04 | Reve 2 and Ideogram 4: Layouts in Imagegen | [전체번역](reports/2026-06/2026-06-04_Reve_2_and_Ideogram_4_Layouts_in_Imagegen.md) | [요약](reports/2026-06/2026-06-04_Reve_2_and_Ideogram_4_Layouts_in_Imagegen_summary.md) | [HTML](reports/2026-06/2026-06-04_Reve_2_and_Ideogram_4_Layouts_in_Imagegen_summary.html) |
