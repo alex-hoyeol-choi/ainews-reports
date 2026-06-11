@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-06-11 | Open Models, Model Labs vs Agent Labs, and What's Untrainable — Sarah Guo | [전체번역](reports/2026-06/2026-06-11_Open_Models_Model_Labs_vs_Agent_Labs_and_Whats_Untrainable_Sarah_Guo.md) | [요약](reports/2026-06/2026-06-11_Open_Models_Model_Labs_vs_Agent_Labs_and_Whats_Untrainable_Sarah_Guo_summary.md) | [HTML](reports/2026-06/2026-06-11_Open_Models_Model_Labs_vs_Agent_Labs_and_Whats_Untrainable_Sarah_Guo_summary.html) |
 | 2026-06-10 | Anthropic Claude Fable 5 — Mythos but Safe, with Controversial Terms | [전체번역](reports/2026-06/2026-06-10_Anthropic_Claude_Fable_5_Mythos_but_Safe_with_Controversial_Terms.md) | [요약](reports/2026-06/2026-06-10_Anthropic_Claude_Fable_5_Mythos_but_Safe_with_Controversial_Terms_summary.md) | [HTML](reports/2026-06/2026-06-10_Anthropic_Claude_Fable_5_Mythos_but_Safe_with_Controversial_Terms_summary.html) |
 | 2026-06-09 | FrontierCode: Benchmarking for Code Quality over Slop | [전체번역](reports/2026-06/2026-06-09_FrontierCode_Benchmarking_for_Code_Quality_over_Slop.md) | [요약](reports/2026-06/2026-06-09_FrontierCode_Benchmarking_for_Code_Quality_over_Slop_summary.md) | [HTML](reports/2026-06/2026-06-09_FrontierCode_Benchmarking_for_Code_Quality_over_Slop_summary.html) |
 | 2026-06-06 | not much happened today | [전체번역](reports/2026-06/2026-06-06_not_much_happened_today.md) | [요약](reports/2026-06/2026-06-06_not_much_happened_today_summary.md) | [HTML](reports/2026-06/2026-06-06_not_much_happened_today_summary.html) |
