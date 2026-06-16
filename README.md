@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-06-16 | Satya on Loopcraft: Building Frontier Ecosystems | [전체번역](reports/2026-06/2026-06-16_Satya_on_Loopcraft_Building_Frontier_Ecosystems.md) | [요약](reports/2026-06/2026-06-16_Satya_on_Loopcraft_Building_Frontier_Ecosystems_summary.md) | [HTML](reports/2026-06/2026-06-16_Satya_on_Loopcraft_Building_Frontier_Ecosystems_summary.html) |
 | 2026-06-13 | Fable and Mythos officially too dangerous to release | [전체번역](reports/2026-06/2026-06-13_Fable_and_Mythos_officially_too_dangerous_to_release.md) | [요약](reports/2026-06/2026-06-13_Fable_and_Mythos_officially_too_dangerous_to_release_summary.md) | [HTML](reports/2026-06/2026-06-13_Fable_and_Mythos_officially_too_dangerous_to_release_summary.html) |
 | 2026-06-12 | Loopcraft: The Art of Stacking Loops | [전체번역](reports/2026-06/2026-06-12_Loopcraft_The_Art_of_Stacking_Loops.md) | [요약](reports/2026-06/2026-06-12_Loopcraft_The_Art_of_Stacking_Loops_summary.md) | [HTML](reports/2026-06/2026-06-12_Loopcraft_The_Art_of_Stacking_Loops_summary.html) |
 | 2026-06-11 | Open Models, Model Labs vs Agent Labs, and What's Untrainable — Sarah Guo | [전체번역](reports/2026-06/2026-06-11_Open_Models_Model_Labs_vs_Agent_Labs_and_Whats_Untrainable_Sarah_Guo.md) | [요약](reports/2026-06/2026-06-11_Open_Models_Model_Labs_vs_Agent_Labs_and_Whats_Untrainable_Sarah_Guo_summary.md) | [HTML](reports/2026-06/2026-06-11_Open_Models_Model_Labs_vs_Agent_Labs_and_Whats_Untrainable_Sarah_Guo_summary.html) |
