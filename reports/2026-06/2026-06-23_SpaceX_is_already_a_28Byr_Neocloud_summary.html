@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX is already a $28B/yr Neocloud - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>SpaceX is already a $28B/yr Neocloud - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-spacex-is-already-a-28byr" target="_blank">https://www.latent.space/p/ainews-spacex-is-already-a-28byr...</a></span>
+<span>번역일: 2026-06-23 06:51</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[OpenAI Daybreak 확장 및 GPT-5.5-Cyber 출시]</strong> — OpenAI가 사이버 보안 스택을 취약점 발견에서 교정으로 확장하는 GPT-5.5-Cyber 모델을 발표했습니다. 이 모델은 CyberGym에서 SOTA 성능을 달성했다고 주장하며, Codex Security 플러그인, Cyber Partner Program, Patch the Planet을 포함하는 확장된 Daybreak 프로그램을 함께 출시했습니다.<br />
+<strong>[GLM-5.2, 에이전트 작업에서 선두 오픈 웨이트 모델로 부상]</strong> — GLM-5.2가 에이전트 작업에서 프론티어 모델에 근접한 최초의 오픈 웨이트 모델로 평가받고 있습니다. Artificial Analysis의 GDPval-AA에서 1524 Elo로 전체 3위를 기록하며 Claude Fable 5와 Opus 4.8에 이어 선두적인 오픈 웨이트 모델로 자리매김했습니다.<br />
+<strong>[Google Gemini Interactions API GA 출시]</strong> — Google이 Gemini Interactions API를 GA(General Availability)로 발표하며, Gemini 모델 및 에이전트의 새로운 기본 인터페이스로 지정했습니다. 이 API는 백그라운드 비동기 실행, 확장된 도구 지원, 멀티모달 생성, 관리형 에이전트 및 격리된 원격 Linux 샌드박스를 포함합니다.<br />
+<strong>[Baseten, 130억 달러 Series F 투자 유치]</strong> — Baseten이 130억 달러 규모의 Series F 투자를 공식 발표했습니다. 이는 기업들이 오픈 또는 특수 모델을 실행하고 자체 데이터로 후속 학습하며 지속적인 학습에 대한 통제권을 유지하려는 추세에 대한 직접적인 투자로 해석됩니다.<br />
+<strong>[Reflection AI, SpaceX와 63억 달러 규모 GB300 컴퓨팅 계약 체결]</strong> — Reflection AI가 GB300 접근을 위해 SpaceX와 63억 달러 규모의 컴퓨팅 계약을 체결했습니다. 이는 SpaceX가 Anthropic 및 Google과의 대규모 계약에 이어 세 번째 주요 GPU 임대 계약입니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>OpenAI가 사이버 보안 스택을 취약점 발견에서 교정으로 확장하는 GPT-5.5-Cyber 모델을 발표했습니다. 이 모델은 CyberGym에서 SOTA 성능을 달성했다고 주장합니다.</li>
+<li>GLM-5.2가 에이전트 작업에서 프론티어 모델에 근접한 최초의 오픈 웨이트 모델로 부상했습니다. Artificial Analysis의 GDPval-AA에서 1524 Elo로 전체 3위를 기록하며 Claude Fable 5와 Opus 4.8에 이어 선두적인 오픈 웨이트 모델로 평가받았습니다.</li>
+<li>GLM-5.2는 실제 버그 수정 테스트에서 Opus 4.8보다 저렴한 비용(0.41달러 대 0.81달러)으로 더 강력한 검증 능력을 보였습니다.</li>
+<li>DeepSWE 벤치마크에서 GLM-5.2 [max]가 44%의 점수와 작업당 평균 비용 3.92달러를 기록하며, 최고 클로즈드 모델보다는 낮지만 강력한 비용-성능 위치를 보여주었습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>OpenAI는 Codex Security 플러그인, Cyber Partner Program, 핵심 OSS 보안을 위한 Patch the Planet을 포함하는 확장된 Daybreak 프로그램을 출시했습니다. 이는 3천만 개 이상의 커밋 스캔, 3만 개 이상의 코드베이스 커버, 7만 개 이상의 리뷰어 표시 수정 사항을 지원합니다.</li>
+<li>Sakana가 Fugu를 출시했습니다. 이는 여러 프론티어 모델에 걸쳐 모델 선택, 위임, 검증, 합성을 학습하는 단일 API로, 자동 연구, 금융, 블라인드 체스, CAD 등 다양한 사용 사례를 지원합니다.</li>
+<li>Vercel이 Fugu Ultra를 AI Gateway에 추가하여, 엔지니어들이 오케스트레이션 레이어로 이동하는 실제 시스템 트렌드에 발맞추고 있습니다.</li>
+<li>GLM-5.2는 AWS Marketplace, Baseten 라이브러리(초당 280 토큰 이상, TTFT 0.8초 미만), Fireworks, LangChain 등 20개 이상의 제공업체에 출시되며 광범위한 배포 및 서비스 속도를 보이고 있습니다.</li>
+<li>Google이 Gemini Interactions API를 GA(General Availability)로 발표하며, Gemini 모델 및 에이전트의 새로운 기본 인터페이스로 지정했습니다. 이 API는 백그라운드 비동기 실행, 확장된 도구 지원, 멀티모달 생성, 관리형 에이전트 및 격리된 원격 Linux 샌드박스를 포함합니다.</li>
+<li>Google은 코딩 에이전트가 새로운 SDK 패턴과 모델 버전을 학습할 수 있도록 설치 가능한 Gemini Interactions 스킬을 출시했습니다.</li>
+<li>Hermes는 Mac 없이 iMessage 접근, 공유 작업 공간에서의 Raft 통합, 그리고 모든 모델로 Windows 또는 Linux 데스크톱 앱을 GUI 제어하는 기능을 포함한 업데이트를 발표했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>LLM-as-a-Judge 감사 결과, 정확 일치 동의율이 심사 모델 품질을 과대평가하며, Cohen의 kappa를 적용하면 MT-Bench에서 동의율이 33~41점 낮아지고 모델 순위가 크게 변동하는 것으로 나타났습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Baseten이 130억 달러 규모의 Series F 투자를 공식 발표했습니다. 이는 기업들이 오픈 또는 특수 모델을 실행하고 자체 데이터로 후속 학습하며 지속적인 학습에 대한 통제권을 유지하려는 추세에 대한 직접적인 투자로 해석됩니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>Reflection AI가 GB300 접근을 위해 SpaceX와 63억 달러 규모의 컴퓨팅 계약을 체결했습니다. 이는 SpaceX가 Anthropic 및 Google과의 대규모 계약에 이어 세 번째 주요 GPU 임대 계약입니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
