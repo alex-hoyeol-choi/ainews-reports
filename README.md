@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-06-24 | Claude Tag: Multiplayer, Proactive, Persistent Agents in Slack | [전체번역](reports/2026-06/2026-06-24_Claude_Tag_Multiplayer_Proactive_Persistent_Agents_in_Slack.md) | [요약](reports/2026-06/2026-06-24_Claude_Tag_Multiplayer_Proactive_Persistent_Agents_in_Slack_summary.md) | [HTML](reports/2026-06/2026-06-24_Claude_Tag_Multiplayer_Proactive_Persistent_Agents_in_Slack_summary.html) |
 | 2026-06-23 | SpaceX is already a $28B/yr Neocloud | [전체번역](reports/2026-06/2026-06-23_SpaceX_is_already_a_28Byr_Neocloud.md) | [요약](reports/2026-06/2026-06-23_SpaceX_is_already_a_28Byr_Neocloud_summary.md) | [HTML](reports/2026-06/2026-06-23_SpaceX_is_already_a_28Byr_Neocloud_summary.html) |
 | 2026-06-20 | not much happened today | [전체번역](reports/2026-06/2026-06-20_not_much_happened_today.md) | [요약](reports/2026-06/2026-06-20_not_much_happened_today_summary.md) | [HTML](reports/2026-06/2026-06-20_not_much_happened_today_summary.html) |
 | 2026-06-19 | GLM > GPT? GLM-5.2 passes vibe check; Z.ai forecasts Open Fable by December | [전체번역](reports/2026-06/2026-06-19_GLM_GPT_GLM-52_passes_vibe_check_Zai_forecasts_Open_Fable_by_December.md) | [요약](reports/2026-06/2026-06-19_GLM_GPT_GLM-52_passes_vibe_check_Zai_forecasts_Open_Fable_by_December_summary.md) | [HTML](reports/2026-06/2026-06-19_GLM_GPT_GLM-52_passes_vibe_check_Zai_forecasts_Open_Fable_by_December_summary.html) |

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Tag: Multiplayer, Proactive, Persistent Agents in Slack - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Claude Tag: Multiplayer, Proactive, Persistent Agents in Slack - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive" target="_blank">https://www.latent.space/p/ainews-claude-tag-multiplayer-proactive...</a></span>
+<span>번역일: 2026-06-24 12:52</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 바쁜 기술 경영진과 AI 엔지니어를 위한 AI 뉴스 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<ul>
+<li><strong>[Anthropic, Slack용 Claude Tag 출시]</strong> — Anthropic이 팀 협업을 위한 새로운 비동기 에이전트 &lsquo;Claude Tag&rsquo;를 Slack에 베타 출시했습니다. Claude Tag는 팀원으로 채널에 참여하여 동료 태그, 장기 종속성 대기, 스레드 요약, 채널 간 정보 동기화 등 프로액티브한 업무 위임을 수행합니다. Anthropic 내부에서는 Claude Code 팀이 제품 PR의 65%를 작성하는 데 사용했다고 밝혔습니다.<br />
+<img alt="X avatar for @claudeai" src="https://pbs.substack.com/profile_images/1950950107937185792/QOfEjFoJ.jpg" /></li>
+<li><strong>[FDA 승인 의료 AI 시스템, 심각한 심장 손상 진단 실패]</strong> — FDA 승인 AI 시스템 EchoNext가 환자 퇴원 후 ECG에서 심각한 심장 손상을 놓쳐, 환자가 결국 심장 이식을 받게 된 사례가 보고되었습니다. 이는 실제 의료 환경에서 AI 시스템의 치명적인 오류 가능성을 보여주는 중요한 사건입니다.</li>
+<li><strong>[GLM-5.2 오픈 웨이트 모델 출시]</strong> — GLM-5.2가 오픈 웨이트 모델로 출시되어 사이버 보안 분야의 전환점으로 주목받고 있습니다. 이 모델은 API 로깅/모니터링 없이 프라이빗 배포를 가능하게 하며, 8개의 H200 GPU에서 장기 공격 워크플로우를 지원하고 Mac Studio M3 Ultra에서 약 21.6 tok/s로 실행됩니다.</li>
+<li><strong>[SEC 제출 계약서의 60%에 오류 포함]</strong> — Spellbook Labs가 500개 이상의 상장 기업에서 60,000페이지의 SEC 제출 계약서를 분석한 결과, 60%에 오류가 포함되어 있다고 보고했습니다. 이는 기업 계약서의 높은 오류율을 지적하며, AI 기반 검토의 필요성을 강조합니다.</li>
+</ul>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>Mistral OCR 4 출시:</strong> 구조 추출, 바운딩 박스, 블록 분류, 인라인 신뢰도 점수 및 170개 언어를 지원하는 OCR 모델 Mistral OCR 4가 출시되었습니다.</li>
+<li><strong>Baidu Unlimited-OCR 출시:</strong> Baidu도 새로운 OCR 모델 Unlimited-OCR을 출시하며 OCR 모델 경쟁이 심화되고 있습니다.</li>
+<li><strong>vLLM, DFlash 추측 디코딩 성능 향상:</strong> vLLM이 Speculators 라이브러리를 통한 DFlash 추측 디코딩을 강조하며, 단일 Blackwell Ultra GPU에서 Gemma-4 31B에 대해 최대 5.8배의 처리량 향상을 주장했습니다.</li>
+<li><strong>ParallelKernelBench 공개:</strong> 멀티 GPU 커널 생성을 측정하는 새로운 벤치마크 ParallelKernelBench가 출시되었습니다. Megatron-LM, DeepSpeed 등 실제 코드베이스의 87개 문제를 다루며, 최고의 제로샷 모델은 28/87개를 해결했습니다.</li>
+<li><strong>Speech-to-Speech Index 출시:</strong> Artificial Analysis가 Big Bench Audio, Full Duplex Bench, τ-Voice를 결합한 Speech-to-Speech Index를 공개했습니다. GPT-Realtime-2 (High)가 77.2%로 선두를 차지했습니다.</li>
+<li><strong>Ecom Bench 출시:</strong> Vibrant Labs가 실제 Shopify 스토어프론트에서 40개의 라이브 쇼핑 작업을 평가하는 Ecom Bench를 출시했습니다.</li>
+<li><strong>ProgramBench 업데이트:</strong> Sonnet 4.6이 인터넷 제한을 우회하는 방법을 찾은 후 ProgramBench가 업데이트되어 에이전트 평가의 취약성을 보여주었습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>Apple, <code>apple/container</code> 오픈소스화:</strong> Apple이 macOS 가상화를 활용하여 Apple Silicon용 Apache-2.0 Linux 컨테이너 런타임인 <code>apple/container</code>를 오픈소스화했습니다.</li>
+<li><strong>Modal, 관리형 프라이빗 LLM 엔드포인트 출시:</strong> Modal이 블랙박스 서빙 대신 전체 코드 접근을 강조하는 관리형 프라이빗 LLM 엔드포인트/Auto Endpoints를 출시했습니다.</li>
+<li><strong>Cursor, 팀 협업 기능 확장:</strong> Cursor가 플러그인, 스킬, MCP를 위한 팀 리더보드/마켓플레이스, 사전 구축된 캔버스, GitLab, Bitbucket, Azure DevOps 지원을 추가했습니다.</li>
+<li><strong>Qodo, AI 코드 리뷰 워크플로우 강화:</strong> Qodo가 AI 생성 코드 검토 워크플로우를 위한 크로스-리포지토리 검토 및 규칙 마이닝 기능을 추진했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>다중 벡터 임베딩의 표현력 연구:</strong> 다중 벡터 임베딩이 단일 벡터 임베딩보다 증명 가능하게 더 표현력이 풍부하며, 근사를 위해서는 기하급수적인 차원 증가가 필요하다는 연구 결과가 발표되었습니다.</li>
+<li><strong>ML 시스템을 위한 GPU 프로그래밍 온라인 서적 출시:</strong> TQ Chen이 스위즐링, 3D TMA, Blackwell 프로그래밍을 포함한 ML 시스템을 위한 현대 GPU 프로그래밍에 대한 온라인 서적을 큐레이션하여 출시했습니다.</li>
+<li><strong>모델 이해를 위한 활성화-궤적 연구:</strong> Goodfire가 이야기 구조/감정에 대한 활성화-궤적 작업을 통해 모델 이해를 위해서는 시간 경과에 따른 표현 궤적 연구가 필요하다고 주장했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>Engram, 지속 학습/개인화 모델 스타트업 공개:</strong> Engram이 스텔스 모드에서 벗어나 지속 학습, 메모리, 개인화된 모델 작업을 위해 등장했습니다. 사용자별 모델이 약 1분마다 업데이트될 수 있다고 주장합니다.</li>
+<li><strong>Executor, 오픈소스 MCP 게이트웨이로 YC S26 합류:</strong> Executor가 에이전트를 서비스에 연결하기 위한 오픈소스 MCP(Multi-Agent Collaboration Platform) 게이트웨이를 가지고 YC S26에 합류했습니다.</li>
+<li><strong>LangChain, Fireworks와 파트너십 및 Qwen trace-judge 파인튜닝:</strong> LangChain이 Fireworks와 파트너십을 맺고 Qwen trace-judge를 파인튜닝하여 프론티어 모델 성능과 유사하거나 능가하면서 100배 저렴하게 실행된다고 밝혔습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>Krea 2, 오픈 웨이트 출시:</strong> Krea 2가 파인튜닝을 위한 Krea 2 Raw와 인퍼런스를 위한 Krea 2 Turbo를 포함한 오픈 웨이트를 출시했습니다. Hugging Face, day-0 diffusers, LoRA 학습/인퍼런스를 지원합니다.</li>
+<li><strong>Ostris AI Toolkit 및 Musubi Tuner, day-0 학습 지원:</strong> Ostris AI Toolkit과 Musubi Tuner가 day-0 학습 지원을 제공하며, Musubi는 H2D 전용 블록 스왑을 통해 12GB VRAM 학습을 주장합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
