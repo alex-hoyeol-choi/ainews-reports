@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>not much happened today - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>not much happened today - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-not-much-happened-today-07e" target="_blank">https://www.latent.space/p/ainews-not-much-happened-today-07e...</a></span>
+<span>번역일: 2026-06-30 06:51</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<ul>
+<li><strong>Meta의 Brain2Qwerty v2 발표:</strong> Meta는 비침습적 뇌 신호로부터 실시간으로 단어와 의미를 디코딩하는 Brain2Qwerty v2를 공개했습니다. 이 시스템은 이전 비침습적 결과 대비 78%의 단어 정확도를 달성하며 침습적 BCI와의 격차를 좁혔습니다.</li>
+<li><strong>Cursor, iOS 및 원격 에이전트 출시:</strong> Cursor는 iOS 앱과 항상 켜져 있는 클라우드 에이전트를 출시하여, 사용자가 휴대폰에서 컴퓨터의 에이전트를 원격으로 제어하고 PR diff 검토 및 알림을 받을 수 있도록 지원합니다. 이는 모바일 환경에서 AI 코딩 에이전트의 활용도를 크게 확장합니다.</li>
+<li><strong>DeepSeek, DSpark 인퍼런스 시스템 공개:</strong> DeepSeek은 추측 디코딩(speculative decoding)의 효율성을 높인 DSpark를 발표했습니다. DSpark는 Qwen3-4B에서 Eagle3 대비 30.9% 더 높은 수용 길이를 달성하며, 새로운 SOTA 단일 GPU 추측 디코딩 경로로 평가받고 있습니다.</li>
+<li><strong>Snowflake Arctic RL, 성능 및 벤치마크 공개:</strong> Snowflake는 VeRL 및 SkyRL과 통합되는 오픈소스 RL 프로젝트 Arctic RL을 출시했습니다. 이 프로젝트는 최대 6배의 액터 업데이트 가속과 3.5배의 엔드투엔드 속도 향상을 제공하며, Arctic-Text2SQL-R2가 엔터프라이즈 SQL 벤치마크에서 Gemini 3.1 Pro 및 Claude 4.7을 능가한다고 주장합니다.</li>
+<li><strong>Arena, $100M ARR 달성:</strong> AI 모델 평가 플랫폼 Arena는 제품 출시 8개월 만에 연간 반복 매출(ARR) 실행률 $100M에 도달했습니다. 이 플랫폼은 7억 건 이상의 대화와 8천2백만 건 이상의 투표를 기록하며, 배포 후(post-deployment) 및 에이전트 평가를 강조하고 있습니다.</li>
+</ul>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Snowflake Arctic RL은 ZoRRo를 통해 최대 6배의 액터 업데이트 가속과 3.5배의 엔드투엔드 속도 향상을 제공하며, 32개의 H200에서 Text2SQL 학습 실행 시간을 약 5일에서 약 36시간으로 단축합니다.</li>
+<li>Snowflake Arctic-Text2SQL-R2는 엔터프라이즈 SQL 벤치마크에서 Gemini 3.1 Pro 및 Claude 4.7의 테스트된 구성을 능가했다고 주장하며, text-to-SQL 및 멀티홉 QA를 위한 오픈 레시피를 제공합니다.</li>
+<li>DeepSeek의 DSpark는 Qwen3-4B에서 Eagle3 대비 30.9%, DFlash 대비 16.3% 더 높은 수용 길이(accepted length)를 보고하며, DeepSeek-V4-Flash 및 V4-Pro의 프리뷰 엔진에 프로덕션 배포되었습니다.</li>
+<li>Meituan은 총 1.6T / 활성 약 48B, 1M 컨텍스트, 35T 학습 토큰, n-그램 임베딩, 희소 어텐션(sparse attention)을 특징으로 하는 LongCat 2.0 / Owl Alpha 모델을 출시할 예정입니다.</li>
+<li>Nemotron-TwoTower는 AR LLM을 확산 스타일 병렬 생성기(diffusion-style parallel generator)로 복제하여 30B 모델에 대해 2.42배의 처리량으로 98.7%의 AR 품질을 달성한다고 주장합니다.</li>
+<li>GLM-5.2 753B (IQ1_S) 모델이 Unsloth 동적 IQ1_S 양자화를 사용하여 2개의 M5 Max 시스템에서 완전 로컬로 실행되어 약 16 tok/s의 생성 속도를 달성했습니다.</li>
+<li>M3 Ultra Studio 256GB + M3 Max MBP 128GB에서 GLM-5.2-UD-IQ4_XS를 실행하는 llama.cpp RPC 스타일 벤치마크에서 2,377 컨텍스트 토큰에서 TTFT 3.09초로 13.03 tok/s를 기록했습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Cursor는 iOS 앱과 항상 켜져 있는 클라우드 에이전트를 출시하여, 사용자가 휴대폰에서 컴퓨터의 에이전트를 원격으로 제어하고 앱 내에서 PR diff 검토 및 알림을 받을 수 있도록 지원합니다.</li>
+<li>Cognition은 &ldquo;Fable 수준&rdquo;의 품질을 유지하면서 35% 비용 절감을 주장하는 하이브리드 모델 코딩 하네스인 Devin Fusion을 출시했습니다.</li>
+<li>W&amp;B는 W&amp;B 내부에 자동 연구 에이전트(autoresearch agent)인 ARIA를 출시했습니다.</li>
+<li>Agenticin은 마이크로 에이전트 라우팅(Micro-Agent routing) 기능을 홍보했습니다.</li>
+<li>LlamaIndex는 하나의 에이전트 루프에서 시맨틱 검색, grep, 파일 목록화, 파일 읽기를 결합한 리트리벌 하네스(Retrieval Harness)를 소개했습니다.</li>
+<li>ndstudio의 Rampart는 데이터가 클라이언트를 떠나기 전에 PII(개인 식별 정보)를 수정하는 14.7MB 브라우저 측 모델을 출시했습니다.</li>
+<li>Azure Foundry에서 Claude Opus 4.8 및 Haiku 4.5가 GA(General Availability)되어, 고객이 Azure ID, 청구, 거버넌스 제어, 프롬프트 캐싱 및 사고 지원을 통해 Claude 모델을 실행할 수 있게 되었습니다.</li>
+<li>Trace Judge 모델이 클로즈드 모델 비용의 약 1/100로 궤적 오류(trajectory errors)를 감지하는 평가 도구로 발표되었습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Meta는 비침습적 기록으로부터 실시간으로 단어와 의미를 디코딩하는 Brain2Qwerty v2 시스템을 발표했으며, 이전 비침습적 결과에서 전체적으로 약 61%의 단어 정확도, 최고의 참가자의 경우 78%로 향상되었다고 밝혔습니다.</li>
+<li>Meta는 Brain2Qwerty v1/v2의 학습 코드를 공개하고 BCBL이 v1 데이터셋을 공개할 예정입니다.</li>
+<li>DeepSeek의 DSpark는 더 나은 초안 생성(draft generation)과 더 스마트한 검증 스케줄링(verification scheduling)에 중점을 둔 추측 디코딩(speculative decoding)의 중요한 단계로 소개되었습니다.</li>
+<li>코딩 에이전트가 구동하는 Auto Research 워크플로우가 표준 HPO(하이퍼파라미터 최적화)를 넘어 단어 오류율을 줄이는 개선 사항을 발견하고 구현했다는 연구 결과가 Meta에 의해 언급되었습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Arena는 평가 제품 출시 8개월 만에 연간 반복 매출(ARR) 실행률 $100M에 도달했습니다.</li>
+<li>Cline은 GLM 5.2, DeepSeek, Kimi, MiniMax, Qwen 등 모델에 대한 할인된 접근을 제공하는 월 $9.99 패스를 출시하여 오픈 웨이트 모델 접근을 제품화했습니다.</li>
+<li>오픈소스 지지자들은 프론티어 API에 대한 단속이 개발자들을 그들이 통제하는 웨이트(weights)로 밀어붙여 역효과를 낼 수 있다고 주장했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>vLLM은 단일 OpenAI 호환 엔드포인트 뒤에 4개의 DGX Spark 박스로 Nemotron-3-Ultra 550B를 서빙하는 가이드를 강조하며, 프라이빗, 다중 노드 프론티어급 인퍼런스를 일반화하는 방법을 제시했습니다.</li>
+<li>GLM-5.2 753B (IQ1_S) 모델이 llama.cpp RPC를 사용하여 단일 Thunderbolt 5 링크를 통해 각각 128GB의 통합 메모리를 가진 2개의 M5 Max 시스템에 웨이트를 샤딩하여 완전 로컬로 실행되었습니다.</li>
+<li>Meituan의 LongCat 2.0 / Owl Alpha 모델은 5만 개의 중국 가속기에서 학습될 예정이며, 이는 국내 중국 하드웨어에서 이 규모로 학습된 잠재적으로 첫 번째 준-프론티어 모델로 평가됩니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
