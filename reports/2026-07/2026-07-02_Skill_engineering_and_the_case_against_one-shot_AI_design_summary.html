@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill engineering and the case against one-shot AI design - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Skill engineering and the case against one-shot AI design - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/skill-engineering-design" target="_blank">https://www.latent.space/p/skill-engineering-design...</a></span>
+<span>번역일: 2026-07-02 18:08</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Impeccable, AI 디자인 에이전트의 정밀 제어 강조]</strong> — Impeccable은 오픈소스 디자인 스킬 시스템으로, AI 에이전트가 웹사이트 섹션을 &ldquo;더 대담하게&rdquo; 또는 &ldquo;더 세련되게&rdquo;와 같은 특정 디자인 어휘를 사용하여 재디자인하도록 정밀하게 지시할 수 있도록 합니다. 개발자 Paul Bakaus는 창의적 과정에서 인간의 판단이 필수적이며, AI의 완전 자동화에 반대하는 &ldquo;스킬 엔지니어링&rdquo; 접근 방식을 강조합니다.<br />
+<img alt="AI Engineer World’s Fair에 참석한 Impeccable의 Paul Bakaus." src="https://substack-post-media.s3.amazonaws.com/public/images/1c23df3d-275c-48a9-a914-994c53dcd32_1280x720.jpeg" /></p>
+<h3 id="_2">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>Impeccable 오픈소스 디자인 스킬 시스템:</strong> 디자이너에게 익숙한 용어를 AI 에이전트에게 부여하여, 계층, 스케일, 타이포그래피 등 구체적인 디자인 개념을 통해 &ldquo;대담함&rdquo;과 같은 추상적 지시를 번역하고 적용합니다.</li>
+<li><strong>Impeccable 라이브 모드 출시:</strong> 개발 환경 내에서 시각적 선택과 코딩 에이전트를 결합한 라이브 모드를 제공하여, 사용자가 기존 코드 및 디자인 시스템 내에서 직접 여러 대안 레이아웃을 요청하거나 디자인 처리를 변경할 수 있습니다.</li>
+</ul>
+<h3 id="_3">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>스킬 라우팅 실험:</strong> Impeccable 개발자는 여러 기능을 결합하고 관련 지침으로 작업을 지시하는 스킬 내부 라우팅을 실험하였으며, 이를 Mixture-of-Experts 모델에 비유하며 토큰 절약 및 효율성 향상에 기여한다고 설명했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
