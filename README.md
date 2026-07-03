@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-07-02 | The website of the future may assemble itself for every visitor | [전체번역](reports/2026-07/2026-07-02_The_website_of_the_future_may_assemble_itself_for_every_visitor.md) | [요약](reports/2026-07/2026-07-02_The_website_of_the_future_may_assemble_itself_for_every_visitor_summary.md) | [HTML](reports/2026-07/2026-07-02_The_website_of_the_future_may_assemble_itself_for_every_visitor_summary.html) |
 | 2026-07-02 | Skill engineering and the case against one-shot AI design | [전체번역](reports/2026-07/2026-07-02_Skill_engineering_and_the_case_against_one-shot_AI_design.md) | [요약](reports/2026-07/2026-07-02_Skill_engineering_and_the_case_against_one-shot_AI_design_summary.md) | [HTML](reports/2026-07/2026-07-02_Skill_engineering_and_the_case_against_one-shot_AI_design_summary.html) |
 | 2026-07-02 | not much happened today | [전체번역](reports/2026-07/2026-07-02_not_much_happened_today.md) | [요약](reports/2026-07/2026-07-02_not_much_happened_today_summary.md) | [HTML](reports/2026-07/2026-07-02_not_much_happened_today_summary.html) |
 | 2026-07-01 | Autoresearch: The feedback loop behind self-improving agents | [전체번역](reports/2026-07/2026-07-01_Autoresearch_The_feedback_loop_behind_self-improving_agents.md) | [요약](reports/2026-07/2026-07-01_Autoresearch_The_feedback_loop_behind_self-improving_agents_summary.md) | [HTML](reports/2026-07/2026-07-01_Autoresearch_The_feedback_loop_behind_self-improving_agents_summary.html) |
