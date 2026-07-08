@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian Weng summarizes 35 papers on Harness Engineering for RSI - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Lilian Weng summarizes 35 papers on Harness Engineering for RSI - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-lilian-weng-summarizes-35" target="_blank">https://www.latent.space/p/ainews-lilian-weng-summarizes-35...</a></span>
+<span>번역일: 2026-07-08 06:53</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 AI 뉴스레터에서 추출한 핵심 신규 소식에 대한 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Meta Muse Image/Video 출시 및 성능]</strong> — Meta Superintelligence Labs가 Muse Image를 출시하고 Muse Video를 미리 공개했습니다. 이 모델들은 계획, 웹 검색, 도구 사용, 코드 실행 및 자체 개선을 포함하는 에이전틱 생성 루프를 특징으로 하며, Muse Image는 Arena에서 GPT Image 2에 이어 2위, Muse Video는 Video Arena 3위를 기록했습니다.<br />
+<strong>[Tencent Hy3 모델 Apache 2.0 라이선스 출시]</strong> — Tencent가 총 295B 파라미터, 활성 21B MoE 모델인 Hy3의 오픈 모델 컬렉션을 Hugging Face에 출시했습니다. 이전의 제한적인 커뮤니티 라이선스와 달리 Apache 2.0 라이선스를 채택하여 한국, 영국, EU 등 이전 사용이 제한되었던 지역에서도 상업적 활용이 가능해졌습니다.<br />
+<strong>[Liquid AI의 Antidoom 학습 방법 공개]</strong> — Liquid AI가 작은 추론 모델의 컨텍스트 고갈로 인한 둠 루프를 줄이는 오픈소스 학습 방법인 Antidoom을 발표했습니다. 이 방법(FTPO)은 루프를 유발하는 토큰을 재라벨링하고 확률을 재분배하여 LFM2.5-2.6B에서 둠 루프를 10.2%에서 1.4%로, Qwen3.5-4B에서 22.9%에서 1%로 크게 감소시켰습니다.<br />
+<strong>[Norm Ai, 1.2억 달러 Series C 투자 유치]</strong> — 에이전틱 법률 시스템을 개발하는 Norm Ai가 12억 달러 가치로 1억 2천만 달러 규모의 Series C 투자를 유치했습니다. 이 회사는 소프트웨어와 AI 네이티브 로펌을 아우르는 풀스택 법률 AI 시스템을 구축하고 있습니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Meta Superintelligence Labs가 Muse Image를 출시하고 Muse Video를 미리 공개했습니다. Muse Image는 Arena에서 GPT Image 2에 이어 Image Arena 2위를, Muse Video는 Video Arena 3위를 기록했습니다.</li>
+<li>NVIDIA가 통합 텍스트+오디오 작업을 위한 1M 컨텍스트를 가진 30B 파라미터 / 3B 활성 MoE 모델인 Audex를 출시했습니다. 이 모델은 단일 MoE 백본을 통해 텍스트 지능을 보존하며 광범위한 오디오 생성 및 이해 기능을 추가합니다.</li>
+<li>Cohere가 Apache 2.0 라이선스 하에 가장 정확한 오픈소스 아랍어 ASR 모델인 Cohere Transcribe Arabic을 출시했습니다. 이 모델은 방언, 코드 스위칭 및 아랍어 억양의 영어에 중점을 둡니다.</li>
+<li>Tencent가 총 295B 파라미터, 활성 21B MoE 모델인 Hy3의 오픈 모델 컬렉션을 Apache 2.0 라이선스 하에 Hugging Face에 출시했습니다.</li>
+<li>Agent Arena 벤치마크에서 Claude Sonnet 5 (Thinking)가 6위에 올랐으며, 확인된 작업 성공 및 bash 사용에서 강력한 신호를 보였습니다.</li>
+<li>Artificial Analysis가 24개 법률 분야에 걸쳐 120개 비공개 법률 작업을 대상으로 하는 법률 에이전트 벤치마크인 Harvey LAB-AA를 출시했습니다. Claude Fable 5가 14.2%의 전체 통과율로 선두를 차지했습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Anthropic이 Claude를 전면 채팅 UI가 아닌 작업을 실행하는 백그라운드 팀원으로 포지셔닝한 Claude Cowork를 모바일 및 웹에 출시했습니다.</li>
+<li>LangChain이 새로운 Deep Agents 강좌와 오픈소스 하네스 프로젝트를 통해 에이전트 설계의 변화를 반영했습니다.</li>
+<li>Google Gemini API Managed Agents에 백그라운드 실행, 원격 MCP 서버, 커스텀 함수 호출 및 자격 증명 새로 고침 기능이 추가되었습니다.</li>
+<li>Codex Mobile iOS에 작업 관리, 필터링된 diff, SSH 키 로그인, 브랜치 비교 및 첨부 파일 흐름 기능이 추가되었습니다.</li>
+<li>Hermes Agent에 플러그형 시크릿 관리자, 기본 1Password 통합, 비공개 Hugging Face 리포지토리를 포함한 세션/데이터셋 내보내기 기능이 추가되었습니다.</li>
+<li>Weaviate 1.38이 런타임으로 게이트된 쓰기 접근을 통해 MCP 서버를 GA(General Availability)로 출시했으며, MCP_SERVER_WRITE_ACCESS_ENABLED를 재시작 없이 실시간으로 전환할 수 있습니다.</li>
+<li>NVIDIA가 GR00T 1.7과 Isaac Teleop을 LeRobot에 통합하여 Hugging Face 생태계로 로봇 공학 스택을 확장했습니다.</li>
+<li>Nsight Python 1.0이 출시되어 Python으로 GPU 성능 분석을 스크립트화할 수 있게 되었습니다.</li>
+<li>Unsloth가 DeepSeek-V4-Flash용 GGUF를 출시했으며, NVFP4/FP8로의 내보내기 및 GRPO와 MoE에 대한 속도 향상을 제공합니다.</li>
+<li>Anthropic과 Neuronpedia가 오픈 모델용 J-렌즈 가중치를 출시했습니다.</li>
+<li>DeepMind가 Gemini를 기반으로 평이한 영어 상호작용을 통해 그리스/라틴 역사 분석을 수행하는 Predicting the Past를 출시했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Lilian Weng이 에이전트/하네스 엔지니어링에 관한 35편의 논문을 요약한 새로운 게시물을 발표하며, 하네스 개선 사항이 코어 모델에 내재화되더라도 목표와 컨텍스트 지정의 필요성은 사라지지 않을 것이라고 강조했습니다.<br />
+<img alt="X avatar for @lilianweng" src="https://pbs.substack.com/profile_images/1923619459643711488/qmXOBh1.jpg" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/5005c722-fdff-4ea8-aee0-6b37e44da978_1512x886.png" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/603a46c6-cedc-4b38-a660-2fa1d4b3f4ba_1626x1146.png" /></li>
+<li>Liquid AI가 작은 추론 모델의 둠 루프를 줄이기 위한 오픈소스 학습 방법인 Antidoom (Final Token Preference Optimization, FTPO)을 발표했습니다. 이 방법은 루프를 유발하는 토큰을 재라벨링하고 대안으로 확률을 재분배합니다.</li>
+<li>NVIDIA가 하이브리드 MoE 상위 모델을 압축하면서 추론, 코딩, 긴 컨텍스트 및 에이전틱 품질을 보존하는 Puzzle-75B-A9B 압축 작업을 공개했습니다.</li>
+<li>Stanford/NVIDIA/Berkeley 연구진이 스코어링 토큰 로짓에서 보정된 연속 점수를 읽어내는 학습 없는 검증기 논문을 발표했습니다. 이 검증기는 Terminal-Bench V2, SWE-Bench Verified 등에서 강력한 수치를 보여주었습니다.</li>
+<li>@eliebakouch가 38개 오픈 모델에서 J-렌즈 기하학에 대한 CKA 유사성을 계산하여 Llama 및 OLMo와 같이 관련 없는 계열에서도 보편적인 레이어/깊이 구성을 발견했습니다.</li>
+<li>Goodfire가 활성화에서 다차원 개념을 위한 Block-Sparse Featurizers를 도입하며, 많은 비전 개념이 단일 방향이 아닌 본질적으로 2-4차원 블록이라고 주장했습니다.</li>
+<li>Google이 엔드투엔드 과학 워크플로우를 위한 다중 에이전트 시스템인 Experience AI Scientist를 홍보했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>에이전틱 법률 시스템을 개발하는 Norm Ai가 12억 달러 가치로 1억 2천만 달러 규모의 Series C 투자를 유치했습니다.</li>
+<li>Tencent Hy3 모델이 Apache 2.0 라이선스로 전환되어, 이전 라이선스에서 제한되었던 한국, 영국, EU 등에서의 상업적 사용이 가능해졌습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>NVIDIA의 Puzzle-75B-A9B 압축 작업은 H100에서 약 2배의 서버 처리량과 1개 요청에서 8개로 증가한 1M 컨텍스트 동시성을 제공합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
