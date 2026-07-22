@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-07-22 | AI Cybersecurity becomes top of mind | [전체번역](reports/2026-07/2026-07-22_AI_Cybersecurity_becomes_top_of_mind.md) | [요약](reports/2026-07/2026-07-22_AI_Cybersecurity_becomes_top_of_mind_summary.md) | [HTML](reports/2026-07/2026-07-22_AI_Cybersecurity_becomes_top_of_mind_summary.html) |
 | 2026-07-21 | not much happened today | [전체번역](reports/2026-07/2026-07-21_not_much_happened_today.md) | [요약](reports/2026-07/2026-07-21_not_much_happened_today_summary.md) | [HTML](reports/2026-07/2026-07-21_not_much_happened_today_summary.html) |
 | 2026-07-18 | not much happened today | [전체번역](reports/2026-07/2026-07-18_not_much_happened_today.md) | [요약](reports/2026-07/2026-07-18_not_much_happened_today_summary.md) | [HTML](reports/2026-07/2026-07-18_not_much_happened_today_summary.html) |
 | 2026-07-17 | Kimi K3 2.8T-A50B: the largest open model ever released; Opus 4.8-class at Sonnet 5 pricing | [전체번역](reports/2026-07/2026-07-17_Kimi_K3_28T-A50B_the_largest_open_model_ever_released_Opus_48-class_at_Sonnet_5_pricing.md) | [요약](reports/2026-07/2026-07-17_Kimi_K3_28T-A50B_the_largest_open_model_ever_released_Opus_48-class_at_Sonnet_5_pricing_summary.md) | [HTML](reports/2026-07/2026-07-17_Kimi_K3_28T-A50B_the_largest_open_model_ever_released_Opus_48-class_at_Sonnet_5_pricing_summary.html) |
