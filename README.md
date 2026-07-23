@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-07-23 | "Laguna S 2.1 Released: Cheaper than Deepseek v4 Flash, Better than V4 Pro" | [전체번역](reports/2026-07/2026-07-23_Laguna_S_21_Released_Cheaper_than_Deepseek_v4_Flash_Better_than_V4_Pro.md) | [요약](reports/2026-07/2026-07-23_Laguna_S_21_Released_Cheaper_than_Deepseek_v4_Flash_Better_than_V4_Pro_summary.md) | [HTML](reports/2026-07/2026-07-23_Laguna_S_21_Released_Cheaper_than_Deepseek_v4_Flash_Better_than_V4_Pro_summary.html) |
 | 2026-07-22 | AI Cybersecurity becomes top of mind | [전체번역](reports/2026-07/2026-07-22_AI_Cybersecurity_becomes_top_of_mind.md) | [요약](reports/2026-07/2026-07-22_AI_Cybersecurity_becomes_top_of_mind_summary.md) | [HTML](reports/2026-07/2026-07-22_AI_Cybersecurity_becomes_top_of_mind_summary.html) |
 | 2026-07-21 | not much happened today | [전체번역](reports/2026-07/2026-07-21_not_much_happened_today.md) | [요약](reports/2026-07/2026-07-21_not_much_happened_today_summary.md) | [HTML](reports/2026-07/2026-07-21_not_much_happened_today_summary.html) |
 | 2026-07-18 | not much happened today | [전체번역](reports/2026-07/2026-07-18_not_much_happened_today.md) | [요약](reports/2026-07/2026-07-18_not_much_happened_today_summary.md) | [HTML](reports/2026-07/2026-07-18_not_much_happened_today_summary.html) |
