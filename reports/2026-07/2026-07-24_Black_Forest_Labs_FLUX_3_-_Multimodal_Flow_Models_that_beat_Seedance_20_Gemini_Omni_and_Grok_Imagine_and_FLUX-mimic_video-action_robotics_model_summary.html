@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Forest Labs FLUX 3 - Multimodal Flow Models that beat Seedance 2.0, Gemini Omni and Grok Imagine, and FLUX-mimic video-action robotics model - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Black Forest Labs FLUX 3 - Multimodal Flow Models that beat Seedance 2.0, Gemini Omni and Grok Imagine, and FLUX-mimic video-action robotics model - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-black-forest-labs-flux-3-multimodal" target="_blank">https://www.latent.space/p/ainews-black-forest-labs-flux-3-multimodal...</a></span>
+<span>번역일: 2026-07-24 06:35</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Black Forest Labs, FLUX 3 Video 및 FLUX-mimic 출시]</strong> — Black Forest Labs(BFL)가 텍스트-투-비디오, 이미지-투-비디오 등 다양한 멀티모달 생성을 지원하는 통합 멀티모달 모델 FLUX 3 Video를 출시했습니다. 또한, FLUX 3 기반의 비디오-액션 로보틱스 모델 FLUX-mimic을 발표하며, FLUX 3의 월드 모델링 능력이 로봇 제어로 확장될 수 있음을 입증하고 Audi와 테스트 중입니다.<br />
+<img alt="X avatar for @bfl_ai" src="https://pbs.substack.com/profile_images/1954888731053142016/NDyG-4-j.jpg" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/2704873d-cd6d-4806-355bf9ca2c93_2258x1460.png" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/3ea45a78-e130-413e-9ddb-b4b34e406782_3040x1256.png" /><br />
+<img alt="X avatar for @bfl_ai" src="https://pbs.substack.com/profile_images/1954888731053142016/NDyG-4-j.jpg" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/ccda8b0c-838f-4429-84dd-e7afada66480_2070x1580.png" /></p>
+<p><strong>[Moonshot AI, Kimi K3 출시 및 벤치마크 성과]</strong> — Moonshot AI가 2.8조 파라미터의 오픈 웨이트 모델 Kimi K3를 출시했습니다. 이 모델은 Aikido Security의 비공개 사이버 보안 벤치마크에서 26개 취약점 중 23개를 발견하여 OpenAI GPT-5.6 Terra와 동등하고 GPT-5.6 Sol에 근접하는 성능을 보였으며, 동시에 상당히 저렴하다고 주장합니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/2704873d-cd6d-4806-355bf9ca2c93_2258x1460.png" /></p>
+<p><strong>[The Stack v3, 최대 규모 오픈 코드 데이터셋 공개]</strong> — @anton_lozhkov가 현재까지 공개된 가장 큰 오픈 코드 데이터셋인 The Stack v3를 발표했습니다. 이 데이터셋은 114 TB의 원본 데이터, 2억 2,400만 개의 리포지토리, 440억 개의 파일, 770개 언어, 그리고 약 5조 개의 중복 제거/필터링된 토큰으로 구성되어 차세대 오픈 코드 모델 개발의 기반이 될 것입니다.</p>
+<p><strong>[Etched, 3억 달러 시리즈 C 투자 유치]</strong> — Etched가 인퍼런스 클러스터 생산 가속화를 위해 103억 달러 기업 가치로 3억 달러 규모의 시리즈 C 투자를 유치했습니다. 회사는 80,000평방피트/10 MW 규모의 시설을 개설하며 프론티어 모델 학습이 아닌 &lsquo;전 세계의 인퍼런스 실행&rsquo;에 집중할 계획입니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>Black Forest Labs FLUX 3 Video 출시:</strong> 텍스트, 이미지, 비디오, 오디오, 키프레임 입력으로부터 비디오를 생성하며, 네이티브 오디오 생성, 다국어 대화, 다양한 시각 스타일 및 화면 비율, 에이전틱 체이닝을 지원하는 통합 멀티모달 모델입니다.</li>
+<li><strong>Moonshot AI Kimi K3 출시:</strong> 2.8조 파라미터의 오픈 웨이트 모델로, Aikido Security의 사이버 보안 벤치마크에서 GPT-5.6 Terra와 동등하고 GPT-5.6 Sol에 근접하는 성능을 보였습니다.</li>
+<li><strong>Microsoft Fara1.5-27B 출시:</strong> Microsoft Research AI Frontiers가 브라우저용 비전 전용 멀티모달 컴퓨터 사용 에이전트 Fara1.5-27B를 출시했습니다. Qwen3.5-27B를 기반으로 합성 작업/궤적 데이터로 지도 파인튜닝되었습니다.</li>
+<li><strong>Alibaba Qwen-Audio-3.0-TTS 출시:</strong> Flash 및 Plus 변형으로 16개 언어, 인라인 제어 태그, 자연어 스타일 조종, 노이즈 참조 강건성, 최대 3분 길이의 원패스 생성을 지원하며 Artificial Analysis TTS 리더보드에서 1위를 차지했다고 주장합니다.</li>
+<li><strong>HuggingApps WordVoice TTS 강조:</strong> 단어별로 지속 시간, 음량, 피치, 톤을 제어할 수 있는 소규모 TTS 모델로, 오디오 툴링을 위한 제어 표면 실험에 중점을 둡니다.</li>
+<li><strong>OpenAI GPT-5.6 Sol 토큰 효율성:</strong> OpenAI의 GPT-5.6 Sol이 현재 토큰 효율성 파레토 프론티어의 많은 부분을 지배하고 있습니다.</li>
+<li><strong>CoreWeave MiniMax M3 속도 벤치마크:</strong> MiniMax M3가 357 출력 토큰/초의 속도와 낮은 혼합 가격을 기록하며 제공자 속도 벤치마크를 게시했습니다.</li>
+<li><strong>Frontier-Bench 출시:</strong> @ryanmart3n이 코딩을 넘어 프론티어 에이전트 작업과 함께 발전하도록 고안된 지속적인 커뮤니티 벤치마크 Frontier-Bench를 출시했습니다.</li>
+<li><strong>EnigmaEval 발표:</strong> @CAIS가 Claude Fable 5와 GPT-5.6 Sol이 선두를 달리는 더 어려운 추론 벤치마크 EnigmaEval을 발표했습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>OpenAI ChatGPT Voice 데스크톱 앱 출시:</strong> Plus/Pro/Business/Edu/Enterprise 사용자를 위해 데스크톱 앱에 ChatGPT Voice가 출시되었으며, GPT-Live 기반으로 컴퓨터를 제어하고 ChatGPT Work 및 Codex 전반에서 작업을 조율할 수 있습니다.</li>
+<li><strong>OpenAI Codex 및 Sites Analytics 업데이트:</strong> 다중 폴더 Codex 프로젝트가 추가되었고, 게시된 사이트에 대한 Sites Analytics 기능이 추가되었습니다.</li>
+<li><strong>OpenAI ChatGPT Health 기능 출시:</strong> 미국에서 ChatGPT의 Health 기능이 출시되어 사용자들이 Apple Health 및 지원되는 의료 기록을 연결할 수 있습니다. 연결된 건강 데이터는 추가 암호화를 받으며 모델 학습이나 광고 타겟팅에 사용되지 않습니다.</li>
+<li><strong>Andrew Ng OpenWorker 출시:</strong> @AndrewYNg가 파일 및 업무용 도구를 위한 오픈소스, 모델 불가지론적 로컬 에이전트 OpenWorker를 출시했습니다.</li>
+<li><strong>vLLM prime-rl 0.6.0 출시:</strong> vLLM이 테라 규모 에이전틱 RL 인퍼런스 플러밍(FP8, 전문가 병렬 처리, 프리필/디코드 분리, KV 오프로드, 라우팅)을 설명했으며, 28개의 H200 노드에서 131k 시퀀스 길이의 SWE 작업에 GLM-5를 5분 미만 단계로 학습시키는 데 사용되었습니다.</li>
+<li><strong>Hermes Profiles 출시:</strong> @witcheer가 별도의 메모리, API 키, 세션, 게이트웨이, 내보내기/가져오기 경로를 가진 네임스페이스 에이전트 인스턴스인 Hermes Profiles를 출시했습니다.</li>
+<li><strong>Microsoft VS Code 에이전트 앱 프로토콜 발표:</strong> @davidfowl이 Microsoft의 VS Code 에이전트 앱의 기반이 되는 새로운 프로토콜을 발표했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>Llama-3.1-8B 가중치 직접 편집 연구:</strong> 파인튜닝, LoRA, RAG 없이 수동으로 구성된 뉴런 회로를 사용하여 Llama-3.1-8B에 명시적인 사실을 &ldquo;구워 넣는&rdquo; 기계론적 해석 가능성(mechanistic-interpretability) 스타일의 방법이 제시되었습니다.</li>
+<li><strong>PRO-LONG 프로그래밍 방식 메모리 접근법:</strong> @dair_ai가 완전한 구조화된 상호작용 기록을 저장하고 데이터베이스처럼 쿼리하는 프로그래밍 방식 메모리 접근법 PRO-LONG을 강조했습니다.</li>
+<li><strong>Harness Handbook 논문 요약:</strong> @omarsar0가 런타임 동작을 소스 위치에 매핑하고 코딩 에이전트의 계획 성공률을 높이며 플래너 토큰 사용량을 줄이는 &lsquo;Harness Handbook&rsquo; 논문을 요약했습니다.</li>
+<li><strong>동적 워크플로우 개념 설명:</strong> @omarsar0가 동적 워크플로우를 루프/그래프/라우터 패턴에 대한 일반화된 추상화로 설명했으며, 이는 모델 협의회, 조언자-심사자-실행자 설정, 멀티 백엔드 오케스트레이션을 지원할 수 있습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>DeepSeek AGI 우선순위 전략:</strong> DeepSeek 창립자 Liang Wenfeng은 단기적인 상업화/사용자 성장보다 AGI 가능성을 명시적으로 최적화하며, 오픈소스 출시 모델이 내부 배포 모델과 동일하다고 밝혔습니다.</li>
+<li><strong>오스트리아 정부 AI 플랫폼 출시:</strong> 오스트리아가 Mistral 모델과 Open WebUI를 사용하는 정부 AI 플랫폼 &lsquo;GovGPT&rsquo;를 출시했습니다. 이 플랫폼은 약 18만 명의 오스트리아 연방 공무원을 대상으로 하며 문서 요약, Q&amp;A, 에이전틱 워크플로우 등을 지원합니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/2704873d-cd6d-4806-355bf9ca2c93_2258x1460.png" /></li>
+<li><strong>미국, 오픈소스 AI 제재 가능성 경고:</strong> Scott B. 재무장관은 오픈소스 AI 출시가 중국의 &lsquo;은밀하고 산업 규모의 디스틸레이션 공격&rsquo; 및 미국 IP 절도를 가능하게 한다면 제재 및 Entity List 지정을 고려할 수 있다고 경고했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li><strong>Etched 인퍼런스 클러스터 생산 가속화:</strong> Etched가 3억 달러 시리즈 C 투자를 유치하고 80,000평방피트/10 MW 규모의 시설을 개설하며 인퍼런스 클러스터 생산을 가속화하고 있습니다.</li>
+<li><strong>vLLM prime-rl 0.6.0 인퍼런스 플러밍:</strong> vLLM의 prime-rl 0.6.0은 FP8, 전문가 병렬 처리, 프리필/디코드 분리, KV 오프로드, 라우팅 등 테라 규모 에이전틱 RL 인퍼런스를 위한 기술을 설명합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
