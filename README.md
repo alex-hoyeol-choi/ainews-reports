@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-08-07 | AMD buys Taalas | [전체번역](reports/2026-08/2026-08-07_AMD_buys_Taalas.md) | [요약](reports/2026-08/2026-08-07_AMD_buys_Taalas_summary.md) | [HTML](reports/2026-08/2026-08-07_AMD_buys_Taalas_summary.html) |
 | 2026-08-06 | Jeff, Sanjay, Oriol, and Quoc depart DeepMind; Demis to Chair; Koray to SVP — what is going on at GDM??? | [전체번역](reports/2026-08/2026-08-06_Jeff_Sanjay_Oriol_and_Quoc_depart_DeepMind_Demis_to_Chair_Koray_to_SVP_what_is_going_on_at_GDM.md) | [요약](reports/2026-08/2026-08-06_Jeff_Sanjay_Oriol_and_Quoc_depart_DeepMind_Demis_to_Chair_Koray_to_SVP_what_is_going_on_at_GDM_summary.md) | [HTML](reports/2026-08/2026-08-06_Jeff_Sanjay_Oriol_and_Quoc_depart_DeepMind_Demis_to_Chair_Koray_to_SVP_what_is_going_on_at_GDM_summary.html) |
 | 2026-08-05 | Megakernels are so dead and so back | [전체번역](reports/2026-08/2026-08-05_Megakernels_are_so_dead_and_so_back.md) | [요약](reports/2026-08/2026-08-05_Megakernels_are_so_dead_and_so_back_summary.md) | [HTML](reports/2026-08/2026-08-05_Megakernels_are_so_dead_and_so_back_summary.html) |
 | 2026-08-04 | Qwen 3.8 Max(2.4T) and 27B, new open weights models for Coding and Cowork | [전체번역](reports/2026-08/2026-08-04_Qwen_38_Max24T_and_27B_new_open_weights_models_for_Coding_and_Cowork.md) | [요약](reports/2026-08/2026-08-04_Qwen_38_Max24T_and_27B_new_open_weights_models_for_Coding_and_Cowork_summary.md) | [HTML](reports/2026-08/2026-08-04_Qwen_38_Max24T_and_27B_new_open_weights_models_for_Coding_and_Cowork_summary.html) |
