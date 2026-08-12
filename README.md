@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-08-12 | How to steal a Reasoning Trace | [전체번역](reports/2026-08/2026-08-12_How_to_steal_a_Reasoning_Trace.md) | [요약](reports/2026-08/2026-08-12_How_to_steal_a_Reasoning_Trace_summary.md) | [HTML](reports/2026-08/2026-08-12_How_to_steal_a_Reasoning_Trace_summary.html) |
 | 2026-08-11 | Muse Glimmer and Spark: Open Weights return Personal Superintelligence promise | [전체번역](reports/2026-08/2026-08-11_Muse_Glimmer_and_Spark_Open_Weights_return_Personal_Superintelligence_promise.md) | [요약](reports/2026-08/2026-08-11_Muse_Glimmer_and_Spark_Open_Weights_return_Personal_Superintelligence_promise_summary.md) | [HTML](reports/2026-08/2026-08-11_Muse_Glimmer_and_Spark_Open_Weights_return_Personal_Superintelligence_promise_summary.html) |
 | 2026-08-08 | Zawinski's Law of MultiAgents | [전체번역](reports/2026-08/2026-08-08_Zawinskis_Law_of_MultiAgents.md) | [요약](reports/2026-08/2026-08-08_Zawinskis_Law_of_MultiAgents_summary.md) | [HTML](reports/2026-08/2026-08-08_Zawinskis_Law_of_MultiAgents_summary.html) |
 | 2026-08-07 | AMD buys Taalas | [전체번역](reports/2026-08/2026-08-07_AMD_buys_Taalas.md) | [요약](reports/2026-08/2026-08-07_AMD_buys_Taalas_summary.md) | [HTML](reports/2026-08/2026-08-07_AMD_buys_Taalas_summary.html) |
