@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-08-14 | Cursor's $60B acquisition by SpaceXai closes | [전체번역](reports/2026-08/2026-08-14_Cursors_60B_acquisition_by_SpaceXai_closes.md) | [요약](reports/2026-08/2026-08-14_Cursors_60B_acquisition_by_SpaceXai_closes_summary.md) | [HTML](reports/2026-08/2026-08-14_Cursors_60B_acquisition_by_SpaceXai_closes_summary.html) |
 | 2026-08-14 | Gemini 3.7 Flash brings GDM back to the forefront | [전체번역](reports/2026-08/2026-08-14_Gemini_37_Flash_brings_GDM_back_to_the_forefront.md) | [요약](reports/2026-08/2026-08-14_Gemini_37_Flash_brings_GDM_back_to_the_forefront_summary.md) | [HTML](reports/2026-08/2026-08-14_Gemini_37_Flash_brings_GDM_back_to_the_forefront_summary.html) |
 | 2026-08-13 | SpaceXAI Grok 4.6 and Grok @Bot | [전체번역](reports/2026-08/2026-08-13_SpaceXAI_Grok_46_and_Grok_Bot.md) | [요약](reports/2026-08/2026-08-13_SpaceXAI_Grok_46_and_Grok_Bot_summary.md) | [HTML](reports/2026-08/2026-08-13_SpaceXAI_Grok_46_and_Grok_Bot_summary.html) |
 | 2026-08-12 | How to steal a Reasoning Trace | [전체번역](reports/2026-08/2026-08-12_How_to_steal_a_Reasoning_Trace.md) | [요약](reports/2026-08/2026-08-12_How_to_steal_a_Reasoning_Trace_summary.md) | [HTML](reports/2026-08/2026-08-12_How_to_steal_a_Reasoning_Trace_summary.html) |
