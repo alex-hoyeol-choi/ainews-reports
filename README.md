@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-08-20 | Death of Params: Z.ai CEO Jie Tang on GLM 5.3 and the new Post-training Scaling Law | [전체번역](reports/2026-08/2026-08-20_Death_of_Params_Zai_CEO_Jie_Tang_on_GLM_53_and_the_new_Post-training_Scaling_Law.md) | [요약](reports/2026-08/2026-08-20_Death_of_Params_Zai_CEO_Jie_Tang_on_GLM_53_and_the_new_Post-training_Scaling_Law_summary.md) | [HTML](reports/2026-08/2026-08-20_Death_of_Params_Zai_CEO_Jie_Tang_on_GLM_53_and_the_new_Post-training_Scaling_Law_summary.html) |
 | 2026-08-19 | Memory prices up 500% in 12 months | [전체번역](reports/2026-08/2026-08-19_Memory_prices_up_500_in_12_months.md) | [요약](reports/2026-08/2026-08-19_Memory_prices_up_500_in_12_months_summary.md) | [HTML](reports/2026-08/2026-08-19_Memory_prices_up_500_in_12_months_summary.html) |
 | 2026-08-17 | Stripe buys OpenRouter for $7B | [전체번역](reports/2026-08/2026-08-17_Stripe_buys_OpenRouter_for_7B.md) | [요약](reports/2026-08/2026-08-17_Stripe_buys_OpenRouter_for_7B_summary.md) | [HTML](reports/2026-08/2026-08-17_Stripe_buys_OpenRouter_for_7B_summary.html) |
 | 2026-08-14 | Cursor's $60B acquisition by SpaceXai closes | [전체번역](reports/2026-08/2026-08-14_Cursors_60B_acquisition_by_SpaceXai_closes.md) | [요약](reports/2026-08/2026-08-14_Cursors_60B_acquisition_by_SpaceXai_closes_summary.md) | [HTML](reports/2026-08/2026-08-14_Cursors_60B_acquisition_by_SpaceXai_closes_summary.html) |
