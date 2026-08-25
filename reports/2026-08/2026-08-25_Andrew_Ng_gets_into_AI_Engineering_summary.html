@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Ng gets into AI Engineering - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Andrew Ng gets into AI Engineering - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering" target="_blank">https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering...</a></span>
+<span>번역일: 2026-08-25 06:05</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Andrew Ng의 DeepLearning.ai, AI Engineering에 집중]</strong> AI 분야의 선구자인 Andrew Ng가 DeepLearning.ai의 초점을 AI Engineering으로 전환하고 4가지 핵심 기술을 강조했습니다. 이는 10,000개 이상의 채용 공고 분석과 전문가 인터뷰를 기반으로 한 중요한 산업 동향 변화를 반영합니다.<br />
+<img alt="Image" src="https://substack-post-media.s3.amazonaws.com/public/images/3107842a-995c-42c3-a41a-592339e041f8_1002x1182.png" /><br />
+<strong>[Anthropic, 엔터프라이즈 MCP 관리 인증 출시]</strong> Anthropic이 MCP 커넥터용 엔터프라이즈 관리 인증을 출시하여 조직의 ID 공급자를 통한 권한 부여 중앙 집중화를 가능하게 했습니다. 이를 통해 Asana, Atlassian 등 주요 커넥터에 대한 도구별 OAuth 필요성을 없애 엔터프라이즈 에이전트 배포의 중요한 진전을 이루었습니다.<br />
+<strong>[Liquid AI + Artificial Analysis, 온디바이스 AI 벤치마크 스위트 &lsquo;Pipette&rsquo; 공개]</strong> Liquid AI와 Artificial Analysis가 온디바이스 인퍼런스 성능 측정을 위한 오픈소스 평가 스위트 Pipette을 출시했습니다. 이 스위트는 35개 모델 클래스, 7개 양자화, llama.cpp 런타임 및 4개 장치에 걸쳐 10,000개 이상의 검증된 결과를 포함하며, iPhone 17 Pro 및 Galaxy S26 Ultra에 대한 독립적인 평가도 제공합니다.<br />
+<strong>[NVIDIA Groq 3 LPX, 에이전트별 처리량 경쟁 가속화]</strong> NVIDIA의 Groq 3 LPX는 Vera Rubin에 전용 토큰 생성 가속기를 추가하여 Artificial Analysis 벤치마킹에서 100K 컨텍스트의 Gemma 4 31B에서 3,400 출력 토큰/초를 달성했다고 주장했습니다. 이는 인퍼런스 벤더들이 원시 TPS를 넘어 에이전트별 처리량으로 경쟁하는 새로운 추세를 보여줍니다.<br />
+<strong>[OpenAI, GPT-5.6 출시 및 API 가격 인하]</strong> OpenAI가 Kiro에서 GPT-5.6을 출시하고, Kiro의 Terra 변형에서 Terminal-Bench 2.1 작업당 약 82%의 비용 절감을 발표했습니다. 또한 GPT-5.6 Sol API 가격을 입력 토큰당 $4/M, 출력 토큰당 $20/M으로 인하하여 비용 효율성을 개선했습니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Qwen3.8-27B 모델이 Code Arena: WebDev에서 1595점으로 전체 9위를 차지하며, 해당 크기 클래스에서 유일한 모델로 뛰어난 성능을 입증했습니다.</li>
+<li>미출시 프론티어 모델인 &ldquo;claude-melon-eap&rdquo;, &ldquo;claude-marshmallow-eap&rdquo;, Ox Alpha, Qwen 4, GPT Astra 등의 징후가 포착되었으며, 3D/RL 스타일 작업에 중점을 둔 EAP 모델이 보고되었습니다.</li>
+<li>Together AI는 $100 예산으로 GLM-5.3이 DeepSWE에서 Fable 5보다 5배 더 많은 작업을 완료했다고 보고하며, 비용 정규화된 에이전트 벤치마크에서 GLM-5.3의 효율성을 강조했습니다.</li>
+<li>DeepSWE v1.1 벤치마크에서 GPT-5.6 Sol Max는 작업당 $6.47에 72.7%를 기록한 반면, Fable 5 Max는 69.7%에 작업당 $21.63을 기록하여 GPT-5.6 Sol Max의 비용 효율성이 우수함을 보였습니다.</li>
+<li>폰 스케일 평가 결과, 8GB 메모리 / 16K 컨텍스트 프레이밍 하에서 Nanbeige4.2-3B와 LFM2.5-2.6B가 평균 점수 63점으로 최고를 기록했으며, LFM2.5-2.6B는 iPhone에서 Nanbeige보다 훨씬 더 효율적이었습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>@andykonwinski는 요청 시에만 생각하는 것이 아니라 지속적으로 생각하는 지속형 에이전트를 위한 오픈소스 &ldquo;마이크로하네스&rdquo;인 Headlong을 소개했습니다. 이 시스템은 궤적을 jsonl 파일의 DAG로 저장하고 자체 안내 내부 루프를 실행합니다.</li>
+<li>@omarsar0는 추가 전용 이벤트 로그, 교체 가능한 실행기, 스냅샷/롤백 가능한 샌드박스를 갖춘 재귀적 자체 개선을 위한 하네스 아키텍처인 exo를 설명했습니다. 이는 에이전트가 영구적인 상태를 손상시키지 않고 프롬프트/도구/메모리를 다시 작성할 수 있도록 설계되었습니다.</li>
+<li>@a1zhang은 코드 생성 중에 안전한 도구 호출을 예측하고 환경 복사본에서 일찍 실행하여 실행이 토큰 생성과 겹치도록 하는 Speculative Programmatic Tool Calling (sPTC)을 소개했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>NVIDIA의 새로운 평가 연구는 에이전트 &ldquo;기술&rdquo;에 대한 구조적 검사가 유용성을 거의 예측하지 못하며, 대신 동일한 조건에서 기술 유무에 따른 작업 완료 차이를 점수화하는 &ldquo;Skill Lift&rdquo; 측정을 제안했습니다.</li>
+<li>@cwolferesearch는 토큰 수준 대 완료 수준 공식화, PPO/GRPO 변형, 액터-크리틱 메서드, 루브릭 기반 RL 및 에이전틱 RL/월드 모델링을 다루는 포괄적인 강화 학습 가이드를 발표했습니다.</li>
+<li>Meta/USC의 Periodic Row-wise Muon은 값비싼 Newton–Schulz 업데이트를 상각하면서 AdamW에 대한 이득을 유지함으로써 Muon 최적화를 더 큰 확산 트랜스포머로 확장하는 연구를 발표했습니다.</li>
+<li>Adobe의 Latent Dynamics Reasoning은 직접적인 미래 예측 대신 잠재 상태 진화를 모델링하여 픽셀에서 외삽적 비디오 월드 모델을 학습합니다.</li>
+<li>Cartwheel은 인간 동작 생성에 대한 컴퓨팅 최적 스케일링 법칙을 보고했으며, 동작이 Chinchilla와 유사한 스케일링 동작을 가진 다섯 번째 양식이 될 수 있다고 주장했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Andrew Ng의 DeepLearning.ai가 AI Engineering에 초점을 맞춰 재출시되었습니다. 이는 &ldquo;AI 애플리케이션 구축 및 배포&rdquo;, &ldquo;소프트웨어 엔지니어링 기본&rdquo;, &ldquo;코딩 에이전트 사용&rdquo;, &ldquo;빌드 형성&rdquo;의 4가지 핵심 AI 엔지니어링 기술을 강조합니다.<br />
+<img alt="Image" src="https://substack-post-media.s3.amazonaws.com/public/images/be233653-3987-4e57-82c9-d541fb5e3265_1936x774.jpeg" /></li>
+<li>Anthropic은 MCP 커넥터용 엔터프라이즈 관리 인증을 출시하여 조직의 ID 공급자를 통해 권한 부여를 중앙 집중화했습니다.</li>
+<li>OpenAI는 GPT-5.6 Sol API 가격을 입력 토큰당 $4/M, 출력 토큰당 $20/M으로 인하했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>Liquid AI + Artificial Analysis는 모델 + 양자화 + 런타임 + 장치 조합 전반에 걸쳐 품질, 속도, 레이턴시 및 메모리를 측정하는 온디바이스 인퍼런스용 오픈소스 평가 스위트인 Pipette을 출시했습니다.</li>
+<li>폰 스케일 평가에서 MoE 설계(LFM2.5-8B-A1B 및 Ling 3.0 Tiny)는 토큰당 약 1B 매개변수를 활성화하여 휴대폰 하드웨어에서 6초 미만의 응답을 가능하게 합니다.</li>
+<li>NVIDIA의 Groq 3 LPX는 Vera Rubin에 전용 토큰 생성 가속기를 추가했으며, Artificial Analysis 벤치마킹에서 100K 컨텍스트의 Gemma 4 31B에서 3,400 출력 토큰/초를 달성했다고 주장했습니다.</li>
+<li>vLLM은 실제 다중 턴 코딩 트레이스에 대한 광범위한 AgentX 1.0 결과를 발표하며, 고성능 에이전틱 처리량의 핵심으로 KV 오프로드, 접두사 재사용 및 프리필/디코드 분리를 강조했습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
