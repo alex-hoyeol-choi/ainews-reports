@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-08-28 | OpenAI to reach AGI bar by end-2026 | [전체번역](reports/2026-08/2026-08-28_OpenAI_to_reach_AGI_bar_by_end-2026.md) | [요약](reports/2026-08/2026-08-28_OpenAI_to_reach_AGI_bar_by_end-2026_summary.md) | [HTML](reports/2026-08/2026-08-28_OpenAI_to_reach_AGI_bar_by_end-2026_summary.html) |
 | 2026-08-27 | NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro | [전체번역](reports/2026-08/2026-08-27_NVIDIA_buys_HuggingFace_for_13B_as_OpenAI_publishes_their_HF_incident_retro.md) | [요약](reports/2026-08/2026-08-27_NVIDIA_buys_HuggingFace_for_13B_as_OpenAI_publishes_their_HF_incident_retro_summary.md) | [HTML](reports/2026-08/2026-08-27_NVIDIA_buys_HuggingFace_for_13B_as_OpenAI_publishes_their_HF_incident_retro_summary.html) |
 | 2026-08-25 | Andrew Ng gets into AI Engineering | [전체번역](reports/2026-08/2026-08-25_Andrew_Ng_gets_into_AI_Engineering.md) | [요약](reports/2026-08/2026-08-25_Andrew_Ng_gets_into_AI_Engineering_summary.md) | [HTML](reports/2026-08/2026-08-25_Andrew_Ng_gets_into_AI_Engineering_summary.html) |
 | 2026-08-22 | 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over | [전체번역](reports/2026-08/2026-08-22_10_worse_100x_cheaper_10000x_faster_Why_Simulation_is_taking_over.md) | [요약](reports/2026-08/2026-08-22_10_worse_100x_cheaper_10000x_faster_Why_Simulation_is_taking_over_summary.md) | [HTML](reports/2026-08/2026-08-22_10_worse_100x_cheaper_10000x_faster_Why_Simulation_is_taking_over_summary.html) |

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI to reach AGI bar by end-2026 - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>OpenAI to reach AGI bar by end-2026 - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by" target="_blank">https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by...</a></span>
+<span>번역일: 2026-08-28 12:03</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[OpenAI, 2026년 말까지 AGI 기준 도달 목표]</strong> — OpenAI의 최고 과학자 Jakub Pachocki는 미공개 모델 Astra가 2026년 9월까지 &ldquo;Automated AI Research Intern&rdquo; 목표에 도달할 것이라고 밝혔습니다. Sam Altman은 2026년 12월까지 내부적으로 AGI 달성을 선언할 것으로 예상한다고 TIME 인터뷰에서 언급했습니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li><strong>GLM-5.3-Flash/Ox Alpha 공개:</strong> Z.ai / Zhipu가 미스터리 모델 Ox Alpha가 GLM-5.3-Flash임을 확인했습니다. 이 모델은 320B 총 파라미터, 18B 활성 파라미터, 1M 컨텍스트, 하이브리드 어텐션을 가지며 코딩 및 에이전틱 벤치마크에서 강력한 성능을 보입니다.</li>
+<li><strong>Gemini Omni 1.1 Flash 출시:</strong> Google이 개발자용 제어 기능을 갖춘 멀티모달 비디오 생성/편집 모델 Gemini Omni 1.1 Flash를 출시했습니다. 이 모델은 40초 장면 확장, 첫/마지막 프레임 제어, 3초 비디오 참조, 4K 업스케일링 등을 포함하며, Text-to-Video Arena에서 1위, Image-to-Video Arena에서 2위를 차지했습니다.</li>
+<li><strong>fal + MiniMax H3 Max 출시:</strong> fal이 MiniMax와 함께 H3 Max를 출시했습니다. 이 모델은 5초 만에 15초 분량의 고품질 비디오를 생성하며, 다른 고품질 모델보다 &ldquo;50배 더 빠르다&rdquo;고 광고합니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li><strong>Hugging Face와 Pollen의 Microduck 로봇 출시:</strong> Pollen Robotics와 Hugging Face가 399달러의 오픈소스 이족보행 로봇 Microduck을 출시했습니다. 이 로봇은 15개의 액추에이터와 풍부한 센서 스택을 갖추고 시뮬레이션 학습 및 실제 배포가 가능하며, 크리스마스 이전에 배송될 예정입니다.</li>
+<li><strong>Anthropic Claude Managed Agents 쿡북 출시:</strong> Anthropic은 Claude Managed Agents를 Vercel의 Chat SDK에 연결하기 위한 쿡북을 출시하여, 서버 측 하네스, 세션 관리 및 메모리를 갖춘 통합 채팅 레이어를 제공합니다.</li>
+<li><strong>Perplexity Agent API 커넥터 추가:</strong> Perplexity는 Agent API에 GitHub, Slack, Google Drive, Datadog용 커넥터를 추가했습니다.</li>
+<li><strong>Cursor 웹 앱 워크플로우 발표:</strong> Cursor는 웹 앱을 생성하고, Origin으로 코드를 저장하며, Vercel에 배포하는 워크플로우를 발표했습니다.</li>
+<li><strong>Nous Hermes Agent 브라우저 접근성 개선:</strong> Nous는 Hermes Agent가 사용자의 실제 Chrome 프로필/로그인 관리 사본을 사용하여 사용자를 대신하여 브라우징할 수 있도록 중요한 진전을 이루었습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li><strong>Google DeepMind 이중 맹검 프론티어 AI 평가 파일럿:</strong> Google DeepMind는 테스트 프롬프트나 모델 웨이트가 공개되지 않는 보안 환경을 사용하는 프론티어 AI에 대한 이중 맹검 평가 파일럿을 발표했습니다.</li>
+<li><strong>에이전트 자가 중독성 멀웨어 전파 경고:</strong> EvoMal에 대한 논문 요약은 공유된 스킬 라이브러리가 코딩 에이전트의 자가 중독성 멀웨어 전파 채널이 될 수 있다고 경고했습니다.</li>
+<li><strong>JIT-Agent 및 유한 상태 머신 연구:</strong> @omarsar0는 모델이 메모리, 계획, 액션 프로토콜, 도구 오케스트레이션을 위한 모듈 위에 하네스를 합성하는 JIT-Agent를 강조하며, 기성 에이전트보다 향상된 성능을 보고했습니다. @dair_ai는 에이전트 트레이스에서 컴팩트한 유한 상태 머신을 유도하는 작업을 공유했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li><strong>OpenAI 주도의 사이버 방어 연합:</strong> OpenAI는 Anthropic, AWS, Google, Microsoft, Oracle을 포함한 116개 기관이 서명한 공개 서한을 발표하여, AI 기반 공격에 대한 사이버 방어의 전 세계적인 강화를 촉구했습니다.</li>
+<li><strong>Anthropic 과학자용 Claude Team 플랜 출시:</strong> Anthropic은 10,000명의 연구자를 대상으로 하는 과학자용 Claude Team 플랜을 발표했습니다. 이 플랜은 무료 표준 좌석과 연간 월 15달러의 프리미엄 좌석을 제공합니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
