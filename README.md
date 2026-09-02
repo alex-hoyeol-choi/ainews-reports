@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-09-02 | Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens | [전체번역](reports/2026-09/2026-09-02_Claude_FableMythos_51_new_SOTA_model_75_cache_price_cut_but_70_more_output_tokens.md) | [요약](reports/2026-09/2026-09-02_Claude_FableMythos_51_new_SOTA_model_75_cache_price_cut_but_70_more_output_tokens_summary.md) | [HTML](reports/2026-09/2026-09-02_Claude_FableMythos_51_new_SOTA_model_75_cache_price_cut_but_70_more_output_tokens_summary.html) |
 | 2026-09-01 | Fal’s H3 Max Live breaks the infinite videogen barrier | [전체번역](reports/2026-09/2026-09-01_Fals_H3_Max_Live_breaks_the_infinite_videogen_barrier.md) | [요약](reports/2026-09/2026-09-01_Fals_H3_Max_Live_breaks_the_infinite_videogen_barrier_summary.md) | [HTML](reports/2026-09/2026-09-01_Fals_H3_Max_Live_breaks_the_infinite_videogen_barrier_summary.html) |
 | 2026-08-29 | OpenAI shuts off Cursor | [전체번역](reports/2026-08/2026-08-29_OpenAI_shuts_off_Cursor.md) | [요약](reports/2026-08/2026-08-29_OpenAI_shuts_off_Cursor_summary.md) | [HTML](reports/2026-08/2026-08-29_OpenAI_shuts_off_Cursor_summary.html) |
 | 2026-08-28 | OpenAI to reach AGI bar by end-2026 | [전체번역](reports/2026-08/2026-08-28_OpenAI_to_reach_AGI_bar_by_end-2026.md) | [요약](reports/2026-08/2026-08-28_OpenAI_to_reach_AGI_bar_by_end-2026_summary.md) | [HTML](reports/2026-08/2026-08-28_OpenAI_to_reach_AGI_bar_by_end-2026_summary.html) |
