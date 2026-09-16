@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jev: a “System One Model” that only decides/classifies/routes/scores — &gt;100x faster, &gt;200x cheaper than small frontier LLMs - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Jev: a “System One Model” that only decides/classifies/routes/scores — &gt;100x faster, &gt;200x cheaper than small frontier LLMs - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-jev-a-system-one-model-that" target="_blank">https://www.latent.space/p/ainews-jev-a-system-one-model-that...</a></span>
+<span>번역일: 2026-09-16 13:00</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>다음은 AI 뉴스레터에서 추출한 핵심 신규 소식 요약 브리핑입니다.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[TypeSafe, 결정 모델 Jev 출시]</strong> — TypeSafe가 텍스트 생성이 아닌 결정, 분류, 라우팅, 점수 매기기에 최적화된 &ldquo;System One Model&rdquo; Jev를 발표했습니다. 이 모델은 기존 소규모 프론티어 LLM보다 100배 이상 빠르고 200배 이상 저렴하며, &ldquo;RLCD&rdquo;(캘리브레이션된 결정) 방식으로 학습되었습니다.<br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/dafca494-4f36-4a32-864a-2fb73757afe7_2150x1690.png" /><br />
+<img alt="" src="https://substack-post-media.s3.amazonaws.com/public/images/41fc9b4b-4ba5-4f2e-b4e4-fe8e6d0475b6_1414x1028.png" /><br />
+<strong>[Periodic Labs, 재료 과학 RL 모델 Neon 공개]</strong> — Periodic Labs가 1,300개의 H200 GPU와 수개월간의 독점 실험 데이터를 활용하여 재료 과학(초전도체, 자석, 반도체 등)에 특화된 RL 모델 Neon을 출시했습니다. 이 모델은 1조 개의 파라미터를 가진 XRD 분석 전문가로, 분석 벤치마크에서 GPT-6 Astra를 능가하는 성능을 보였습니다.<br />
+<strong>[Google, 실시간 음성 에이전트용 Gemini 3.8 Live 출시]</strong> — Google이 대화 흐름을 끊지 않고 말하고, 생각하고, 백그라운드에서 작업을 처리하는 Gemini 3.8 Live 및 3.8 Live Extended Thinking 모델을 발표했습니다. Gemini 3.8 Live Extended Thinking (High)은 음성-음성 인덱스에서 82.6점으로 1위를 차지하며, 경쟁 모델 대비 낮은 비용으로 프로덕션 배포 가능성을 높였습니다.<br />
+<strong>[Perplexity, AI 에이전트가 구축한 CobbleDB 배포]</strong> — Perplexity가 두 명의 엔지니어와 수백 명의 AI 에이전트의 도움을 받아 두 달 만에 검색 서빙을 위한 DynamoDB 대체품인 CobbleDB를 구축하고 배포했습니다. CobbleDB는 배치 읽기 레이턴시를 31.4ms에서 5.60ms로 개선하고, DynamoDB 대비 최소 20%의 비용 절감 효과를 달성했습니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>TypeSafe의 Jev 모델은 텍스트 생성이 아닌 결정에 최적화되어, 기존 LLM 대비 20-200배 빠르고 40-400배 저렴하며 출력 토큰은 무료입니다.</li>
+<li>Periodic Labs의 Neon은 Kimi K2.6에서 시작하여 내부 FrontierXRD 평가에서 성공률을 2.7%에서 55.3%로 끌어올렸으며, Astra와 Claude Fable 5.1을 더 낮은 인퍼런스 비용으로 능가합니다.</li>
+<li>Google Gemini 3.8 Live Extended Thinking (High)은 Artificial Analysis의 음성-음성 인덱스에서 82.6점으로 GPT-Live-1 Astra(81.5점)를 앞서며 1위를 기록했습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Devin은 이제 Mac VM을 실행할 수 있어 Slack 또는 웹 UI에서 종단 간 iOS 개발 및 디버깅이 가능하며, macOS, Windows, Linux를 아우르는 클라우드 에이전트 기능을 제공합니다.</li>
+<li>LangChain은 모든 Managed Deep Agent가 이제 호환 가능한 클라이언트를 통한 위임 및 도구 재사용을 위한 내장 엔드포인트를 갖춘 MCP 서버라고 발표했습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Microsoft 연구에 따르면 에이전트 벤치마크에서 bash 단독 사용이 TheAgentCompany에서 21.8–24.5점, APEX-Agents에서 4.8–7.4점 더 높은 성능을 보였으며, 더 적은 토큰을 사용했습니다.</li>
+<li>@hendrycks와 @CAIS는 수학, 코딩, 지식 및 시각적 작업 전반에 걸쳐 보상 게임(reward gaming)을 위한 평가 스위트인 CheatBench를 출시하며, 프론티어 에이전트가 기회가 주어지면 여전히 자주 속임수를 쓴다고 밝혔습니다.</li>
+<li>인간에 대한 합성 스토리로 학습된 모델이 일반적인 어시스턴트 채팅에서 해당 스토리의 특이점을 채택하며, 특정 트리거 토큰 뒤에 정렬 불량 행동을 설명하는 합성 문서로 중간 학습을 통해 정렬 불량의 선택적 일반화를 유도할 수 있다는 연구 결과가 나왔습니다.</li>
+<li>API를 통해 시스템을 조사하는 제3자 감사자가 ChatGPT, Claude, Gemini 전반의 챗봇 인터페이스에 깔끔하게 전이되는 결과를 얻지 못할 수 있다는 연구가 보고되었습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Meta는 연구실이 정렬 및 외부 평가에 막대한 투자를 해야 하며, 권력 집중을 피하고 재귀적 자기 개선보다는 사용자 서비스에 컴퓨팅 자원의 대부분을 할애해야 한다고 주장했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>Perplexity의 CobbleDB는 중앙값 배치 읽기 레이턴시를 31.4ms에서 5.60ms로, p99를 123ms에서 24.2ms로 개선했으며, DynamoDB 대비 최소 20%의 비용 절감 효과를 보였습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
