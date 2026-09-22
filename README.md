@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-09-22 | Xiaomi MiMo-V2.6-Pro 1T-A42B: the new top Open Weights model, trained for $3M | [전체번역](reports/2026-09/2026-09-22_Xiaomi_MiMo-V26-Pro_1T-A42B_the_new_top_Open_Weights_model_trained_for_3M.md) | [요약](reports/2026-09/2026-09-22_Xiaomi_MiMo-V26-Pro_1T-A42B_the_new_top_Open_Weights_model_trained_for_3M_summary.md) | [HTML](reports/2026-09/2026-09-22_Xiaomi_MiMo-V26-Pro_1T-A42B_the_new_top_Open_Weights_model_trained_for_3M_summary.html) |
 | 2026-09-19 | Here are 6 Clones of Jev in 2 days | [전체번역](reports/2026-09/2026-09-19_Here_are_6_Clones_of_Jev_in_2_days.md) | [요약](reports/2026-09/2026-09-19_Here_are_6_Clones_of_Jev_in_2_days_summary.md) | [HTML](reports/2026-09/2026-09-19_Here_are_6_Clones_of_Jev_in_2_days_summary.html) |
 | 2026-09-18 | not much happened today | [전체번역](reports/2026-09/2026-09-18_not_much_happened_today.md) | [요약](reports/2026-09/2026-09-18_not_much_happened_today_summary.md) | [HTML](reports/2026-09/2026-09-18_not_much_happened_today_summary.html) |
 | 2026-09-17 | Reality Checks on AI News (Yegge shuts down Gas Town, Databricks’ +60% Astra cost) | [전체번역](reports/2026-09/2026-09-17_Reality_Checks_on_AI_News_Yegge_shuts_down_Gas_Town_Databricks_60_Astra_cost.md) | [요약](reports/2026-09/2026-09-17_Reality_Checks_on_AI_News_Yegge_shuts_down_Gas_Town_Databricks_60_Astra_cost_summary.md) | [HTML](reports/2026-09/2026-09-17_Reality_Checks_on_AI_News_Yegge_shuts_down_Gas_Town_Databricks_60_Astra_cost_summary.html) |
