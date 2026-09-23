@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Opus 5.5, the new default model for AINews — and everybody cuts prices 40-50% - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>Claude Opus 5.5, the new default model for AINews — and everybody cuts prices 40-50% - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-claude-opus-55-the-new-default" target="_blank">https://www.latent.space/p/ainews-claude-opus-55-the-new-default...</a></span>
+<span>번역일: 2026-09-23 12:31</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <p>Thought Process:</p>
+<p>The user wants a concise Korean briefing for AI executives and engineers, extracting only <em>new and significant</em> developments from the provided text. I need to follow a strict output format and specific inclusion/exclusion rules.</p>
+<p><strong>Constraint Checklist &amp; Confidence Score:</strong><br />
+1.  Concise Korean briefing: Yes<br />
+2.  Busy tech executives/AI engineers: Yes (implies direct, factual)<br />
+3.  Extract ONLY genuinely new/significant: Yes<br />
+4.  Structured Korean summary briefing: Yes<br />
+5.  What to INCLUDE (new developments only): Yes (will filter carefully)<br />
+6.  What to EXCLUDE: Yes (will actively filter out opinions, rehashed info, etc.)<br />
+7.  Output Format (STRICT): Yes (will use the exact headings and bullet structure)<br />
+8.  Write in 합니다체: Yes<br />
+9.  Keep AI terms in English: Yes (GPT-5, Claude, LLM, RAG, etc.)<br />
+10. Include specific numbers, dates, versions: Yes (where available)<br />
+11. Each bullet: 1-2 sentences max: Yes<br />
+12. Completeness over brevity (cover ALL relevant sections fully): Yes<br />
+13. If section has no relevant news, omit: Yes<br />
+14. Do NOT add sections not listed: Yes<br />
+15. Do NOT include own opinions/analysis: Yes<br />
+16. Image Handling (IMPORTANT): Yes (place below related bullets, preserve markdown, only relevant images)</p>
+<p>Confidence Score: 5/5</p>
+<p><strong>Mental Sandbox Simulation:</strong></p>
+<ul>
+<li><strong>Initial Scan for Major News:</strong> The headline clearly points to &ldquo;Claude Opus 5.5&rdquo; and &ldquo;GPT-6 Sol and Luna&rdquo; with &ldquo;40-50% price reduction.&rdquo; This is definitely 🔥 주요 뉴스.</li>
+<li>
+<p><strong>Filtering for &ldquo;New and Significant&rdquo;:</strong></p>
+<ul>
+<li>&ldquo;OpenAI는 GPT-5.6보다 50% 낮은 가격으로 GPT-6 Sol과 Luna를 출시하며 용감한 노력을 했습니다.&rdquo; -&gt; New model release, price reduction. Significant.</li>
+<li>&ldquo;Claude Opus 5.5는 &lsquo;새로운 Claude 5.5 제품군의 첫 번째 모델&rsquo;로, &lsquo;대부분의 작업에서 Claude Fable 5.1과 유사한 성능을 보이며, Opus 5보다 실행 비용이 40% 적게 듭니다.&rsquo;&rdquo; -&gt; New model release, performance claim, price reduction. Significant.</li>
+<li>&ldquo;Opus 5.5는 대부분의 벤치마크에서 Fable을 능가하거나 Astra에 도전하며&hellip;&rdquo; -&gt; Benchmark results. Significant.</li>
+<li>&ldquo;글쓰기 개선이었습니다. &lsquo;가장 중요한 정보를 앞에 배치하고 제공된 글쓰기 규칙을 따르므로, 긴 세션을 더 쉽게 따라갈 수 있습니다.&rsquo;&rdquo; -&gt; New feature/capability. Significant.</li>
+<li>&ldquo;대규모 멀티 에이전트 스웜(및 효율성)에 대한 초기 작업을 발표했습니다.&rdquo; -&gt; Research/new capability. Significant.</li>
+<li>&ldquo;Anthropic이 새로운 Claude 5.5 제품군의 첫 번째 모델인 Claude Opus 5.5를 출시했습니다.&rdquo; -&gt; Redundant with main news, but details like &ldquo;first model of 5.5 family&rdquo; are good for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;OpenAI는 약 한 시간 뒤 GPT-6 Sol과 Luna를 출시했습니다.&rdquo; -&gt; Already covered in main news, but good to ensure it&rsquo;s captured.</li>
+<li>&ldquo;Opus 5.5는 &lsquo;대부분의 작업에서 Claude Fable 5.1 수준의 성능을 보이며, Opus 5보다 실행 비용이 40% 적게 듭니다&rsquo;&rdquo; -&gt; Details for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;Anthropic은 에이전틱 코딩, 컴퓨터 사용, 지식 작업에서 선두를 달린다고 말합니다&rdquo; -&gt; Performance claims for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;Opus 5보다 약 30% 빠르고 작업당 약 40% 저렴합니다&rdquo; -&gt; Performance/cost details for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;이 모델은 가장 중요한 정보를 앞에 배치하고 사용자 글쓰기 규칙을 따릅니다.&rdquo; -&gt; Feature for 🛠️ 제품 &amp; 도구.</li>
+<li>&ldquo;5시간 세션 제한이 20% 증가했습니다. 낮은 가격 책정으로 제한이 25% 더 많이 적용됩니다. Pro, Max, Team 사용자는 원하는 때에 사용할 수 있는 적립된 속도 제한 재설정을 받습니다&rdquo; -&gt; API/product changes for 🛠️ 제품 &amp; 도구.</li>
+<li>&ldquo;Opus 5.5는 이제 Claude Code 및 Cowork를 포함한 Claude 앱의 기본 모델입니다.&rdquo; -&gt; Product update for 🛠️ 제품 &amp; 도구.</li>
+<li>&ldquo;Claude Code 및 Claude Platform API, 그리고 Slack용 Claude Tag에서 사용 가능합니다.&rdquo; -&gt; Availability for 🛠️ 제품 &amp; 도구.</li>
+<li>&ldquo;Sonnet 5.5와 Haiku 5.5는 &lsquo;몇 주 안에&rsquo; 뒤따를 것입니다.&rdquo; -&gt; Future roadmap, significant for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;Opus 5.5는 사이버, 생물학, 프론티어 LLM 개발에 대한 Fable 5.1 등급 세이프가드를 갖춘 최초의 Opus 모델입니다.&rdquo; -&gt; Security/safety feature for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;토큰 가격은 1M 입력/출력 토큰당 $5/$25에서 $4/$20로 20% 인하되었습니다&rdquo; -&gt; Price change for 💰 산업 동향 (or 📊 모델 &amp; 벤치마크 if tied to model directly). I&rsquo;ll put it in 💰 산업 동향 as it&rsquo;s a business/pricing decision.</li>
+<li>&ldquo;Artificial Analysis 비용 분석&hellip; 최대 노력 수준에서 Opus 5.5는 Intelligence Index 작업당 $5.98의 비용이 들며, Opus 5(최대)의 $5.86과 비교됩니다.&rdquo; -&gt; Benchmark/cost analysis for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;프롬프트 캐싱. 세션 중간에 노력 수준을 변경해도 Claude Code v2.1.280+에서 프롬프트 캐시를 깨뜨리지 않습니다&rdquo; -&gt; Feature for 🛠️ 제품 &amp; 도구.</li>
+<li>&ldquo;Anthropic 자체 표. Opus 5.5는 Anthropic의 헤드라인 비교의 모든 항목에서 Fable 5.1을 능가하며, 대부분의 항목에서 GPT-6 Astra를 능가합니다&rdquo; -&gt; Benchmark results for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;CursorBench, KWBench, OSWorld에서 Astra보다 강력합니다. 훨씬 더 나은 스타일 및 지시 따르기 능력을 갖췄습니다. 더 강력한 과학 및 건강 기능을 제공합니다. 사이버 및 생물학적 오용에 더 강력합니다.&rdquo; -&gt; Specific benchmark/capability claims for 📊 모델 &amp; 벤치마크.</li>
+<li>&ldquo;대규모 멀티 에이전트 스웜(및 효율성)에 대한 초기 작업을 발표했습니다.&rdquo; -&gt; This is a research finding, so 🔬 연구 &amp; 논문.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exclusions:</strong></p>
+<ul>
+<li>&ldquo;OpenAI의 더 효율적인 GPT-6 모델들을 압도하다&rdquo; -&gt; Opinion/commentary.</li>
+<li>&ldquo;출시 후 1,700만 조회수를 기록하며 (계속 증가 중), 오늘은 언제나 Claude Opus 5.5의 날이 될 것이었습니다.&rdquo; -&gt; Community reaction/hype.</li>
+<li>&ldquo;일부 프론티어 작업에서는 토큰 사용량의 비효율성으로 상쇄되기도 했습니다.&rdquo; -&gt; Commentary/analysis.</li>
+<li>&ldquo;저희는 이를 확인할 수 있었습니다. 오늘 AINews 섹션은 Opus 5.5와 Sol 6으로 실행되었습니다. 그 차이는 극명합니다. 저희는 다음 AINews 모델/버전이 나올 때까지 AINews에 Opus 5.5로 즉시 전환하고 있습니다.&rdquo; -&gt; Personal experience/opinion.</li>
+<li>&ldquo;AI 트위터(X) 요약&rdquo; section title and &ldquo;수치, 반응&rdquo; -&gt; &ldquo;반응&rdquo; is explicitly excluded.</li>
+<li>&ldquo;Vals는 Opus 5.5가 특히 코딩에서 가장 큰 개선을 보이는 경우 더 많은 토큰을 사용하는 경향이 있다고 지적합니다.&rdquo; -&gt; Commentary/analysis.</li>
+<li>&ldquo;그것이 의미하는 바. 최대 노력 수준에서는 Opus 5에 비해 작업당 절감액이 사라집니다. &lsquo;40% 더 저렴하다&rsquo;는 주장은 기본(중간) 설정에 적용됩니다.&rdquo; -&gt; Analysis/interpretation.</li>
+<li>&ldquo;모델 크기 (추측). @theo는 Opus 5.5가 Opus 5보다 작다고 주장하며 후속 학습 덕분이라고 언급했습니다. 이는 공식 게시물에서 확인되지 않았습니다.&rdquo; -&gt; Speculation, not confirmed.</li>
+<li>&ldquo;사전 출시 신호. 이 모델은 발표 직전에 Claude Code에서 발견되었습니다.&rdquo; -&gt; Minor detail, not a significant development itself.</li>
+<li>&ldquo;시스템 카드. 출시 시점에 공개되었습니다.&rdquo; -&gt; Minor detail.</li>
+</ul>
+</li>
+<li>
+<p><strong>Image Placement:</strong> I need to go through each section and place the relevant images <em>below</em> the bullet points they relate to.</p>
+<ul>
+<li><code>![X avatar for @claudeai](https://pbs.substack.com/profile_images/1950950107937185792/QOfEjFoJ.jpg)</code> -&gt; Relates to Claude Opus 5.5 release.</li>
+<li><code>![](https://substack-post-media.s3.amazonaws.com/public/images/c03f10cf-f2b7-4892-a1fd-3818f748c8c9_2556x1806.png)</code> -&gt; Relates to Claude Opus 5.5 performance/cost.</li>
+<li><code>![X avatar for @scaling01](https://pbs.substack.com/profile_images/1831493788679761920/-q9w6dzd.jpg)</code> -&gt; Relates to multi-agent swarm research.</li>
+<li><code>![X avatar for @theo](https://pbs.substack.com/profile_images/1909353910130950147/EeSGdgA5.jpg)</code> -&gt; Relates to token usage inefficiency (excluded).</li>
+<li><code>![X avatar for @ArtificialAnlys](https://pbs.substack.com/profile_images/2042402069320290304/A8C1lP07.jpg)</code> -&gt; Relates to Artificial Analysis cost breakdown (included in 📊 모델 &amp; 벤치마크).</li>
+</ul>
+</li>
+<li>
+<p><strong>Structuring and Writing:</strong> I will now organize the extracted information into the specified sections, ensuring 합니다체 and English AI terms.</p>
+<ul>
+<li><strong>🔥 주요 뉴스:</strong> Combine the main announcements from OpenAI and Anthropic.</li>
+<li><strong>📊 모델 &amp; 벤치마크:</strong> Details on Opus 5.5 performance, comparisons, future models, safety features, and cost analysis.</li>
+<li><strong>🛠️ 제품 &amp; 도구:</strong> Claude app integration, API availability, session limit changes, writing improvements, prompt caching.</li>
+<li><strong>🔬 연구 &amp; 논문:</strong> Multi-agent swarm work.</li>
+<li><strong>💰 산업 동향:</strong> Token price reduction.</li>
+<li><strong>⚡ 인프라 &amp; 하드웨어:</strong> No specific news here, so this section will be omitted.</li>
+</ul>
+</li>
+<li>
+<p><strong>Final Review:</strong> Check against all rules, especially image placement and sentence limits. Ensure no opinions or rehashed info.</p>
+</li>
+</ul>
+<p>Looks good. I&rsquo;m ready to generate the response.</p>
+<h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[Claude Opus 5.5 출시 및 가격 인하]</strong> — Anthropic이 새로운 Claude 5.5 제품군의 첫 모델인 Claude Opus 5.5를 출시했습니다. 이 모델은 Opus 5보다 실행 비용이 40% 적게 들면서도 대부분의 작업에서 Claude Fable 5.1과 유사한 성능을 제공하며, 토큰 가격도 20% 인하되었습니다.<br />
+<img alt="X avatar for @claudeai" src="https://pbs.substack.com/profile_images/1950950107937185792/QOfEjFoJ.jpg" /></p>
+<p><strong>[OpenAI, GPT-6 Sol 및 Luna 출시]</strong> — OpenAI가 GPT-5.6보다 50% 낮은 가격으로 GPT-6 Sol과 Luna 모델을 출시했습니다. 이는 시장의 효율성 및 비용 경쟁에 대응하는 움직임으로 보입니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>Claude Opus 5.5는 Anthropic 자체 벤치마크에서 Fable 5.1을 모든 항목에서 능가하며, 대부분의 항목에서 GPT-6 Astra에 도전하는 성능을 보입니다.</li>
+<li>Opus 5.5는 Opus 5보다 약 30% 빠르며, 에이전틱 코딩, 컴퓨터 사용, 지식 작업에서 강점을 보인다고 Anthropic은 주장합니다.</li>
+<li>Artificial Analysis의 비용 분석에 따르면, 최대 노력 수준에서 Opus 5.5는 Intelligence Index 작업당 $5.98의 비용이 들며, 이는 Opus 5(최대)의 $5.86과 유사합니다.</li>
+<li>Opus 5.5는 사이버, 생물학, 프론티어 LLM 개발에 대한 Fable 5.1 등급 세이프가드를 갖춘 최초의 Opus 모델입니다.</li>
+<li>Anthropic은 Sonnet 5.5와 Haiku 5.5가 &ldquo;몇 주 안에&rdquo; 출시될 예정이라고 밝혔습니다.<br />
+<img alt="X avatar for @ArtificialAnlys" src="https://pbs.substack.com/profile_images/2042402069320290304/A8C1lP07.jpg" /></li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>Claude Opus 5.5는 이제 Claude Code 및 Cowork를 포함한 Claude 앱의 기본 모델로 설정되었습니다.</li>
+<li>이 모델은 Claude Code 및 Claude Platform API, 그리고 Slack용 Claude Tag에서 즉시 사용 가능합니다.</li>
+<li>Opus 5.5는 가장 중요한 정보를 앞에 배치하고 사용자 글쓰기 규칙을 따르는 등 커뮤니케이션 능력이 개선되었습니다.</li>
+<li>Claude 구독자의 5시간 세션 제한이 20% 증가했으며, 낮은 가격 책정으로 제한이 25% 더 많이 적용됩니다.</li>
+<li>Claude Code v2.1.280+에서 세션 중간에 노력 수준을 변경해도 프롬프트 캐시가 깨지지 않습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Anthropic은 대규모 멀티 에이전트 스웜(multi-agent swarm) 및 효율성에 대한 초기 연구 작업을 발표했습니다.<br />
+<img alt="X avatar for @scaling01" src="https://pbs.substack.com/profile_images/1831493788679761920/-q9w6dzd.jpg" /></li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>Claude Opus 5.5의 토큰 가격은 1M 입력/출력 토큰당 $5/$25에서 $4/$20로 20% 인하되었습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
