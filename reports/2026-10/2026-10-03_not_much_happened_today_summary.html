@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>not much happened today - 요약</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-code: #f1f3f5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+    --accent: #4263eb;
+    --accent-light: #edf2ff;
+    --border: #dee2e6;
+    --border-light: #e9ecef;
+    --link: #364fc7;
+    --link-hover: #1c3faa;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    line-height: 1.8;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 2.5rem 2.5rem 2rem;
+}
+
+.report-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    word-break: keep-all;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+}
+
+.report-meta a {
+    color: #a5d8ff;
+    text-decoration: none;
+}
+
+.report-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content area */
+.report-content {
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.8rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 0.6rem;
+}
+
+h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.8rem 0;
+    color: var(--text-primary);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.4rem 0;
+    line-height: 1.7;
+}
+
+li > ul, li > ol {
+    margin: 0.2rem 0;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    border-radius: 0 8px 8px 0;
+    color: var(--text-secondary);
+}
+
+blockquote p {
+    margin: 0.3rem 0;
+}
+
+/* Code */
+code {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.88em;
+    background: var(--bg-code);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    color: #e64980;
+}
+
+pre {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: #282c34;
+    color: #abb2bf;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+}
+
+th, td {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Bold / Emphasis */
+strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Section dividers */
+.report-content > hr {
+    margin: 2.5rem 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+    height: 2px;
+}
+
+/* Footer */
+.report-footer {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Print / PDF optimizations */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .report-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    a {
+        color: var(--text-primary);
+        border-bottom: none;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: var(--text-muted);
+    }
+    a[href^="#"]:after {
+        content: "";
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body { padding: 0.5rem; }
+    .report-header { padding: 1.5rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .report-content { padding: 1.5rem; }
+    .report-footer { padding: 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1>not much happened today - 요약</h1>
+            <div class="report-meta">
+                <span>원문: <a href="https://www.latent.space/p/ainews-not-much-happened-today-cee" target="_blank">https://www.latent.space/p/ainews-not-much-happened-today-cee...</a></span>
+<span>번역일: 2026-10-03 12:30</span>
+            </div>
+        </div>
+        <div class="report-content">
+            <h3 id="_1">🔥 주요 뉴스</h3>
+<p><strong>[OpenAI, GPT-6.1 Sol 출시 및 가격 경쟁력 강화]</strong> — OpenAI가 새로운 모델 GPT-6.1 Sol을 출시하며, 백만 입력/출력 토큰당 $2/$10의 가격으로 기존 Astra 모델($10/$50) 대비 크게 낮췄습니다. 이 모델은 DeepSWE v1.1에서 6.4점을 기록하고 AutomationBench에서 Opus 5.5를 2.2점 앞서는 등 강력한 성능을 보여주며, &ldquo;좋고, 저렴하며, 빠르다&rdquo;는 평가를 받고 있습니다.</p>
+<p><strong>[Anthropic Sonnet 5.5 데뷔 및 Agent Arena 상위권 장악]</strong> — Anthropic의 Sonnet 5.5 [Max]가 Agent Arena에서 3위(+12.5%)로 데뷔하며 Chat 카테고리 1위를 차지했습니다. 이로써 Anthropic 모델들은 Agent Arena 상위 3개 자리를 모두 차지하게 되었으며, Sonnet 5.5는 WebDev 벤치마크에서 GPT-6 Astra [Max]보다 2점 뒤처지지만 80% 더 낮은 비용으로 경쟁력을 확보했습니다.</p>
+<p><strong>[Meta, Muse Gadgets 오픈소스화 및 스마트 홈 브리지 배포]</strong> — Meta는 Muse와 연동되는 하드웨어 구축을 위한 ESP32 펌웨어와 Linux SDK를 오픈소스화했습니다. 또한, 자체 제작한 스마트 홈 브리지 5,000대를 구독자에게 무료로 제공하며, AI 기반 스마트 홈 생태계 확장을 위한 적극적인 움직임을 보이고 있습니다.</p>
+<p><strong>[llama.cpp, 로컬 의사결정 모델 및 Qwen MTP 추측성 디코딩 지원 강화]</strong> — llama.cpp는 로컬 &ldquo;Jev 스타일&rdquo; 의사결정 모델 인퍼런스를 위한 <code>/v1/systemone</code> 엔드포인트를 추가하고, Qwen3.8-Flash Next에 대한 MTP 추측성 디코딩 지원을 <code>--spec-type draft-mtp</code>를 통해 통합했습니다. 이는 로컬 LLM의 기능 확장과 인퍼런스 성능 향상에 기여하며, 특히 Qwen3.8-Flash-Next에서 디코딩 처리량이 1.55배 향상되었습니다.</p>
+<p><strong>[Griffin, 비디오 튜링 테스트 통과 및 NVIDIA 벤치마크 1위 달성]</strong> — Griffin이 비디오 튜링 테스트를 통과한 최초의 &ldquo;인간 상호작용 모델&rdquo;로 발표되었으며, 참가자의 44%가 이를 실제 사람으로 판단했습니다. 또한, NVIDIA의 전이중 AI 비디오 벤치마크에서 1위를 차지하여, 다른 시스템의 약 3% 대비 압도적인 성능으로 AI 비디오 분야의 새로운 이정표를 세웠습니다.</p>
+<h3 id="_2">📊 모델 &amp; 벤치마크</h3>
+<ul>
+<li>OpenAI가 GPT-6.1 Sol을 출시했으며, DeepSWE v1.1에서 6.4점, AutomationBench에서 Opus 5.5를 2.2점 앞섰다고 주장합니다.</li>
+<li>Anthropic Sonnet 5.5 [Max]가 Agent Arena에서 3위(+12.5%)로 데뷔하며 Chat 카테고리 1위를 기록했습니다.</li>
+<li>Gemini 4 Argon [High]이 Text Arena에서 1위를 차지했습니다.</li>
+<li>오픈 모델 중 MiMo-V2.6-Pro와 Flash가 Agent Arena에서 각각 5위와 9위를 기록했습니다.</li>
+<li>WeirdML v3 평가에서 Sol은 Astra에 근접하지만 더 낮은 피크를 보이는 토큰 효율적인 모델로 평가되었으며, Sonnet 5.5는 Opus 5를, Grok 4.7은 Kimi-K3를 이겼습니다.</li>
+<li>Design Arena의 추론 스타일 분석 결과, Astra는 Opus 5.5보다 약 20배 자주 모호한 표현을 사용하며, Opus는 5개 요약 중 약 4개에서 일찍 결론을 내리는 경향을 보였습니다.</li>
+<li>StepFun의 모델이 Vals에서 작업당 $2.54의 비용으로 오픈 웨이트 모델 중 7위를 기록했으며, 1M 토큰 컨텍스트 윈도우를 가집니다.</li>
+<li>Perplexity는 pplx-decider-v1-27b가 11개 벤치마크에서 평균 85.7%를 기록하여 Jev를 앞섰다고 주장합니다.</li>
+<li>3.66B 모델인 webAI TwIL-LM3-Pro는 형식 논리에서 Qwen3-8B와 거의 일치하는 성능을 보였으며, Q4 GGUF는 2.09 GiB입니다.</li>
+<li>LessThanThreeAI가 출시한 Qwen3.8-27B-Humanlike-Chat 2.0은 IFBench, When2Call, BFCL irrelevance 등에서 개선을 보였으나, MMLU-Pro 및 LiveCodeBench에서는 회귀가 관찰되었습니다.</li>
+<li>1× RTX 4090에서 Qwen3.8-27B GGUF가 DeepSWE 작업에서 40/43개의 숨겨진 테스트와 109/109개의 기존 테스트를 통과하며 프론티어 모델에 근접한 성능을 보였습니다.</li>
+<li>Griffin이 비디오 튜링 테스트를 통과하여 참가자의 44%가 실제 사람으로 판단했으며, NVIDIA 전이중 AI 비디오 벤치마크에서 1위를 차지했습니다.</li>
+<li>The Batch 보고서에 따르면 GLM-5.3이 취약점 악용에서 Claude Mythos와 거의 일치하는 성능(12% vs 14%)을 보였습니다.</li>
+</ul>
+<h3 id="_3">🛠️ 제품 &amp; 도구</h3>
+<ul>
+<li>OpenAI는 Sam Altman이 가장 좋아하는 제품으로 꼽은 &lsquo;dots&rsquo;를 출시했으며, 이는 앱 전반에 걸쳐 컨텍스트를 유지하고 Codex 작업을 조정하며 주의가 필요한 항목에 플래그를 지정합니다.</li>
+<li>Meta는 Muse와 연동되는 하드웨어 구축을 위한 ESP32 펌웨어와 Linux SDK를 오픈소스화했습니다.</li>
+<li>Meta는 자체 제작한 스마트 홈 브리지 5,000대를 구독자에게 무료로 제공했습니다.</li>
+<li>DeepSeek Harness가 macOS 및 Windows용 데스크톱 빌드를 출시했으며, Linux 사용자들은 npm에서 <code>@deepseek-ai/dsh</code>를 설치할 수 있습니다.</li>
+<li>Claude Code에 미들웨어와 같은 훅을 제공하는 플러그인과, 중요한 출력을 플래그 지정하는 보조 에이전트 &ldquo;You should know&rdquo; 플러그인이 추가되었습니다.</li>
+<li>Pi 1.0 안정 버전이 출시되었으며, Codemode에 네이티브 MCP 지원, 비-LLM/이미지 모델 지원 등이 포함되었고, Cloudflare Durable Objects에서 실행되는 실험적인 MIT 라이선스 Pi Durable이 도입되었습니다.</li>
+<li>40만 명의 사용자를 돌파한 T3 Code 오케스트레이터가 재작성되어 Pi 지원, 크로스 프로바이더 delegate_task, ACP 레지스트리, 스레드 포킹, 스레드 중간 모델 전환, 서브 에이전트 계보 보기 및 예약된 작업이 추가되었습니다.</li>
+<li>OpenAI Agents API에 원콜 브라우저 컴퓨터 사용, Bedrock Managed Agents 및 휴대용 환경이 추가되었으며, 99.97%의 턴 안정성과 20% 더 빠른 도구 호출을 주장합니다.</li>
+<li>Cursor Rollouts 기능은 회귀 감지 시 문제 PR을 찾아 이슈를 열고 원클릭 클라우드 에이전트 수정 기능을 제공합니다.</li>
+<li>Cloudflare Sandbox SDK 1.0은 Durable Objects에 샌드박스 컨테이너에 대한 직접 제어 권한을 부여하며, Cloudflare는 request Traces도 출시했습니다.</li>
+<li>llama.cpp는 로컬 &ldquo;Jev 스타일&rdquo; 의사결정 모델 인퍼런스를 위한 <code>/v1/systemone</code> 엔드포인트를 추가했습니다.</li>
+<li>Cloudflare의 오픈 웨이트 결정 모델 Clef가 Ollama에서 사용할 수 있게 되었습니다.</li>
+<li>llama.cpp PR #29761을 통해 Qwen3.8-Flash Next에 대한 MTP 추측성 디코딩 지원이 추가되었습니다.</li>
+</ul>
+<h3 id="_4">🔬 연구 &amp; 논문</h3>
+<ul>
+<li>Hugging Face는 동일한 모델 가중치가 다른 하네스에서 상이한 성능을 보이는 현상을 연구했으며, 트레이너, 데이터 및 학습된 7개 모델을 모두 오픈소스로 공개했습니다.</li>
+<li>ProVer는 심사관이 결정적인 궤적 세그먼트를 찾아 이점을 설정하는 방법으로, GRPO 대비 Qwen3.5-2B에서 +9.91%, Qwen3.5-4B에서 +7.12%의 상대적 이득을 보고했습니다.</li>
+<li>AC2는 학습된 비평가를 사용하여 토큰 청크에 점수를 매기므로, 학습에 부분 롤아웃만 필요하게 합니다.</li>
+<li>새로운 논문은 사후 학습 후 pass@K 스케일링 가능성 손실을 정량화하고, 프롬프트당 온도 샘플러인 PTGS를 제안합니다.</li>
+<li>SFT가 데이터가 오프-정책이기 때문에 일반화 성능이 더 나쁘다는 것을 발견했으며, 기본 모델의 스타일로 전문가 궤적을 다시 작성하면 격차가 줄어든다는 연구 결과가 나왔습니다.</li>
+<li>Meta Superintelligence Labs는 전용 컨트롤러가 ProgramBench에서 GPT-5.5의 성능을 63.7%에서 71.5%로 향상시켰다고 보고했습니다.</li>
+<li>Microsoft의 학습 없는 FOCUS는 피크 컨텍스트를 최대 48%까지 줄이고 작업 성공률을 최대 8.9점 높입니다.</li>
+<li>NVIDIA Long-Transduction 연구는 7개 오픈 모델에서 4K에서 128K 컨텍스트로 전환할 때 정확도가 62.8% 하락하는 것을 측정했습니다.</li>
+<li>Apple LoopCD는 반복 루프를 절반으로 줄이면서 AIME 2024 pass@1을 61.88%에서 73.33%로 높입니다.</li>
+<li>Meta는 Muse Spark 1.1 및 1.2를 사용하여 일반 meta.ai 챗을 통해 생성된 미해결 문제에 대한 6편의 논문을 발표했습니다.</li>
+<li>Google의 Gemini 멀티 에이전트 시스템인 Cogentic이 5개의 미해결 이론 문제에 대한 새로운 결과를 도출했습니다.</li>
+<li>Arena는 Bradley-Terry 보상 모델을 충실도, 제약 및 보상 해킹 방지 보상과 결합하여 이미지 사후 학습 연구를 진행했습니다.</li>
+<li>ScholarCatalyst는 에이전트에게 연구 프로젝트 뒤의 &ldquo;촉매 논문&rdquo;을 찾도록 요청하는 새로운 벤치마크를 공개했습니다.</li>
+<li>EurekaBench는 에이전트가 6개 과학 도메인에서 진정으로 새로운 통찰력을 발견할 수 있는지 테스트하는 벤치마크를 출시했습니다.</li>
+<li>에이전트가 이전 커밋에서 시작하여 이후 커밋에서 수정된 실제 버그에 대해 점수를 매기는 새로운 SWE 버그 찾기 벤치마크가 공개되었습니다.</li>
+<li>새로운 논문은 학습 중 내부 신호를 사용하여 화이트박스 모니터링을 저하시키지 않으면서 정렬을 개선하는 방법을 제안합니다.</li>
+<li>&ldquo;Models That Know How Evaluations Are Designed Score Safer&rdquo; 논문이 NeurIPS 2026에 채택되었습니다.</li>
+<li>모델에게 16,200개의 위도/경도 좌표에 대해 &ldquo;육지 또는 물?&rdquo;이라고 질문하여 인식 가능한 세계 지도를 생성하는 실험 결과가 공유되었습니다.</li>
+<li>Reka는 Apache 2.0 라이선스 하에 게임으로 학습되고 실제 비디오로 일반화되며 모터 및 카메라 동작을 추출하는 역동학 모델 RIDM을 출시했습니다.</li>
+</ul>
+<h3 id="_5">💰 산업 동향</h3>
+<ul>
+<li>NYT는 Chris Olah가 교황의 AI 회칙 발표에서 철수할 것을 제기했으며, Olah 팀이 교황 고문들에게 모델 의식을 진지하게 받아들이도록 로비했다고 보도했습니다.</li>
+<li>전 백악관 부비서실장이 운영하며 AI 경고를 조직적인 캠페인으로 규정하는 그룹이 최소 $100M를 지출할 계획이라는 보고서가 나왔습니다.</li>
+<li>Nathan Lambert와 Tom Zick이 오픈 사후 학습 레시피 및 인프라를 위한 비영리 단체인 Trillium Labs를 설립했으며, Halcyon Futures와 Schmidt Sciences로부터 초기 지원을 받았습니다.</li>
+<li>비공개 온디바이스 AI 스타트업 Underdog이 a16z, Khosla 등으로부터 지원을 발표했습니다.</li>
+<li>Yoshua Bengio가 캐나다의 새로운 AI 국가 위원회에 합류했습니다.</li>
+<li>블룸버그는 $150B의 자사주 매입 증가 후 Nvidia의 시가총액이 $5.7T에 육박하는 사상 최고치를 기록했다고 보도했습니다.</li>
+</ul>
+<h3 id="_6">⚡ 인프라 &amp; 하드웨어</h3>
+<ul>
+<li>DeepSeek의 오픈소스 분석을 통해 Ascend 950 칩의 레이아웃이 추론되었으며, 32개의 AI 코어와 BF16/FP8/FP4에서 약 432/865/1,730 TFLOPS의 예상 피크 성능을 가집니다.</li>
+<li>Prime Intellect는 MLA 잠재 공간을 NVFP4에 저장하여 행을 576바이트에서 352바이트로 줄이고 FP8보다 약 50% 더 많은 캐시된 토큰을 저장합니다.</li>
+<li>Stas Bekman은 B200에서 NVFP4가 MXFP4보다 약 9% 더 효율적이며 더 높은 정확도를 보인다고 측정했으며, mamf-finder 도구는 이제 FP8, MXFP8, MXFP4 및 NVFP4를 벤치마크합니다.</li>
+<li>NVHBM은 메모리 컨트롤러를 맞춤형 베이스 다이로 이동시켜 HBM4E보다 최대 30% 더 높은 대역폭과 15% 더 낮은 전력을 주장합니다.</li>
+<li>Volantis는 광학 기술을 사용하여 10T개 이상의 파라미터를 가진 모델에서 사용자당 최대 10K 토큰/초를 목표로 하는 스타트업입니다.</li>
+<li>SemiAnalysis는 Google의 GPU 클러스터를 Gold 티어로 평가했으며, ConnectX NCCL 플러그인이 이제 자동 활성화된다고 언급했습니다.</li>
+<li>Google Research는 검증 가능한 차등 프라이버시를 갖춘 TEE 기반 연합 학습을 출시했습니다.</li>
+<li>llama.cpp 포크/분산 인퍼런스 설정을 통해 iPhone 17 Pro Max를 24GB MacBook의 보조 GPU로 활용하여 Qwen 3.8 27B 인퍼런스 성능을 최대 44% 향상시켰습니다.</li>
+</ul>
+<hr />
+<p><em>이 문서는 Latent Space AINews 뉴스레터를 자동 요약한 것입니다.</em></p>
+        </div>
+        <div class="report-footer">
+            자동 번역된 문서입니다.
+        </div>
+    </div>
+</body>
+</html>
