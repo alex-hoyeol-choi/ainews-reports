@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-10-06 | Reflection Beam - 501B-A23B American Open Model | [전체번역](reports/2026-10/2026-10-06_Reflection_Beam_-_501B-A23B_American_Open_Model.md) | [요약](reports/2026-10/2026-10-06_Reflection_Beam_-_501B-A23B_American_Open_Model_summary.md) | [HTML](reports/2026-10/2026-10-06_Reflection_Beam_-_501B-A23B_American_Open_Model_summary.html) |
 | 2026-10-03 | not much happened today | [전체번역](reports/2026-10/2026-10-03_not_much_happened_today.md) | [요약](reports/2026-10/2026-10-03_not_much_happened_today_summary.md) | [HTML](reports/2026-10/2026-10-03_not_much_happened_today_summary.html) |
 | 2026-10-02 | Pi 1.0, Pi Durable, and AIE NYC | [전체번역](reports/2026-10/2026-10-02_Pi_10_Pi_Durable_and_AIE_NYC.md) | [요약](reports/2026-10/2026-10-02_Pi_10_Pi_Durable_and_AIE_NYC_summary.md) | [HTML](reports/2026-10/2026-10-02_Pi_10_Pi_Durable_and_AIE_NYC_summary.html) |
 | 2026-10-01 | Gemini 4 Argon: GDM’s answer to Astra/Fable, with 1M output | [전체번역](reports/2026-10/2026-10-01_Gemini_4_Argon_GDMs_answer_to_AstraFable_with_1M_output.md) | [요약](reports/2026-10/2026-10-01_Gemini_4_Argon_GDMs_answer_to_AstraFable_with_1M_output_summary.md) | [HTML](reports/2026-10/2026-10-01_Gemini_4_Argon_GDMs_answer_to_AstraFable_with_1M_output_summary.html) |
