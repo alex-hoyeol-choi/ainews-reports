@@ -21,6 +21,7 @@ reports/
 
 | 날짜 | 제목 | 전체번역 | 요약 | HTML |
 |------|------|----------|------|------|
+| 2026-10-13 | Meta Muse Wonder & Wonder Full: MSL’s Claude 5.5-tier Frontier Model | [전체번역](reports/2026-10/2026-10-13_Meta_Muse_Wonder_Wonder_Full_MSLs_Claude_55-tier_Frontier_Model.md) | [요약](reports/2026-10/2026-10-13_Meta_Muse_Wonder_Wonder_Full_MSLs_Claude_55-tier_Frontier_Model_summary.md) | [HTML](reports/2026-10/2026-10-13_Meta_Muse_Wonder_Wonder_Full_MSLs_Claude_55-tier_Frontier_Model_summary.html) |
 | 2026-10-10 | TypeSafe/Jev at >$100M ARR, $7.5B valuation 3 weeks after launch | [전체번역](reports/2026-10/2026-10-10_TypeSafeJev_at_100M_ARR_75B_valuation_3_weeks_after_launch.md) | [요약](reports/2026-10/2026-10-10_TypeSafeJev_at_100M_ARR_75B_valuation_3_weeks_after_launch_summary.md) | [HTML](reports/2026-10/2026-10-10_TypeSafeJev_at_100M_ARR_75B_valuation_3_weeks_after_launch_summary.html) |
 | 2026-10-08 | not much happened today | [전체번역](reports/2026-10/2026-10-08_not_much_happened_today.md) | [요약](reports/2026-10/2026-10-08_not_much_happened_today_summary.md) | [HTML](reports/2026-10/2026-10-08_not_much_happened_today_summary.html) |
 | 2026-10-08 | Claude Haiku 5.5 — better than GPT-6 Luna at the same pricing | [전체번역](reports/2026-10/2026-10-08_Claude_Haiku_55_better_than_GPT-6_Luna_at_the_same_pricing.md) | [요약](reports/2026-10/2026-10-08_Claude_Haiku_55_better_than_GPT-6_Luna_at_the_same_pricing_summary.md) | [HTML](reports/2026-10/2026-10-08_Claude_Haiku_55_better_than_GPT-6_Luna_at_the_same_pricing_summary.html) |
